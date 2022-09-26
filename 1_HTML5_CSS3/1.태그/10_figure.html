@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 그룹화와 설명</title>
+</head>
+<body>
+    <!--멀티미디어 : 이미지, 동영상, 소리 등등-->
+    <figure> <!--figure : 이미지들을 inline으로 묶는 태그, 이미지가 주가 되는 설명에 사용-->
+        <figcaption>전주한옥마을의 한컷</figcaption> <!--묶인 이미지들의 메인제목-->
+        <img src="./images/jeonju.jpg" alt="어느 한옥마을 사랑방 문앞">
+    </figure>
+    <figure>
+        <img src="./images/waiting.jpg"> <!--하나의 figure태그 안에 하나의 이미지만 있고, figcaption과 alt가 동일한 경우 alt 생략 가능-->
+        <figcaption>요즘에는 보기 힘든 빨간 우체통</figcaption>
+    </figure>
+    <figure>
+        <img src="./images/fall1.jpg" alt="단풍 든 담쟁이" title=""> <!--title : 필수설명(alt)를 제외한 보충설명, 필요할 경우에만 사용-->
+        <img src="./images/fall2.jpg" alt="억새풀숲">
+        <img src="./images/fall3.jpg" alt="억샛길">
+        <figcaption><b>산굼부리의 가을</b> - 단풍 든 담쟁이, 바람 가득한 억새 바다, 그리고 억샛길</figcaption>
+        <!--b : 글자강조태그-->
+    </figure>
+</body>
+</html>

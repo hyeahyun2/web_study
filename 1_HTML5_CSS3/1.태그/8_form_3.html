@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>신청폼</title>
+    
+</head>
+<body>
+    <h1>여름방학 특강 신청</h1>
+    
+    <form>
+        <fieldset><!--입력받는 값들의 그룹화 (입력값의 그룹을 나누기 위해 사용)-->
+            <legend>수강과목</legend> <!--fieldset 그룹의 제목-->
+            <label for="subj">영어회화(초급)</label> <!--label : 설명과 값이 연관되게 묶어주기 위해 사용, 해당되는 값의 id 입력-->
+            <input type="text" id="subj" readonly value="오전 9:00 ~ 11:00">
+        </fieldset>
+        <fieldset>
+            <legend>신청자</legend>
+            <label for="uname">이름</label>
+            <input type="text" id="uname" placeholder="이름을 적으시오" required><br><!--required : 필수입력-->
+            <label>학번 <!--label활용방법2 : 설명+값 묶어서 label안에 입력, for속성 사용x-->
+                <input type="text" id="uid" minlength="7" maxlength="7" placeholder="7자로 작성하시오" required><br>
+            </label>
+            <label for="uclass">학과</label>
+            <select id="uclass">
+                <option value="건축공">건축공학과</option>
+                <option value="기계공">기계공학과</option>
+                <option value="산업공">산업공학과</option>
+                <option value="전기공">전기전자공학과</option>
+                <option value="컴공" selected>컴퓨터공학과</option>
+                <option value="화공">화학공학과</option>
+            </select>
+            <label for="uphone">연락처</label>
+            <input type="tel" id="uphone" minlength="11" maxlength="11" placeholder="'-'없이 11자리를 입력하시오">
+        </fieldset>
+        <fieldset>
+            <legend>교재 주문</legend>
+            <label for="ubook">교재</label>
+            <input type="range" id="ubook" value="1" min="1" max="5"> <!--min/max : 범위 지정(최대/최소값)-->
+            <br>
+            <label for="uWS">워크시트</label>
+            <input type="number" id="uWS" value="1" min="1" max="10">
+            <br>
+            <label for="unum">단체주문</label>
+            <input type="number" id="unum" value="10" min="10" max="50" step="10"> <!--step : 묶음 단위 (여기선 10개 단위로~)-->
+            <br>
+            <label for="ulike">관심분야-문법, 어휘, 회화, 리스닝</label>
+            <input type="text" id="ulike" list="interest"> 
+            <datalist id="interest"> <!--datalist : select랑 비슷한 태그, input의 list속성과 연계되어 사용-->
+                <option value="grammar" label="문법"></option>
+                <option value="voca" label="어휘"></option>
+                <option value="speaking" label="회화"></option>
+                <option value="listening" label="리스닝"></option>
+            </datalist>
+        </fieldset>
+        <fieldset>
+            <legend>신청과 재입력</legend>
+            <input type="submit" value="submit">
+            <input type="reset" value="reset">
+        </fieldset>
+    </form>
+    
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>블락요소(block)와 인라인요소(inline)</title>
+    <style>
+        /*margin-left : 왼쪽공간띄우기*/
+        div { margin-left: 500px; }
+        h1 span { color: red; }
+        a { background: yellow; width: 200px; display: block;} /*인라인요소, 텍스트 크기 만큼 지정됨 ,, display속성으로 블락/인라인요소로 바꾸기 가능*/
+        p { background: lightgreen; width: 200px; display: inline;} /*블락요소, 한 줄 전체에 지정됨*/
+    </style>
+</head>
+<body>
+    <div> <!--div(division) : 의미없이 여러개의 태그들을 묶는 용도로 사용되는 블락그룹태그-->
+        <h1><span>제목</span>태그</h1> <!--span : 의미없이 (블락요소내) 특정인라인요소를 묶는 인라인그룹태그-->
+        <a href="#">앵커태그</a>
+        <p>문단태그</p>
+    </div>
+</body>
+</html>
