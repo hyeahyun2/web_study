@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>요안도라 객실소개</title>
+    <style>
+        h3, h5 { height:15px; }
+        table { border-collapse: collapse; }
+        col#first {background:rgb(253, 236, 138);}/*id를 이용하여 해당col 지정*/
+        col#second {background:rgb(170, 207, 255);}
+        col {background: grey;}/*나머지 하나 남은 col에 대한 스타일*/
+        /* th {background: rgb(253, 236, 138);} */
+        /* thead {background: rgb(253, 236, 138);} */
+        /* tbody > tr > th {background: rgb(170, 207, 255);} */
+        /* thead > tr > #who {background-color: rgb(253, 236, 138); } */
+        th, td { height:30px; width:120px; border: 1px solid black; }
+    </style>
+</head>
+<body>
+    <h3>객실소개</h3>
+    <h5>도미토리</h5>
+    <!--행 : tr , 열 : td-->
+    <table>
+        <caption>요안도라 객실</caption>
+        <colgroup> <!--칼럼들의 그룹 style시트 상에서 필요할 경우에 기제, 반드시 필요는 없음-->
+            <col id="first"> <!--행 갯수만큼 !! (4행이면 <col> 4개 필요)-->
+            <col span="2" id="second"> <!--행 합병? (2칸만큼 차지, <col>하나 삭제!!)-->
+            <col>
+        </colgroup>
+        <thead>
+            <tr>
+                <th scope="col">방이름</th>
+                <th scope="col" id="who">대상</th>
+                <th scope="col" id="size">크기</th>
+                <th scope="col" id="price">가격</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row" id="room1">유채방</th>
+                <td headers="room1 who">여성 도미토리</td>
+                <td rowspan="3" headers="room1 size">4인실</td>
+                <td rowspan="4" headers="room1 price">1인 20,000원</td>
+            </tr>
+            <tr>
+                <th scope="row" rowspan="2" id="room2">동백방</th>
+                <td headers="room2 who">동성도미토리</td>
+            </tr>
+            <tr>
+                <td headers="room2 who">가족1팀</td>
+            </tr>
+            <tr>
+                <th scope="row" id="room3">천혜향방</th>
+                <td headers="room3 who">-</td>
+                <td headers="room3 size">2인실</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="4">바깥채 전체를 렌트합니다</td>
+            </tr>
+        </tfoot>
+
+    </table>
+</body>
+</html>
