@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table { border-collapse: collapse;}
+        th, td { height:30px; width:120px; border: 1px solid black; }
+        /*height : 셀의 높이, width : 셀의 너비*/
+
+    </style>
+</head>
+<body>
+    <!--행 : tr , 열 : td-->
+    <table>
+        <caption>A와 B의 중화요리 가격비교</caption>
+        
+        <thead>
+            <tr>
+                <th> </th>
+                <!--scope속성 : 어떤 목록에 대한 제목셀인지, <th>에만 사용 가능-->
+                <th scope="col" id="storeA">A</th> <!--col : 해당 열에 대한 제목셀-->
+                <th scope="col" id="storeB">B</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row" id="menu1">짜장면</th> <!--row : 해당 행에 대한 제목셀-->
+                <td headers="storeA menu1">4,000원</td><!--해당목록의 헤더들 지정-->
+                <td headers="storeB menu1">5,000원</td>
+            </tr>
+            <tr>
+                <th scope="row" id="menu2">짬뽕</th>
+                <td headers="storeA menu2">4,500원</td>
+                <td headers="storeB menu2">5,500원</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th scope="row" id="total">합계</th>
+                <td headers="storeA menu1 menu2 total">8,500원</td>
+                <td headers="storeB menu1 menu2 total">10,500원</td>
+            </tr>
+        </tfoot>
+
+    </table>
+    
+</body>
+</html>

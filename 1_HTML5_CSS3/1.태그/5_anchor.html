@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr"> <!--ltr : left to right = 왼쪽정렬(왼쪽에서 오른쪽으로)-->
+  <head>
+    <meta charset="utf-8">
+    <title>하이퍼링크 태그, anchor</title>
+  </head>
+  <body>
+    <a href="1_heading.html">헤딩문서로 이동</a> <!--inline요소이다!! (따로 명령어 안쓰면 뒷태그와 같이 한줄로 표기됨)-->
+                                                <!--block요소 : 한문단-->
+    <br><!--줄바꿈-->
+    <a href="http://www.naver.com">네이버로 이동</a>
+    <a href="http://www.daum.net" target="_blank">다음으로 이동</a>
+    <!--target : 링크 여는 방법? , _blank : 새 탭에서 링크 열기-->
+    <h1><a href="http://www.nate.com/">네이트</a></h1> <!--block요소(heading 태그) 안에 링크 걸기-->
+
+    <!--밑의 두 문단 전체에 링크를 걸 때-->
+    <a href="http://www.nate.com/">
+    <h1>네이트</h1>
+    <p>새로운 네이트의 세계로 가봅니다.</p>
+    </a>
+    <a href="#">이동주소없음</a> <!--이동주소가 없을 때 : # 사용 (=지금 있는 페이지로 이동)-->
+  </body>
+</html>

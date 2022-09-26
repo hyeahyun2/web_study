@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table { border-collapse: collapse;}
+        th, td { width:150px; border: 1px solid black; }
+        /*width : 셀의 너비*/
+
+    </style>
+</head>
+<body>
+    <!--행 : tr , 열 : td-->
+    <table>
+        <caption>표제목</caption><!--caption : 표제목-->
+        <!--4행2열-->
+        <thead><!--thead : table head, 표의 머릿말-->
+        <tr>
+            <th>Header1</th><!--thead에는 td대신 th만 올 수 있음-->
+            <th>Header2</th>
+        </tr>
+        </thead>
+        <tbody><!--tbody : table body, 표의 내용-->
+        <tr>
+            <td>Data1</td>
+            <td>Data1</td>
+        </tr>
+        <tr>
+            <td>Data2</td>
+            <td>Data2</td>
+        </tr>
+        </tbody>
+        <tfoot><!--tfoot : tabole foot, 표의 말미부분, 생략가능-->
+        <tr>
+            <td>Total1</td>
+            <td>Total2</td>
+        </tr>
+        </tfoot>
+
+    </table>
+</body>
+</html>
