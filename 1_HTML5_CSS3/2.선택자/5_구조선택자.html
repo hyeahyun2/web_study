@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구조선택자</title>
+    <style>
+        /* 일반구조선택자 */
+        /* 태그명:nth-child(n) : 태그 중 n번째만 선택 */
+        /* !!부모태그가 있다면 부모태그 안에 있는 태그에서 순번 매김 */
+        /* :first-child : 태그 중 첫번째로 쓰인 태그 선택 */
+        /* :last-child : 태그 중 마지막으로 쓰인 태그 선택 */
+        /* :nth-last-child(n) : 태그 중 역순으로 n번째 선택 */
+        /* p:first-child { color: red; } */
+        /* p:nth-child(2) { color: red; } */
+        /* p:last-child { color: red; } */
+        /* p:nth-last-child(1) {color:red;} */
+
+        /* 태그명 :only-child == 해당태그에서 자식태그가 1개일 때 선택 */
+        /* 태그명:empty ==  해당태그의 자식태그가 비어있을 때*/
+        /* 태그명:not(속성/class/id) == 해당 속성을 가지는 태그를 제외하고 */
+
+        /* 형태구조선택자 : 같은 태그들 중에서 n번째 선택 */
+        /* !!부모태그가 있다면 부모태그 중 해당태그에 순번 매김 */
+        /* 태그명:nth-of-type(n) */
+        /* p:nth-of-type(2) {color:red;} */
+        /* p:first-of-type {color:red;} */
+        /* p:last-of-type {color:red;} */
+
+        /* odd = 2n+1 = 홀수, even = 2n = 짝수 */
+        section {border: 1px solid #000;}
+        /* section p:nth-child(odd) { background: green;} */
+        /* section p:nth-child(odd) { background: lightgreen;}
+        section p:nth-child(even) { background: yelow;} */
+        section p:nth-child(2n+1) { background: lightgreen;}
+        section p:nth-child(2n) { background: yellow;}
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Lorem Ipsum dolot sit amet</h1>
+        <p>Lorem Ipsum dolot sit amet</p>
+        <p>Lorem Ipsum dolot sit amet</p>
+        <p>Lorem Ipsum dolot sit amet</p>
+        <p>Lorem Ipsum dolot sit amet</p>
+        <p>Lorem Ipsum dolot sit amet</p>
+    </div>
+    <div>
+        <!-- <h1>Lorem Ipsum dolot sit amet</h1> -->
+        <p>Lorem Ipsum dolot sit amet</p>
+        <p>Lorem Ipsum dolot sit amet</p>
+        <p>Lorem Ipsum dolot sit amet</p>
+        <p>Lorem Ipsum dolot sit amet</p>
+        <p>Lorem Ipsum dolot sit amet</p>
+    </div>
+    <section>
+        <p>Lorem Ipsum dolot sit amet</p>
+        <p>Lorem Ipsum dolot sit amet</p>
+        <p>Lorem Ipsum dolot sit amet</p>
+        <p>Lorem Ipsum dolot sit amet</p>
+        <p>Lorem Ipsum dolot sit amet</p>
+    </section>
+</body>
+</html>

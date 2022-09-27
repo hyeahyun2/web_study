@@ -1,0 +1,4 @@
+@charset "utf-8";
+h2 { color: orange;}
+p { color: green;}
+hr {display: none;} /*display : 적용방식, none : 안보이게*/

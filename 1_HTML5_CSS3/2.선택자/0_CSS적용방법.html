@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스타일시트 적용방법</title>
+    <!-- 방법3. .css파일 분리해서 거기서 스타일 입히기!, 권장!!-->
+    <link rel="stylesheet" href="./common1.css">
+
+    <!--
+        <style> /*방법2. head에 style시트로, 이것도 권장x*/
+        h2 {color: blue;}
+        </style>
+    -->
+</head>
+<body>
+    <div>
+        <!--방법1. style시트를 태그에 속성으로 다이렉트로~, 권장x-->
+        <h1 style="color: red; font-size: 35px;">웹문서 제작</h1>
+        <p>웹사이트를 제작하기 위해 필요한 요소들에 대해 살펴봅시다</p>
+        <hr>
+        <h2>HTML</h2>
+        <p>웹문서를 구조화하기 위한 데이터 언어</p>
+        <h2>CSS</h2>
+        <p>웹문서에 디자인을 입히는 언어</p>
+        <h2>JavaScript</h2>
+        <p>웹문서에 동적인 효과를 주어 인터랙션을 하기 위한 언어</p>
+    </div>
+    
+</body>
+</html>

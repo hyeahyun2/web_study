@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기본선택자</title>
+    <style>
+        /* 태그선택자 */
+        div { border: 1px solid #000; }
+        /* 아이디 선택자
+            1. 영문사용, 영문으로 시작, 한글x, 특수기호x (cf. 사용가능한 특수기호 : _ , -)
+            2. 숫자는 사용가능, 다만 첫번째글자로는 올 수 없음.
+            3. 대소문자 구분
+            4. 하나의 아이디는 웹페이지 내에서 한번만 사용가능
+        */
+        div#box1 { background: beige; }
+        #box2 { background: lightgray; } /*아이디 선택자일 경우 >> 태그명 생략가능*/
+        /* 클래스 선택자 
+            1. 아이디선택자와 적용방법은 동일하나 중복사용 가능(다른 태그에도 사용가능)
+            2. 다중클래스 적용가능
+        */
+        div.select { color: green; }
+        div.select1 { color: blue; }
+        /* 우선순위 : 더 디테일한 선택자 순*/
+        h1#heading { color: green; }
+        div.heading { color: blue; }
+        h1 { color: red; } 
+        /*태그,아이디,클래스 선택자 전부 사용 >> 젤 우선*/
+        div #heading.heading { background: yellow ;}
+    </style>
+</head>
+<body>
+    <div id="box1" class="select select1 seleect2"> <!--클래스 여러개 적용가능!(다중클래스)-->
+        <h1>Lorem Ipsum1</h1>
+        <h2>Lorem Ipsum2</h2>
+        <p>Lorem ipsum dolor sit amet</p>
+    </div>
+    <div id="box2" class="select"><!--id는 중복x, class는 중복가능-->
+        <h1>Lorem Ipsum1</h1>
+        <h2>Lorem Ipsum2</h2>
+        <p>Lorem ipsum dolor sit amet</p>
+    </div>
+    <div><!--id와 class 같은 단어로도 많이 씀!-->
+        <h1 id="heading" class="heading">Lorem Ipsum1</h1>
+        <h2>Lorem Ipsum2</h2>
+        <p>Lorem ipsum dolor sit amet</p>
+    </div>
+</body>
+</html>

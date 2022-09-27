@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>동위, 이웃, 형제선택자</title>
+    <style>
+        /* 이웃선택자 */
+        /* + : h1 바로 뒤 h2태그(이웃관계)만 선택*/
+        body > h1 + h2 { color:red; }
+        /* ~ : h1 뒤에 오는 h2(이웃관계) 전부 선택*/
+        body > h1 ~ h2 { background: yellow; }
+
+        ul li + li { background: green; }
+
+        /*그룹선택자*/
+        #box1 h1, #box2 h2 { color: green;}
+
+    </style>
+</head>
+<body>
+    <h2>header-2</h2>
+    <h1>header-1</h1>
+    <h2>header-2</h2>
+    <h2>header-2</h2>
+    <h2>header-2</h2>
+    <h2>header-2</h2>
+    <hr>
+    <ul>
+        <li>Lorem Ipsum</li>
+        <li>Lorem Ipsum</li>
+    </ul>
+    <hr>
+    <div id="box1">
+        <h1>Lorem Ipsum1</h1>
+        <h2>Lorem Ipsum1</h2>
+    </div>
+    <div id="box2">
+        <h1>Lorem Ipsum1</h1>
+        <h2>Lorem Ipsum1</h2>
+    </div>
+</body>
+</html>

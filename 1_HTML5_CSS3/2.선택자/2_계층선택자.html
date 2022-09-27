@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자손, 자식 선택자</title>
+    <style>
+        * { border: 1px solid #f00; } /* * : 모든 태그들! 각각의 요소*/
+        div h1 { color: red; } /*div에서 몇계층을 내려가도 h1이면 적용됨*/
+        div > h1 { color: green; } /*div 바로 및 계층에 있는 h1만 적용*/
+        body > h1 { background: yellow; }
+    </style>
+</head>
+<body>
+    <h1>Lorem Ipsum1</h1>
+    <div> 
+        <h1>Lorem Ipsum1</h1>
+        <h2>Lorem Ipsum2</h2>
+        <p>Lorem ipsum dolor sit amet</p>
+        <section>
+            <h1>Lorem Ipsum3</h1>
+        </section>
+    </div>
+    <div>
+        <h1>Lorem Ipsum1</h1>
+        <h2>Lorem Ipsum2</h2>
+        <p>Lorem ipsum dolor sit amet</p>
+    </div>
+    <div>
+        <h1>Lorem Ipsum1</h1>
+        <h2>Lorem Ipsum2</h2>
+        <p>Lorem ipsum dolor sit amet</p>
+    </div>
+</body>
+</html>

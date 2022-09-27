@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>속성선택자</title>
+    <style>
+        /* 태그명[속성명] */
+        /* 태그명[속성명="속성값"] (둘 다 사용 가능)*/
+        input[type] {background: blue; color: white;}
+        input[type="password"] { background:red; color: yellow;}
+        /* img[src="images/ux.gif"] { border: 5px solid #f00; } */
+
+        /* ^= : 특정문자값으로 시작하는 값 선택 */
+        /* div image[scr ^= "images/"] { border: 5px solid #f00; } */
+    
+        /* $= : 특정문자값으로 끝나는 값 선택 */
+        /* div img[src $= "g"] { border: 5px solid #f00; } */
+
+        /* *= : 특정문자값을 포함하는 값 선택*/
+        div img[src *= "images"] { border: 5px solid #f00; }
+    </style>
+</head>
+<body>
+    <form>
+        <input type="text">
+        <input type="password">
+        <input>
+    </form>
+    <div>
+        <img src="./images/node.jpg" alt="" width="200">
+        <img src="images/ux.gif" alt="" width="200">
+        <img src="images/jajq.png" alt="" width="200">
+        <img src="hanbit.png" alt="" width="200" height="250">
+    </div>
+</body>
+</html>

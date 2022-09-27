@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상태선택자</title>
+    <style>
+        /* [속성명] - 속성명으로 있는 것만 사용 가능 */
+        /* :상태선택자 - 현재 상태를 적용시킬 수 있음(속성 따로 없어도)*/
+        /* input[disabled] { background: gray;} */
+        input:disabled { background: grey; }
+        /* enabled : 입력할 수 있는 상태 */
+        input:enabled { background: blue; color: white;}
+        /* focus : 지금 활성화되어있는 상태 */
+        input:focus { background-color: yellow; color: black;}
+        /* input[type="checkbox"]:checked == input:checked */
+        /* 체크박스가 체킹되어있을 때 text 배경색을 바꿈 */
+        input[type="checkbox"]:checked + input[type="text"] {background-color: green;}
+
+        div { width: 100px; height: 100px; border: 1px solid #000;}
+        /* input이 checked 상태가 되면 div의 배경을 바꿈 */
+        input:checked ~ div {background-color: blue;}
+    </style>
+</head>
+<body>
+    <input type="checkbox">
+    <input type="text">
+    <input type="text" disabled>
+    <div></div>
+</body>
+</html>
