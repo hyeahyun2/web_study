@@ -73,14 +73,15 @@
         </nav> 
         
         <a href="#">영문사이트</a>
-        <div><!--검색-->
-            <a href="#">검색</a>
+        <div><!--검색아이콘-->
+            <a href="#">검색아이콘</a>
             <form>
                 <fieldset>
+                    <legend>검색</legend>
                     <input type="text" placeholder="검색어를 입력하세요">
                     <input type="button" value="검색">
                 </fieldset>
-                <button>닫기</button>
+                <button aria-label="closs">X</button> <!--닫기버튼, aria-label : 어떤 버튼인지 설명하는 텍스트-->
             </form>
         </div>
         <nav><!--사이드맵 네비게이션-->
@@ -112,6 +113,29 @@
     <hr>
     <section>
         <h2>LG재단 주요프로모션</h2>
+        <!--방법1-->
+        <ul> <!--이미지 슬라이드 (3개)-->
+            <li>
+                <div>
+                    <dl><!--스타일시트를 제거했을 때 명확하게 구조화를 이해하기 쉬움(접근성 용이)-->
+                        <dt>LG아트센터 서울 open</dt>
+                        <dd>2022년 10월 13일 LG아트센터 서울이 오픈합니다.</dd>
+                        <dd><a href="#">아트센터 서울 바로가기</a></dd>
+                    </dl>
+                </div>
+            </li>
+            <li></li>
+            <li></li>
+        </ul>
+        <hr>
+        <!--방법2-->
+        <section>
+            <h3>LG아트센터 서울 open</h3>
+            <p>2022년 10월 13일 LG아트센터 서울이 오픈합니다.</p>
+            <a href="#">아트센터 서울 바로가기</a>
+        </section>
+        <section></section>
+        <section></section>
     </section>
     <hr>
     <main>
@@ -123,12 +147,52 @@
                     LG의 사회공헌 활동은 언제나 '고객을 위한 가치 창조'와 
                     '인간 존중의 경영'이라는 기업 경영철학을 기본으로 합니다.
                 </p>
+                <ul><!--재단의 소개(사진/설명/링크)-->
+                    <li><!--연암문화재단-->
+                        <a href="#">
+                            <dl>
+                                <dt>연암문화재단</dt>
+                                <dd>
+                                LG아트센터, LG디스커버리랩, LG상남도서관을 통해<br>
+                                문화예술의 발전과 과학 기술의 진흥에 기여합니다.
+                                </dd>
+                            </dl>
+                        </a>
+                    </li>
+                    <li><!--복지재단-->
+                        <a href="#">
+                            <dl>
+                                <dt>복지재단</dt>
+                                <dd>
+                                LG의 인상, 성장호르몬제 지원사업을 전개하여<br>
+                                정의사회를 구현하고 어려운 이웃과 함께 사는 사회를 희망합니다.
+                                </dd>
+                            </dl>
+                        </a>
+
+                    </li>
+                </ul>
+                <div>
+                    <button>이전내용보기</button>
+                    <button>다음내용보기</button>
+                </div>
             </section>
         </section>
         <section>
             <h2>소식/공지</h2>
             <section>
                 <h3>활동소식</h3>
+                <ul>
+                    <li><a href="#">경기도, LPG 충전소에 장애인 편의 시설 설치... 복지재단과 협약</a></li>
+                    <li><a href="#">폭우 속 이웃 구하고 불이 난 화물차에서 운전자 구조한 시민 3명에서 'lG 의인상' 수여</a></li>
+                    <li><a href="#">사라졌던 무궁화&middot;황새, 다시 우리 곁으로... LG의 25년 자연 사랑</a></li>
+                    <li><a href="#">조성진 LG아트센터 개관공연, 오픈 40초 만에 전석매진</a></li>
+                </ul>
+                <div><!--이전/다음내용보기(화살표)-->
+                    <button>이전내용보기</button>
+                    <button>다음내용보기</button>
+                </div>
+                <a href="#">더보기</a>
             </section>
             <section>
                 <h3>공지사항</h3>
