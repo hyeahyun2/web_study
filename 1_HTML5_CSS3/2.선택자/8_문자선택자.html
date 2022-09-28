@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시작문자, 반응문자, 전후문자선택자</title>
+    <style>
+        /* 문자열과 관련된 선택자는 :: 붙임 */
+        /* 시작문자 */
+        h1::first-letter { color: red; font-size: 50px;}/* first-letter : 첫글자 */
+        h1::first-line { background: yellow;}/* first-line : 첫줄 */
+
+        /* 반응문자 selection : 텍스트 드래그 했을 때의 스타일*/
+        h2::selection { background:black; color: yellow;}
+
+        /* 전후문자선택자 - 지정된 태그 젤 앞부분/뒷부분에 추가 */
+        p::before { content: ""; /*before : 앞부분에 추가*/ /*content를 비웠을 때 빈객체만 생김*/
+                    position: absolute; /*다른요소와 겹치도록 배치*/
+                    top: 0; left: 0; /*위치 지정???*/
+                    z-index: -1; /*배경색 젤 뒤로 보내기?인가?*/
+                    display: block;
+                    width: 1000px;
+                    height: 200px;
+                    background-color: gray;
+                } 
+        p::after { content: "****";} /*after : 뒷부분에 추가*/
+        p::first-letter { color: red;} /*전후문자선택자에 의해 추가된 문자 해당됨!*/
+    </style>
+</head>
+<body>
+    <h1>Lorem <br>Ipsum1</h1>
+    <h2>Lorem Ipsum2</h2>  
+    <p>Lorem ipsum dolor sit amet</p>
+</body>
+</html>
