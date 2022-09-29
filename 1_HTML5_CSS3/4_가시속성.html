@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dispaly, visibility, opacity</title>
+    <style>
+        /* display : 태그의 영역을 포함하여 스타일 변경 */
+        /* none : 아예 없는 취급 */
+        h1 { display: none; }
+        /* visibility : 태그의 영역을 포함하지 않고 태그값의 스타일만 변경*/
+        h2 { visibility: hidden; }
+        /* opacity : 태그값을 투명하게???? */
+        h3 { opacity: 1; transition: 1s;} /* transition : 스타일 변화 속도 */
+        h3:hover { opacity: 0.2;} /* 마우스오버시 스타일 */
+    </style>
+</head>
+<body>
+    <div>
+        <h1>가시속성1</h1>
+        <h2>가시속성2</h2>
+        <h3>가시속성3</h3>
+    </div>
+    <table>
+        <tr>
+            <td>테이블</td>
+        </tr>
+    </table>
+    <ul>
+        <li>리스트</li>
+        <li>리스트</li>
+    </ul>
+</body>
+</html>

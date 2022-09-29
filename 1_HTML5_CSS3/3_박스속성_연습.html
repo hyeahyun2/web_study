@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>박스속성</title>
+    <style>
+        body { margin: 0; }
+        #parent { width: 400px; height: 400px; background: #000; 
+                /* 부모태그에 공간을 줘서 자식태그를 밀어냄 */
+                padding: 200px 0 0 200px; 
+                box-sizing: border-box; 
+                /*자식태그에 margin태그를 쓸 때 부모의 박스 이동을 원하지 않는 경우*/
+                overflow: hidden; 
+        }
+        #child { width: 200px; height: 200px; background: #ff0;
+                /* margin: 200px 0 0 200px; */
+        }
+
+    </style>
+</head>
+<body>
+    <div id="parent">
+        <div id="child"></div>
+    </div>
+</body>
+</html>

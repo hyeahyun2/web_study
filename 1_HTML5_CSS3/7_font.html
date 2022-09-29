@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>font-family, font-size, font-weight, font-style</title>
+    <!--글꼴 웹상에서 바로 불러오기(링크) 1 -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* 글꼴 불러오는 명령어는 style시트에서 최상단에 적어야함!! */
+        /*글꼴 웹상에서 바로 불러오기(링크) 2 */
+        @import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
+        /* 내 컴퓨터에 저장되어있는 웹폰트 적용하기 */
+        @font-face {
+            font-family: chery;
+            src: url(./webfont/cheri.ttf), /* 웹폰트 변수에 저장*/
+                 url(./webfont/cheri.eot), 
+                 url(./webfont/cheri.woff); 
+        }
+        h1 {
+            /* 글꼴 이름, 앞의 글꼴 먼저 적용 -> 적용 안된게 있으면 뒤의 글꼴 적용 */
+            font-family: 'Century Gothic', Arial,'맑은 고딕', 'Malgun Gothic', sans-serif;
+            /* sans-serif : 기본글꼴, 고딕체 */ 
+        }
+        h2 {
+            font-family: '나눔 스퀘어', 'Times New Roman', 바탕체, batang, serif; /* serif : 영어 기본체(명조체???) */
+        }
+        h3 {
+            font-family: Cheri, /* 만약 폰트가 컴터상에 설치되있으면 먼저 불러오기 (이게 로딩속도 더 빠름)*/ 
+                         chery; /* 설치안돼있으면 -> 변수명 입력 -> 웹폰트 적용 */
+        }
+        h4 {
+            font-family: 'Noto Sans KR', sans-serif; /* 웹상에서 불러온 폰트 적용하기-1 */
+        }
+        p {
+            font-family: 'NanumSquare'; /* 웹상에서 불러온 폰트 적용하기-2 */
+        }
+        address {
+            font-family: 'Noto Sans KR', sans-serif;
+            /* 폰트의 스타일 (기본, 기울임 등등) (기본값 : normal)*/
+            font-style: normal;
+            /* 폰트의 굵기 (기본값 : normal)*/
+            font-weight: 900; /* bold : 굵게, 숫자로도 지정 가능(글꼴에 따라 크기 적용 값이 다름) */
+        }
+        div {
+            /* font-style: italic;
+            font-weight: bold;
+            font-size: 30px;
+            font-family: 'NanumSquare'; */
+            /* 폰스톡성 한번에 지정 (순서 상관 있음!) */
+            /* (style, weight) normer인 값은 생략 가능. 단, size와 family는 생략 불가능 */
+            font: italic bold 30px 'NanumSquare', sans-self;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lorem Ipsum 로렘입섬 1234</h1>
+    <h2>Lorem Ipsum 로렘입섬 1234</h2>
+    <h3>WebFont</h3>
+    <h4>웹폰트를 적용합니다</h4>
+    <p>웹폰트를 적용합니다</p>
+    <address>폰트굵기 지정하기</address>
+    <div>폰트속성 한번에 지정하기</div>
+</body>
+</html>
