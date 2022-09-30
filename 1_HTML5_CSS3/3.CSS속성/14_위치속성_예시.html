@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>예시</title>
+    <style>
+        body, h1, h3, p { margin: 0; }
+        header { 
+            height: 100px; 
+            position: absolute; /* absolute를 하게되면 영역이 글자만큼으로 국한됨->글자위치 왼쪽 */
+            width: 100%; /* 너비영역을 강제로 100%만큼 갖게 함 -> 글자위치 중앙*/
+        }
+        /*텍스트 위치 : 가로-중앙, 세로-100px떨어진만큼*/
+        h1 { text-align: center; line-height: 100px;}
+        div { height: 300px; background: #a5c4e2;}
+        section {
+            width: 1000px; margin: 50px auto 0;
+            padding: 50px 0;
+            border: 1px solid #000;
+            position: relative;
+        }
+        a {
+            position: absolute; /* 상대영역 없애기 */
+            top: 50px; left: 100px; /* section(부모요소)에 position을 줘서 section안을 기준으로 위치*/
+            text-decoration: none; color: #000;
+        }
+        section a::after { content: "+"; font-size: 20px;} /* 가상요소 삽입, 가상요소의 스타일 */
+        section a span { position: absolute; left:-5000px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>헤더영역</h1>
+    </header>
+    <div>슬라이드 영역</div>
+    <section>
+        <h3>제목위치</h3>
+        <p>여기는 문단위치입니다</p>
+        <p>여기는 문단위치입니다</p>
+        <p>여기는 문단위치입니다</p>
+        <a href="#"><span>더보기</span></a>
+    </section>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그라디언트</title>
+    <style>
+        body { 
+            height: 100vh;
+            background: linear-gradient(137deg, #12c2e9, #c471ed, #f64f59, #f953c6);
+            background-size: 400% 400%;
+            /*no-repeat;  /* 반복x */
+            animation: bgMove 10s ease infinite;
+        }
+        @keyframes bgMove {
+            0% { background-position: 0 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0 50%; }
+        }
+        div {
+            width: 300px; height: 300px;
+            border: 1px solid #000;
+            /* 선형그라데이션(각도, 시작색 그라데이션시작지점, 끝색 그라~끝지점) (시작지점과 끝지점은 생략가능) */
+            /* background: linear-gradient(90deg, #ff0 0%, #000 100%); */
+            /* background: linear-gradient(90deg, #ff0, #f00, #000); */
+            background: linear-gradient(to bottom, rgb(102, 194, 255) 50%, rgb(255, 98, 171) 50%); /*단색2개로 표현*/
+            background-size: 10px 30px;
+            animation: move 0.5s linear infinite; /* 애니메이션 : 움직이는 0.5초 선형으로 무한대*/
+        }
+        /* div:hover {
+            background-position-x: 15px;
+            transition: 1s;
+        } */
+        @keyframes move { /* 움직이는 애니메이션 만들기 ! */
+            to { background-position-y: 30px; } /* 배경색 포지션이 30px만큼 이동하는 */
+        }
+        h2 {
+            width: 200px; height: 200px;
+            line-height: 200px; text-align: center;
+            border-radius: 50%;
+            background: radial-gradient(red, yellow); /* 원형 그라디언트 */
+            background-position: center;
+            background-size: 100%;
+            animation: radiMove 3s infinite;
+            
+        }
+        @keyframes radiMove {
+            0% { background-size: 100% 100%;}
+            50% { background-size: 200% 200%;}
+            100% { background-size: 100% 100%;}
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <h2>원형</h2>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stichy</title>
+    <!-- 특정위치에 태그가 도착했을 때 태그의 위치를 고정하는 속성 : stichy -->
+    <style>
+        body { margin: 0; }
+        #slider { height: 500px; border: 2px solid #000; }
+        .btn { 
+            display: block; width: 100px; height: 100px;
+            background: #3394f4;
+            /* top위치가 200px떨어진 위치에 왔을 때 부터 화면에서 해당 태그의 위치 고정 */
+            position: sticky;
+            top: 200px;
+            float: right; /* 레이아웃과 관련된 속성. 해당 태그를 우측으로 이동 */
+         }
+        #content {
+            height: 1500px;
+        }
+    </style>
+</head>
+<body>
+    <section id="slider"></section>
+    <a href="#" class="btn">sticky</a>
+    <section id="content"></section>
+</body>
+</html>

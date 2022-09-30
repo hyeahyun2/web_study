@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>그라디언트, gradient</title>
+    <style>
+      html, body { height: 100%; margin: 0; }
+      /* body { background: linear-gradient(90deg, #d3eea9 0%, #9ef186 25%, #ff9465 50%, #04e0ee 75%, #a870b6 100%); } */
+      div.double { width: 500px; height: 500px; margin: 0 auto; border: 1px solid #000; border-radius: 250px;
+                  background: linear-gradient(to right, #f0ff71 50%, #275bf5 50%);
+                  background-size: 100px; }
+      div.checkPattern { width: 500px; height: 500px; margin: 0 auto; border: 1px solid #000;
+                        background: linear-gradient(45deg, #16a4b3 25%, transparent 25%),
+                                    linear-gradient(-45deg, #be2cc6 25%, transparent 25%),
+                                    linear-gradient(45deg, transparent 75%, #16a4b3 75%),
+                                    linear-gradient(-45deg, transparent 75%, #be2cc6 75%);
+                        background-size: 50px 50px;
+                        background-position: 0 0, 0 25px, 25px -25px, -25px 0px; }
+      div.sprite { width: 100%; height: 200px;
+                  background: linear-gradient(45deg, red 25%, green 0, green 50%, red 0, red 75%, green 0);
+                  background-size:30px 30px;
+                  /* -webkit-background-size:30px 30px; */
+                  animation: rotate 0.5s linear infinite;
+                  }
+      @keyframes rotate {
+        to { background-position-y: 30px; }
+      }
+    </style>
+  </head>
+  <body>
+      <div class="double"></div>
+      <div class="checkPattern"></div>
+      <div class="sprite"></div>
+
+  </body>
+</html>

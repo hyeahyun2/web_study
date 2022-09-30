@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>리스트속성</title>
+    <style>
+        body, ul, ol { margin: 0; padding: 0;} /* padding : 리스트 앞쪽(왼쪽)에 비어있는 공간 없애기*/
+        ul { background: #a8eef0;}
+        
+        /* list-style-type (li기본값 : disc, 숫자 : decimal) */
+        /* ul에 적용해도 되고 li에 적용해도 상관x*/
+        /* ul : disc circle square */
+        /* ol : decimal upper-~ lower-~ */
+        ul li {
+            /* margin: 10px 0; */
+            background: #fbf0d0 url(./images/bullet.png) no-repeat 20px center;
+            text-indent: 50px;
+            /* padding: 0 50px; */ /*text-indent or padding 중 하나 사용*/
+            list-style: none;
+            font-size: 50px;
+            /* list-style-type: circle; */
+            /* list style로 position과 image넣어서 쓰는 방법은 지금은 많이 안씀 */
+            /* list-style-position: inside;
+            list-style-image: url(./images/bullet.png); */
+        }
+        ol li {
+            list-style-type: lower-roman ;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>리스트</li>
+        <li>리스트</li>
+        <li>리스트</li>
+    </ul>
+    <ol>
+        <li>리스트</li>
+        <li>리스트</li>
+        <li>리스트</li>
+    </ol>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>float</title>
+    <style>
+        img {
+            /* float : 뒤의 블락요소와 같은 줄?에 위치할 수 있게 함 */
+            /* 보통 글자와 이미지를 같이 나열하기 위해 사용 */
+            /* 기본값 : none (사용하지 않음) */
+            float: left;
+        }
+        p {
+            width: 300px; float: left;
+        }
+        h2 { 
+            /* 위에서 사용된 float에 의해 영향을 받지 않게 하는 속성 */
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <img src="./images/w3c.png" alt="w3c">
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+        when an unknown printer took a galley of type and scrambled it to make 
+        a type specimen book. 
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+        when an unknown printer took a galley of type and scrambled it to make 
+        a type specimen book.
+    </p>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+        when an unknown printer took a galley of type and scrambled it to make 
+        a type specimen book.
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+        when an unknown printer took a galley of type and scrambled it to make 
+        a type specimen book.
+    </p>
+    <h2>Lorem Ipsum</h2>
+</body>
+</html>

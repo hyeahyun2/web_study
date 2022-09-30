@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>float를 활용한 레이아웃</title>
+    <style>
+        /* 초기화 (body에 margin:0) */
+        body { margin: 0; }
+        /* header */
+        #headerWrap {
+            width: 100%; 
+            /* height: 200px; */
+            background: #fcf9d8;
+            padding-top: 100px;
+            /* 박스사이즈 유지 , headerWrap에 height 200을 줄 때 사용*/
+            /* box-sizing: border-box;  */
+        }
+        #header {
+            width: 1000px; height: 100px;
+            margin: 0 auto;
+            background: #ffee59;
+            /* position: relative;
+            top: 100px; */
+        }
+        /* content */
+        #Wrap {
+            background: #755dff url(./images/바다.jpg) no-repeat center center / cover;
+        }
+        #contentWrap { /* 자식요소에서 float사용하면 부모요소의 높이가 0이 됨 */
+            width: 1000px; margin: 0px auto; 
+            padding: 50px 0;
+            /* background: #fbcafb; */
+        }
+        /* 부모요소의 높이를 지정해주기 위해 가상요소 적용-> clear이용해서 float속성 끝냄 */
+        #contentWrap::after {content: " "; display: block; clear: both;}
+        #content1 {
+            width: 400px; height: 400px;
+            background: #82f794;
+            float: left;
+            margin-right: 50px;
+        }
+        #content2 {
+            width: 300px; height: 400px;
+            background: #377041;
+            float: left;
+        }
+        #banner {
+            width: 200px; height: 300px;
+            background: #6394ff;
+            float: right;
+        }
+        /* footer */
+        #footer {
+            width: 1000px; height: 150px;
+            margin: 0 auto;
+            background: #7b8586;
+            /* clear: both; */ /* #contentWrap::after에서 clear적용했으니 필요x */
+        }
+        /* 
+        ## float 적용시 clear 방법 ##
+        1. float를 적용한 요소의 부모가 없는 경우
+            float를 마지막으로 적용한 요소의 다음 요소에
+            clear(left, right, both)를 적용한다.
+        1. float를 적용한 요소의 부모가 있는 경우
+            방법1) 부모요소에 height를 적용(cf. 자식요소가 가변높이일 경우에는 적용 불가능!!)
+            방법2) 부모요소에게 overflow(auto, hidden)을 적용
+                (원래 overflow 용도가 아니므로 사용을 자제 (권장x))
+            방법3) 부모요소에게 ::after로 가상요소를 추가하여 
+                부모::after {content: ""; display: block; clear: both; }
+        */
+    </style>
+</head>
+<body>
+    <div id="headerWrap">
+        <header id="header">헤더</header>
+    </div>
+    <div id="Wrap">
+        <div id="contentWrap">
+            <section id="content1">섹션1</section>
+            <section id="content2">섹션2</section>
+            <aside id="banner">배너</aside>
+        </div>
+    </div>
+    <footer id="footer">푸터</footer>
+</body>
+</html>
