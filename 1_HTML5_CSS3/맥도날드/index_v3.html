@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>맥도날드</title>
+    <!-- 체크박스를 이용하여 클릭시 서브메뉴 여닫을 수 있는 내비 만들기 -->
+    <style>
+        *  {margin: 0; padding: 0;}
+        li {
+            list-style: none;
+        }/* 리스트 앞에 암것두 안나오게?? */
+        * {box-sizing: border-box;} 
+        /*박스 사이즈 고정 */
+        .depth1 {
+            /* border: 1px solid red; */
+            width: 100%;
+        }
+        .navi {
+            /* background-color: #b5e8cd; */
+        }
+
+        .list1 {
+            width: 150px;
+            /* border: 1px solid #000; */
+            line-height: 50px; text-align: center;
+            font-weight: 900;
+            /* display: block; */
+        }
+        label {/* 마우스오버시 포인터모양 */
+            cursor: pointer;
+        }
+        input {
+            display: none;
+        }
+        /*  */
+        input[type=checkbox]:checked + label ~ * {
+            /* background-color: #d3b9f7; */
+            display: block;
+        }
+        .depth2 {
+            display: none;
+            position: relative;
+            /* flex박스의 방향 설정 : 위아래 */
+        }
+        .depth2 > li {
+            height: 50px; width: 150px;
+            /* border: 1px solid #000; */
+            font-weight: 500;
+        }
+        
+        .depth2 > li > a {
+            color: #000000;
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+<body>
+    <head>
+        <div>
+            <nav class="navi">
+                <ul class="depth1">
+                    <li class="list1">
+                        <input type="checkbox" id="menu">
+                        <label for="menu">Menu</label>
+                        <ul class="depth2">
+                            <li><a href="#">버거</a></li>
+                            <li><a href="#">맥런치</a></li>
+                            <li><a href="#">맥모닝</a></li>
+                        </ul></li>
+                        
+                    <li class="list1">
+                        <input type="checkbox" id="store">
+                        <label for="store">Store</label>
+                        <ul class="depth2">
+                            <li><a href="#">매장찾기</a></li>
+                            <li><a href="#">맥딜리버리</a></li>
+                            <li><a href="#">맥드라이브</a></li>
+                        </ul>
+                    </li>
+                        
+                    <li class="list1">
+                        <input type="checkbox" id="new">
+                        <label for="new">What's New</label>
+                        <ul class="depth2">
+                            <li><a href="#">프로모션</a></li>
+                            <li><a href="#">새로운소식</a></li>
+                            <li><a href="#">이달의 해피밀</a></li>
+                        </ul>
+                    </li>
+                        
+                    <li class="list1" id="last">
+                        <input type="checkbox" id="story">
+                        <label for="story">Story</label>
+                        <ul class="depth2">
+                            <li><a href="#">브랜드 소개</a></li>
+                            <li><a href="#">맥도날드 품질이야기</a></li>
+                            <li><a href="#">맥도날드 사람들</a></li>
+                        </ul>
+                    </li>
+                        
+                </ul>
+            </nav>
+        </div>
+    </head>
+    <main></main>
+    <footer></footer>
+</body>
+</html>
