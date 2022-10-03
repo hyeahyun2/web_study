@@ -1,0 +1,64 @@
+@charset "utf-8";
+/* 초기화 */
+* { margin: 0; padding: 0; box-sizing: border-box;}
+
+
+h1 {
+    width: 120px; height: 80px;
+    background: url(./image/LG_logo.PNG) no-repeat center / contain;
+    text-indent: -100%;
+    overflow: hidden;
+    position: absolute;
+}
+h2 {
+    display: none;
+}
+.logo {
+    width: 120px; height: 80px;
+    display: block;
+    /* border: 1px solid #000; */
+}
+
+.depth1 {
+    padding-left: 120px; padding-top: 30px;
+    width: 100%;
+    display: flex; flex-direction: row;
+    border-bottom: 1.5px solid rgb(37, 37, 37);
+}
+
+.list1 {
+    width: 150px; height: 50px;
+    /* border: 1px solid #000; */
+    line-height: 50px; text-align: center;
+    list-style: none;
+}
+
+.list1:hover {
+    border-bottom: 5px solid #ffc823;
+}
+
+.list1 > a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 900; font-size: 18px;
+}
+
+.list1:hover > .depth2 {
+    display: block;
+}
+.depth2 {
+    display: none;
+    position: relative;
+    flex-direction: column;
+    height: 200px; width: 100%;
+    /* border: 1px solid #000; */
+}
+
+.depth2 > li {
+    list-style: none;
+    /* border: 1px solid #000; */
+}
+
+.depth2 > li > a {
+    text-decoration: none; color: #000;
+}
