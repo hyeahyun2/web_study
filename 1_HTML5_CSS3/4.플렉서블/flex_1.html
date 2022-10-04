@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <title>플렉서블 박스</title>
+    <!-- flex : 창 크기에 따라 태그 크기가 유동적으로 변함, 부모요소에 사용 -->
+    <!-- float : 요소 크기 고정할 때 사용, 옆으로 나열할 해당 요소에 사용, 번거롭다 -->
+    <style>
+        * { margin: 0; padding: 0; }
+        #wrap {
+            /* 부모요소에 flex 적용 */
+            display: flex;
+            flex-direction: row; /* 기본값, 방향 지정 */
+            flex-wrap: wrap;
+
+            /* 부모요소의 최소크기 고정시키기 -> 창 줄여도 이 크기 이하로 안줄어듬 */
+            /* min-width: 900px; */
+
+            width: 90%; height: 500px;
+            margin: 0 auto;
+            background: #F5FFB7;
+            border: 4px solid #000;
+        }
+        #wrap div { 
+            /* width: 100%; */
+            width: 300px;
+            /* 300px보다 작을 때 자동으로 크기 줄면서 비율 맞춤 (부모요소에 맞춰서) */
+            /* width: 33.3333%; height: 100%; float: left; */
+        }
+        #wrap div:nth-child(1) { background: red;  }
+        #wrap div:nth-child(2) { background: green; }
+        #wrap div:nth-child(3) { background: blue; }
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html>
