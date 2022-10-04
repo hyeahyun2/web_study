@@ -1,0 +1,102 @@
+@charset "utf-8";
+/* 초기화 */
+/* * { margin: 0; padding: 0; box-sizing: border-box;} */
+body, h1, h2, ul {margin: 0; padding: 0;}
+* { box-sizing: border-box; }
+ul li { list-style: none; }
+.hidden { position: absolute; left: -9999px; }
+a { text-decoration: none; color: #000; }
+body { min-width: 1000px; position: relative;}
+/* 헤더 */
+#headerWrap { 
+    position: absolute; z-index: 999;
+    height: 130px; width: 100%; top: 0; left: 0;
+    /* background :#fbffbf; */
+    border-bottom: 1px solid #000; 
+    overflow: hidden; 
+}
+#headerWrap:hover {
+    height: 300px; transition: 0.3s;
+    background: #fff;
+}
+#headerWrap::before { 
+    content: ""; background: #eeeeee; 
+    position: absolute; top: 0; left: 0;
+    height: 40px; width: 100%;
+}
+#headerWrap:hover::after {
+    content: "";
+    position: absolute; top: 130px; left: 0; width: 100%;
+    border-top: 1px solid #919191;
+}
+#header { 
+    margin: 0 auto; padding-top: 40px;
+    box-sizing: content-box;
+    position: relative;
+    width: 1000px; height: 90px;
+    display: flex;
+    justify-content: space-between;
+}
+#header > h1 { width: 154px; margin-top: 30px;}
+#header > h1 > a { 
+    display: block; height: 43px;
+    background: url(./imgs/logo.png) no-repeat;
+    text-indent: -9999px;
+}
+
+/* gnb */
+#gnb { position: absolute; top: 0; right: 0;}
+#gnb > ul { display: flex; align-items: center; height: 40px;}
+#gnb > ul > li {
+    position: relative;
+    padding: 0 10px;
+    /* float: left; -> 대신 display:flex 사용 */
+}
+#gnb > ul > li:not(:first-child)::after {
+    content: ""; 
+    position: absolute; top: 5px; left: 0;
+    height: 10px;
+    border-left: 1px solid #000;
+}
+#gnb > ul > li > a { 
+    font-size: 13px;
+    /* line-height: 40px; -> 대신 align-items 사용 */
+}
+
+/* lnb */
+#lnb {}
+#lnb > h2 {}
+#lnb > ul {
+    display: flex;
+    justify-content: space-evenly;
+    width: 780px;
+}
+#lnb > ul > li {
+    position: relative; 
+    /* border: 1px solid #000; */
+    /* width: 100px; */
+    /* text-align: center; */
+}
+#lnb > ul > li > a {
+    display: block; line-height: 90px;
+}
+
+/* 서브네비 */
+#lnb .snb { position: absolute; top: 90px; left: 0; opacity: 0; }
+#lnb .snb > li {
+    white-space: nowrap; line-height: 50px;
+    /* border: 1px solid #000; */
+}
+#lnb .snb > li > a {
+    color: #595959; font-size: 14px; 
+}
+/*  홀오더 */
+#lnb > ul > li:hover .snb { opacity: 1;}
+
+/* 메인슬라이더 */
+section {
+    width: 100%; height: 500px;
+    /* margin-top: 130px; */
+    position: relative; top: 130px;
+    background: #68b3fd;
+}

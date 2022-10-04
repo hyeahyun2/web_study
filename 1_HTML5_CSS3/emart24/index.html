@@ -3,44 +3,72 @@
   <head>
     <meta charset="utf-8">
     <title>이마트24</title>
+    <link rel="stylesheet" href="./common.css">
   </head>
   <body>
-    <header> <!--웹사이트의 헤드에 해당-->
-      <h1>emart24</h1>
-      <nav>
-        <h2>멤버쉽관련, 고객센터, 매장안내, 전자계약관련 메뉴</h2>
-        <ul>
-          <li><a href="#">로그인</a></li> <!--<a href="" : 해당요소 하이퍼링크화-->
-          <li>회원가입</li>
-          <li>고객센터</li>
-          <li>매장안내</li>
-          <li>전자계약 체결/조회</li>
-        </ul>
-      </nav>
-      <nav> <!--네비게이션 태그, h2에 해당하는 section-->
-        <h2>이마트24 주요이용메뉴</h2> <!--뒤에 오는 ul-li태그들이 h2로 인식됨-->
-        <ul>
-          <li>이마트24 소개
-            <ul>
-              <li>브랜드스토리</li>
-              <li>BI/CI(로고)</li>
-              <li>사업 본부 안내</li>
-            </ul>
-          </li>
-          <li>창업안내
-            <ul>
-              <li>창업가이드</li>
-              <li>사업설명회</li>
-              <li>사업 본부 안내</li>
-            </ul>
-          </li>
-          <li>상품</li>
-          <li>이마트 4 매거진</li>
-          <li>매장안내</li>
-          <li>서비스 안내</li>
-        </ul>
-      </nav>
+    <div id="headerWrap">
+      <header id="header"> <!--웹사이트의 헤드에 해당-->
+        <h1><a href="#"><span>e</span>mart<span>24</span></a></h1>
+        <nav id="gnb">
+          <h2 class="hidden">멤버쉽관련, 고객센터, 매장안내, 전자계약관련 메뉴</h2>
+          <ul>
+            <li><a href="#">로그인</a></li> <!--<a href="" : 해당요소 하이퍼링크화-->
+            <li><a href="#">회원가입</a></li>
+            <li><a href="#">고객센터</a></li>
+            <li><a href="#">매장안내</a></li>
+            <li><a href="#">전자계약 체결/조회</a></li>
+          </ul>
+        </nav>
+        <nav id="lnb"> <!--네비게이션 태그, h2에 해당하는 section-->
+          <h2 class="hidden">이마트24 주요이용메뉴</h2> <!--뒤에 오는 ul-li태그들이 h2로 인식됨-->
+          <ul id="lnbList">
+            <li><a href="#">이마트24 소개
+              <ul class="snb">
+                <li><a href="#">브랜드스토리</a></li>
+                <li><a href="#">BI/CI(로고)</a></li>
+                <li><a href="#">사업 본부 안내</a></li>
+              </ul>
+            </li>
+            <li><a href="#">창업안내</a>
+              <ul class="snb">
+                <li><a href="#">창업가이드</a></li>
+                <li><a href="#">사업설명회</a></li>
+                <li><a href="#">사업 본부 안내</a></li>
+              </ul>
+            </li>
+            <li><a href="#">상품</a>
+              <ul class="snb">
+                <li><a href="#">상품안내</a></li>
+                <li><a href="#">+1상품안내</a></li>
+              </ul>
+            </li>
+            <li><a href="#">이마트 4 매거진</a>
+              <ul class="snb">
+                <li><a href="#">이마트24 TV</a></li>
+                <li><a href="#">이벤트</a></li>
+                <li><a href="#">미디어소식</a></li>
+                <li><a href="#">공지사항</a></li>
+              </ul>
+            </li>
+            <li><a href="#">매장안내</a>
+              <ul class="snb">
+                <li><a href="#">매잔찾기</a></li>
+                <li><a href="#">Premium Life</a></li>
+                <li><a href="#">New Lifestyle</a></li>
+              </ul>
+            </li>
+            <li><a href="#">서비스 안내</a>
+              <ul class="snb">
+                <li><a href="#">생활 서비스</a></li>
+                <li><a href="#">제휴 서비스</a></li>
+                <li><a href="#">신세계 포인트</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
 
-    </header>
+      </header>
+    </div>
+    <section>메인슬라이더 영역</section>
   </body>
 </html>
