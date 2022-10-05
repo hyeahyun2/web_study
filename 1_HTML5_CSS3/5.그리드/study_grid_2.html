@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        #all {
+            width: 500px; height: 500px;
+            border: 1px solid #000;
+            background: #f7f09f;
+            margin: 0 auto; /* 브라우저 중앙으로 이동 */
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+            /* gap: 10px; */
+        }
+        #all > div {
+            /* width: 400px; height: 400px; */
+            background: #000; color: #fff;
+            font-size: 50px;
+            margin: 5px;
+            transition: 0.5s;
+            border-radius: 5%;
+        }
+        .div1 { grid-area: 2 / 1 / span 2 / span 3; }
+        .div2 { grid-area: 1 / 4 / span 2 / span 2; }
+        .div3 { grid-area: 3 / 4 / span 2 / span 3; }
+        .div4 { grid-area: 4 / 2 / span 3 / span 2; }
+        #all > .div:hover {
+            background: #99b6f9; color: #920c0c;
+            z-index: 99;
+            /* grid-area: 1 / 1 / span 5 / sapn 6; */
+            border-radius: 50%;
+            transition: 0.5s;
+            /* text-align: center;
+             */
+            transform: scale(150%); /* 변화 효과 */
+            /* filter: brightness(50%) blur(50%); */ /* 필터 효과 */
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="all">
+        <div class="div div1">1</div>
+        <div class="div div2">2</div>
+        <div class="div div3">3</div>
+        <div class="div div4">4</div>
+    </div>
+</body>
+</html>

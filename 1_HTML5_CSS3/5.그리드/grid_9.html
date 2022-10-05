@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <title>grid</title>
+    <style>
+        #wrap {
+            padding: 10px;
+            background: #808080;
+            display: grid;
+            grid-template-areas: 
+                'header header header header header header' 
+                'nav main main main aside aside' 
+                'nav footer footer footer footer footer';
+        }
+
+        .item {
+            padding: 20px;
+            border: 1px solid #000;
+            background: #f8f49c;
+            text-align: center;
+            font-size: 30px;
+        }
+        .item1 { grid-area: header;}
+        .item2 { grid-area: nav;}
+        .item3 { grid-area: main;}
+        .item4 { grid-area: aside;}
+        .item5 { grid-area: footer;}
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="item item1">Header</div>
+        <div class="item item2">Navi</div>
+        <div class="item item3">Main</div>
+        <div class="item item4">Aside</div>
+        <div class="item item5">footer</div>
+    </div>
+</body>
+</html>

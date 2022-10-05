@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <title>grid</title>
+    <style>
+        #wrap {
+            height: 300px;
+            padding: 10px;
+            background: #808080;
+            display: grid;
+            grid-template-columns: 100px 150px 200px;
+            grid-template-rows: 100px 100px;
+            /* grid도 flex에서 쓰던 속성들 쓸 수 있음!~! */
+            justify-content: space-evenly;
+            align-content: center;
+            gap: 20px;
+        }
+
+        .item {
+            padding: 20px;
+            border: 1px solid #000;
+            background: #f8f49c;
+            text-align: center;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="item item1">1</div>
+        <div class="item item2">2</div>
+        <div class="item item3">3</div>
+        <div class="item item4">4</div>
+        <div class="item item5">5</div>
+        <div class="item item6">6</div>
+    </div>
+</body>
+</html>
