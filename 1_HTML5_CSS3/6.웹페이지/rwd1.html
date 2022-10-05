@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형 적용방법</title>
+    <style>
+        body { margin: 0; 
+            /* background: #98c972;  */
+        }
+        div { 
+            width: 1000px; height: 50vh;
+            margin: 0 auto;
+            border: 1px solid #000;
+
+        }
+        /* 최소크기가 1000px(크기가 1000px 이상인)인 모든 미디어에 적용 */
+        @media all and ( min-width: 1000px ) {
+            body { background: #aef896; }
+        }
+        /* 600px ~ 999px인 모든 미디어에 적용 */
+        @media all and ( max-width: 999px ) and (min-width: 600px) {
+            body { background: #8784f7; }
+        }
+        /* 600px 이하인 모든 미디어에 적용 */
+        @media all and ( max-width: 600px ) {
+            body { background: #f8dbb4; }
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

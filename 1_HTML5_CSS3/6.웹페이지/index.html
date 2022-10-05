@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형</title>
+    <link rel="stylesheet" href="./rwd2.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="#">로고</a></h1>
+        <nav id="membership">
+            <h2 class="hidden">멤버쉽 관련</h2>
+            <ul>
+                <li><a href="#">로그인</a></li>
+                <li><a href="#">회원가입</a></li>
+            </ul>
+        </nav>
+        <a href="#" class="gnbView"><span class="hidden">메뉴펼치기</span></a>
+        <nav id="gnb">
+            <h2 class="hidden">주요이용메뉴</h2>
+            <ul>
+                <li><a href="#">리스트1</a></li>
+                <li><a href="#">리스트2</a></li>
+                <li><a href="#">리스트3</a></li>
+            </ul>
+        </nav>
+    </header>
+    <hr>
+    <section id="event">
+        <h2>이벤트</h2>
+        <p>관련이벤트가 진행중입니다.</p>
+        <a href="#">자세히 알아보기</a>
+    </section>
+    <hr>
+    <main>
+        <section id="content1" class="content">
+            <h2>컨텐츠1</h2>
+        </section>
+        <section id="content2" class="content">
+            <h2>컨텐츠2</h2>
+        </section>
+        <section id="content3" class="content">
+            <h2>컨텐츠3</h2>
+        </section>
+        <section id="content4" class="content">
+            <h2>컨텐츠4</h2>
+        </section>
+    </main>
+    <footer id="footer">
+        <address>대구 중구 코리아아이티</address>
+        <small>copyright &copy;</small>
+    </footer>
+
+    <!-- 클릭하면 숨김메뉴 보기 -->
+    <script>
+        const gnbView = document.querySelector(".gnbView");
+        const gnb = document.getElementById("gnb");
+        // gnbView를 클릭했을 경우 이벤트 추가
+        gnbView.addEventListener('click', ()=> {
+            // 스타일시트 left값을 0px로 바꿔준다.
+            gnb.style.left = "0px";
+        })
+        // 마우스가 gnb 범위 벗어났을 경우 이벤트 추가
+        gnb.addEventListener('mouseleave', ()=> {
+            gnb.style.left = "-200px";
+        })
+    </script>
+</body>
+</html>
