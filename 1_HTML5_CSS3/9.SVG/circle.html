@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>circle</title>
+    <!-- 원 -->
+    <style>
+        svg {
+            width: 300px; height: 300px;
+            border: 1px solid #000;
+        }
+        circle {
+            fill: #fbc060;
+            stroke: #000;
+            stroke-width: 5;
+            stroke-dasharray: 628.31853;
+            stroke-dashoffset: 628.31853;
+            /* transition: 2s linear; */
+            animation: circleAni 2s linear infinite forwards;
+            transition: 2s;
+        }
+        /* svg:hover circle {
+            fill: #fbc060;
+        } */
+        @keyframes circleAni {
+            50% { stroke-dashoffset: 0; fill-opacity: 0;}
+            100% { stroke-dashoffset: -628.31853; fill-opacity: 1;}
+            
+        }
+        .text3 { display: inline;}
+        span {
+            position: absolute; z-index: 100;
+            top: 120px; left: 145px; font-size: 50px;
+            display: none;
+        }
+        
+        @keyframes text3Ani {
+            50% { }
+        }
+    </style>
+</head>
+<body>
+    <!-- viewBox : (svg태그의)x지점 y지점 너비 높이 , 도형이 기준이 아니다!!-->
+    <!-- <svg viewBox="0 0 100 100"> -->
+    <svg>
+        <!-- r : 반지름 , 기준점 잡기(viewBox적용전) -> cx : circle x , cy : circle y-->
+        <circle r="100" cx="150" cy="150">
+        
+        <!-- <circle r="100" cx="100" cy="100"> -->
+    </svg>
+    <span class="text3">3</span>
+    <span class="text2">2</span>
+    <span class="text1">1</span>
+</body>
+</html>

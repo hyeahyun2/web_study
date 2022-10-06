@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transfrom</title>
+    <style>
+        /* body { perspective: 500px; } */
+        section {
+            position: relative;
+            width: 600px; height: 300px;
+            font-size: 100px; color: #fff;
+            margin: 50px auto;
+            border: 5px solid #000;
+            /* 부모요소에 3d 스타일 적용 */
+            /* transform-style: preserve-3d;
+            transition: 1s; */
+            perspective: 500px;
+        }
+        section > div { 
+            width: 300px; height: 300px;
+            position: absolute; top: 0; left: 300px;
+            /* 구조상 맨 앞에 있는 요소가 젤 앞쪽에 위치 */
+            /* backface-visibility: hidden; */
+            transform-style: preserve-3d;
+            transition: 1s;
+            transform-origin: top left;
+        }
+        .front { 
+            background: url(../01_transition/image1.jpg) #3d62f5 center / cover;
+            
+            transform: rotateY(0deg);
+            z-index: 3;
+        }
+        .back { 
+            background: url(../01_transition/image2.jpg) #f35850 center / cover;
+            transform: rotateY(0deg);
+        }
+        .front:hover {
+            transform: rotateY(-180deg);
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="front"></div>
+        <!-- <div class="front_2"></div> -->
+        <div class="back"></div>
+    </section>
+</body>
+</html>

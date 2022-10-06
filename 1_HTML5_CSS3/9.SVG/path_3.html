@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연속곡선</title>
+    <style>
+        body { margin: 0; overflow: hidden;}
+        div { 
+            position: absolute; top: 100; left: 0; 
+            width: 3000px;
+             /* 모든 선을 가로배열 */
+            display: flex;
+            /* 위치 -1000px만큼 x축 방향으로이동 */
+            transform: translateX(-1000px);
+            animation: lineMove 5s linear infinite;
+        }
+        svg { 
+            width: 1000px; height: 300px; 
+            /* border: 1px solid #000; */
+        }
+        path {
+            fill: none;
+            stroke-width: 1;
+            stroke: #000;
+        }
+
+        @keyframes lineMove {
+            to {transform: translate(0);}
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <svg>
+            <!-- , T : 꺾어지는 반대모양 곡선 -->
+            <path d="M0 150 Q125 100 250 150, T500 150, T 750 150, 1000 150">
+        </svg>
+    </div>
+    <script>
+        const div = document.querySelector('div');
+        const svg = document.querySelector('svg');
+        // cloneNode : svg의 카피본 만들기
+        const svg1 = svg.cloneNode(true);
+        const svg2 = svg.cloneNode(true);
+
+        // 특정요소내에 내가 원하는 요소를 넣기
+        div.append(svg1);
+        div.append(svg2);
+    </script>
+</body>
+</html>

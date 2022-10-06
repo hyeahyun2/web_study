@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="prefixfree.min.js"></script>
+    <style>
+        body { width: 200px; margin: 100px auto; }
+
+        section { 
+            position: relative; width: 200px; height: 200px;
+            /* 3d표현할 때 반드시 필요한 속성!!(움직이는 요소에 적용함) */
+            transform-style: preserve-3d;
+            animation: ani 5s infinite linear;
+        }
+        div { 
+            width: 200px; height: 200px; 
+            position: absolute; left: 0; top: 0;
+            opacity: 1;
+            font-size: 100px;
+            /* transform-origin: left top; */
+        }
+
+        /* 변환함수 적용하기 */
+        /* 옆면 */
+        div:nth-child(1) { background: red; }
+        div:nth-child(2) {
+            background: green;
+            transform: translateZ(-200px) rotateY(180deg);
+        }
+        div:nth-child(3) { 
+            background: blue;
+            transform: translateX(50%) rotateY(90deg) translateX(50%);
+        }
+        div:nth-child(4) { 
+            background: yellow;
+            transform: translateX(-50%) rotateY(-90deg) translateX(-50%);
+        }
+        /* 윗면, 아랫면 */
+        div:nth-child(5) { 
+            background: brown;
+            transform: translateY(50%) rotateX(-90deg) translateY(50%);
+        }
+        div:nth-child(6) {
+            background: pink;
+            /* transform: rotateX(90deg) translate3d( 0, -50%,-50%); */
+            transform: translateY(-50%) rotateX(90deg) translateY(-50%);
+        }
+        section:hover { animation-play-state: paused; }
+        @keyframes ani {
+            from { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+            to { transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg); }
+        }
+
+    </style>
+</head>
+<body>
+    <section>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </section>
+</body>
+</html>

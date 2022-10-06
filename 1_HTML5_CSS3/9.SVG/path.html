@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>path</title>
+    <!-- 자유롭게 그릴 수 있는 도형 -->
+    <style>
+        svg {
+            width: 500px; height: 500px;
+            border: 1px solid #000;
+        }
+        path {
+            fill: none;
+            stroke: #000;
+            stroke-width: 2;
+            stroke-dasharray: 300;
+            stroke-dashoffset: 300;
+            animation: pathAni 2s linear infinite;
+        }
+        @keyframes pathAni {
+            50% { stroke-dashoffset: 0;}
+            100% { stroke-dashoffset: -300;}
+        }
+    </style>
+</head>
+<body>
+    <svg>
+        <!-- d = "M(시작지점)x y L(이을지점)x y, ... " 여러개 가능, L : line?-->
+        <path d="M100 100 L400 100, M400 100 L400 400, M400 400 L100 400, M100 400 L100 100">
+        <!-- d = "M(시작지점)x y L(이을지점)x y x y x y ... Z(끝)" -->
+        <!-- <path d="M100 100 L400 100 400 400 100 400 Z"> -->
+        <!-- d = "M x y l(첫지점에서 상대거리)x y x y ... Z(끝)"  -->
+        <!-- <path d="M100 100 l300 0 0 300 -300 0 Z"> -->
+    </svg>
+</body>
+</html>

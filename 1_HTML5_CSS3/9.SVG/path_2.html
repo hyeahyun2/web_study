@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>path를 활용한 곡선</title>
+    <style>
+        svg {
+            width: 500px; height: 300px;
+            border: 1px solid #000;
+        }
+        path {
+            fill: none; stroke: #000;
+        }
+    </style>
+</head>
+<body>
+    <svg>
+        <!-- Q : 곡선 꼭지점?? ( x축 y축 , 값의 기준 : svg태그(부모요소) ) -->
+        <!-- <path d="M50 150 Q250 0 450 150"> -->
+        <!-- q(소문자)일때 기준 : 시작점 -->
+        <path d="M50 150 q200 -150 400 0, M50 200 q200 -150 400 0">
+    </svg>
+</body>
+</html>

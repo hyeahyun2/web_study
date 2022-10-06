@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영역 transition</title>
+    <style>
+        * {margin: 0;}
+        #wrap {
+            display: flex;
+            justify-content: space-between;
+        }
+        #wrap > div {
+            height: 80vh;
+            background: no-repeat center center / 1920px;
+            flex: 1;
+            transition: 1s flex;
+        }
+        #wrap > #img2 { background-image: url(./image2.jpg); }
+        #wrap > #img3 { background-image: url(./image3.jpg); }
+        #wrap > #img1 { background-image: url(./image1.jpg); }
+        /* 마우스 올린 사진의 비율 10으로 */
+        #wrap > div:hover { flex:10; }
+        
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="img1"></div>
+        <div id="img2"></div>
+        <div id="img3"></div>
+    </div>
+    
+</body>
+</html>
