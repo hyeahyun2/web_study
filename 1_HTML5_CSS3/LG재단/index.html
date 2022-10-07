@@ -1,146 +1,280 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LG재단</title>
-    <link rel="stylesheet" href="./index_style_v2.css">
-    <style>
-        /* 
-        header > nav {
-            display: flex;
-            align-items: center;
-            flex-direction: row;
-            justify-content: flex-start;
-        }
-        */
-        /*
-        h2 {position: absolute; left:-9999px;} /////h2 영역 감추기
-        section {border: 3px solid #000;} ////section별로 박스 처리
-        section section {border: 2px solid #f00;}
-        */
-    </style>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LG재단</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="./css/index_style_v2.css"> -->
+  <link rel="stylesheet" href="./css/common.css">
 </head>
+
 <body>
-    <div id="headerWrap">
-        <header id="header">
-            <h1><a href="#" class="logo">LG재단</a></h1>
-            <nav id="lnb"><!--LG재단 주요이용메뉴-->
-                <!--nav : header밖에 있어도 되고 안에 있어도 됨-->
-                <h2 class="hidden">LG재단 주요이용메뉴</h2>
-                <ul class="depth1">
-                    <li class="list1"><a href="#">LG재단</a>
-                        <ul class="depth2">
-                            <li><a href="#">재단 소개</a></li>
-                            <li><a href="#">설립자</a></li>
-                            <li><a href="#">재단 연혁</a></li>
-                        </ul>
-                    </li>
-                    <li class="list1"><a href="#">연암문화재단</a>
-                        <ul class="depth2">
-                            <li><a href="#">LG아트센터 서울</a></li>
-                            <li><a href="#">LG디스커버리랩</a></li>
-                            <li><a href="#">LG상남도서관</a></li>
-                        </ul>
-                    </li>
-                    <li class="list1"><a href="#">복지재단</a>
-                        <ul class="depth2">
-                            <li><a href="#">LG 의신상</a></li>
-                            <li><a href="#">성장호르몬제 지원</a></li>
-                            <li><a href="#">소외계층 지원</a></li>
-                        </ul>
-                    </li>
-                    <li class="list1"><a href="#">상록재단</a>
-                        <ul class="depth2">
-                            <li><a href="#">화담숲</a></li>
-                            <li><a href="#">무궁화 사업</a></li>
-                            <li><a href="#">도감발간</a></li>
-                        </ul>
-                    </li>
-                    <li class="list1"><a href="#">연압학원</a>
-                        <ul class="depth2">
-                            <li><a href="#">연암대학교</a></li>
-                            <li><a href="#">연암공과대학교</a></li>
-                        </ul>
-                    </li>
-                    <li class="list1"><a href="#">소식/공지</a>
-                        <ul class="depth2">
-                            <li><a href="#">미디어 자료실</a></li>
-                            <li><a href="#">활동소식</a></li>
-                            <li><a href="#">공지사항</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav> 
-            
-            <!-- <a href="#">영문사이트</a> -->
-            <!--검색-->
-            <!-- <div>
-                <a href="#">검색</a>
-                <form>
-                    <fieldset>
-                        <input type="text" placeholder="검색어를 입력하세요">
-                        <input type="button" value="검색">
-                    </fieldset>
-                    <button>닫기</button>
-                </form>
-            </div> -->
-            <!--사이드맵 네비게이션-->
-            <!-- <nav>
-                <h2><a href="#">사이트맵</a></h2>
-                <ul>
-                    <li><a href="#">LG재단</a>
-                        <ul>
-                            <li><a href="#">재단 소개</a></li>
-                            <li><a href="#">설립자</a></li>
-                            <li><a href="#">재단 연혁</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">연암문화재단</a></li>
-                    <li><a href="#">복지재단</a></li>
-                    <li><a href="#">상록재단</a></li>
-                    <li><a href="#">연압학원</a></li>
-                    <li><a href="#">소식/공지</a></li>
-                </ul>
-                <ul>
-                    <li><a href="#">1:1문의</a></li>
-                    <li><a href="#">자주하는 질문</a></li>
-                    <li><a href="#">오시는 길</a></li>
-                    <li><a href="#">개인정보처리방침</a></li>
-                </ul>
-            </nav> -->
-                
-            
-        </header>
-    </div> 
-    <section id="test"> 메인 영역 표시 </section>
-    <!-- <hr>
-    <section>
-        <h2>LG재단 주요프로모션</h2>
+  <div id="headerWrap">
+    <header id="header">
+      <h1 class="logo"><a href="#">LG재단</a></h1>
+      <nav id="gnb">
+        <!--LG재단 주요이용메뉴-->
+        <!--nav : header밖에 있어도 되고 안에 있어도 됨-->
+        <h2 class="hidden">LG재단 주요이용메뉴</h2>
+        <ul id="gnbList">
+          <li class="list1"><a href="#">LG재단</a>
+            <ul class="snb">
+              <li><a href="#">재단 소개</a></li>
+              <li><a href="#">설립자</a></li>
+              <li><a href="#">재단 연혁</a></li>
+            </ul>
+          </li>
+          <li class="list1"><a href="#">연암문화재단</a>
+            <ul class="snb">
+              <li><a href="#">LG아트센터 서울</a></li>
+              <li><a href="#">LG디스커버리랩</a></li>
+              <li><a href="#">LG상남도서관</a></li>
+            </ul>
+          </li>
+          <li class="list1"><a href="#">복지재단</a>
+            <ul class="snb">
+              <li><a href="#">LG 의신상</a></li>
+              <li><a href="#">성장호르몬제 지원</a></li>
+              <li><a href="#">소외계층 지원</a></li>
+            </ul>
+          </li>
+          <li class="list1"><a href="#">상록재단</a>
+            <ul class="snb">
+              <li><a href="#">화담숲</a></li>
+              <li><a href="#">무궁화 사업</a></li>
+              <li><a href="#">도감발간</a></li>
+            </ul>
+          </li>
+          <li class="list1"><a href="#">연압학원</a>
+            <ul class="snb">
+              <li><a href="#">연암대학교</a></li>
+              <li><a href="#">연암공과대학교</a></li>
+            </ul>
+          </li>
+          <li class="list1"><a href="#">소식/공지</a>
+            <ul class="snb">
+              <li><a href="#">미디어 자료실</a></li>
+              <li><a href="#">활동소식</a></li>
+              <li><a href="#">공지사항</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <div id="sideMenu">
+        <a href="#" class="goEng">영문사이트</a>
+        <a href="#" class="goSearch">검색하기</a>
+        <a href="#" class="goSiteMap">사이트맵</a>
+      </div>
+      <form id="searchWrap">
+        <fieldset>
+          <legend>검색</legend>
+          <input type="text" placeholder="검색어를 입력하세요">
+          <input type="button" value="검색">
+        </fieldset>
+        <button>닫기</button>
+      </form>
+      <!--사이트맵 네비게이션-->
+      <nav id="siteMap">
+        <h2>사이트맵</h2>
+        <ul>
+          <!-- <li><a href="#">LG재단</a>
+            <ul>
+              <li><a href="#">재단 소개</a></li>
+              <li><a href="#">설립자</a></li>
+              <li><a href="#">재단 연혁</a></li>
+            </ul>
+          </li>
+          <li><a href="#">연암문화재단</a></li>
+          <li><a href="#">복지재단</a></li>
+          <li><a href="#">상록재단</a></li>
+          <li><a href="#">연압학원</a></li>
+          <li><a href="#">소식/공지</a></li>
+        </ul>
+        <ul>
+          <li><a href="#">1:1문의</a></li>
+          <li><a href="#">자주하는 질문</a></li>
+          <li><a href="#">오시는 길</a></li>
+          <li><a href="#">개인정보처리방침</a></li> -->
+        </ul>
+        <button aria-label="sitemapClose">X</button>
+      </nav>
+
+
+    </header>
+  </div> 
+  <!-- index_style_v2에서 사용된 test section -->
+  <!-- <section id="test"> 메인 영역 표시 </section> -->
+  <hr>
+  <section id="mainSlider">
+    <h2 class="hidden">LG재단 주요프로모션</h2>
+    <ul id="mainSliderList">
+      <li class="mainSlider1">
+        <div>
+          <dl>
+            <dt>LG아트센터 서울 open</dt>
+            <dd>2022년 10월 13일 LG아트센터 서울이 오픈합니다.</dd>
+            <dd><a href="#" class="eventGo">LG아트센터 서울 바로가기</a></dd>
+          </dl>
+        </div>
+      </li>
+      <li class="mainSlider2">
+        <dl>
+          <dt>화담숲</dt>
+          <dd>자연과 인간의 조화로운 공존, 화담숲이 지켜가는 꿈입니다.</dd>
+          <dd><a href="#" class="eventGo">자세히 보기</a></dd>
+        </dl>
+      </li>
+      <li class="mainSlider3">
+        <dl>
+          <dt>LG디스커버리랩</dt>
+          <dd>LG의 인공지능 기술이 변화시킬 미래의 모습을 청소년이 이해하고,<br>
+          자신의 가능성을 발견할 수 있는 청소년 대상 인공지능 교육 기관입니다.</dd>
+          <dd><a href="#" class="eventGo">자세히 보기</a></dd>
+        </dl>
+      </li>
+    </ul>
+    <div id="mainSliderBtn">
+      <button class="mainBtnNext">다음 슬라이더</button>
+      <button class="mainBtnPrev">이전 슬라이더</button>
+    </div>
+  </section>
+
+  <main>
+    <section id="productWrap">
+      <h2 class="hidden">LG재단</h2>
+      <section id="introduceProduct">
+        <h3>재단소개</h3>
+        <p>
+          LG의 사회공헌 활동은 언제나 '고객을 위한 가치 창조'와
+          '인간 존중의 경영'이라는 기업 경영철학을 기본으로 합니다.
+        </p>
+        <ul>
+          <li>
+            <a href="#">
+              <dl>
+                <dt>연암문화재단</dt>
+                <dd>LG아트센터, LG디스커버리랩, LG상남도서관을 통해<br>
+                문화예술의 발전과 과학기술의 진흥에 기여합니다</dd>
+              </dl>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <dl>
+                <dt>복지재단</dt>
+                <dd>LG의 인상, 성장호르몬제 지원사업을 전개하며<br>
+                정의사회를 구현하고 어려운 이웃과 함께 사는 상회를 희망합니다</dd>
+              </dl>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <dl>
+                <dt>상록재단</dt>
+                <dd>화담숲, 도감발간, 무궁화 품종 지원과 같은 지속적인 환경보호 활동으로<br>
+                자연과 인간의 조화로운 공존을 지향합니다</dd>
+              </dl>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <dl>
+                <dt>연암학원</dt>
+                <dd>연암대학교, 연암공과대학교를 설립 운영하며<br>
+                미래 한국을 이끌 중견 기술인을 배출합니다</dd>
+              </dl>
+            </a>
+          </li>
+        </ul>
+        <div class="btnWrap">
+          <button class="prev">이전내용보기</button>
+          <button class="next">다음내용보기</button>
+        </div>
+      </section>
     </section>
-    <hr>
-    <main>
-        <section>
-            <h2>LG재단</h2>
-            <section>
-                <h3>재단소개</h3>
-                <p>
-                    LG의 사회공헌 활동은 언제나 '고객을 위한 가치 창조'와 
-                    '인간 존중의 경영'이라는 기업 경영철학을 기본으로 합니다.
-                </p>
-            </section>
-        </section>
-        <section>
-            <h2>소식/공지</h2>
-            <section>
-                <h3>활동소식</h3>
-            </section>
-            <section>
-                <h3>공지사항</h3>
-            </section>
-        </section>
-    </main>
-    <footer></footer> -->
+    <section id="noticeWrap">
+      <h2 class="hidden">소식/공지</h2>
+      <section id="news">
+        <div>
+          <h3>활동소식</h3>
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+          <div class="btnWrap">
+            <button class="prev">이전내용보기</button>
+            <button class="next">다음내용보기</button>
+          </div>
+          <a href="#" class="more">더보기</a>
+        </div>
+      </section>
+      <section id="notice">
+        <div>
+          <h3>공지사항</h3>
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+          <div class="btnWrap">
+            <button class="next">다음내용보기</button>
+            <button class="prev">이전내용보기</button>
+          </div>
+          <a href="#" class="more">더보기</a>
+        </div>
+      </section>
+    </section>
+  </main>
+  <hr>
+  <aside id="familySite">
+    <h2 class="hidden">관련사이트</h2>
+    <ul>
+      <li><a href="#" target="_blank"><img src="./images/family1.svg" alt="LG아트센터 서울"></a></li>
+      <li><a href="#" target="_blank"><img src="./images/family.png" alt="LG디스커버리랩"></a></li>
+      <li><a href="#" target="_blank"><img src="./images/family3.svg" alt="LG상남도서관"></a></li>
+      <li><a href="#" target="_blank"><img src="./images/family4.png" alt="화담숲"></a></li>
+      <li><a href="#" target="_blank"><img src="./images/family5.png" alt="연암대학교"></a></li>
+      <li><a href="#" target="_blank"><img src="./images/family6.png" alt="연암공과대학교"></a></li>
+    </ul>
+  </aside>
+  <hr>
+  <footer id="footer">
+    <div id="footerWrap">
+      <div class="goSite">
+        <ul>
+          <li class="goYoutube"><a href="#">유튜브바로가기</a></li>
+          <li class="goFacebook"><a href="#">페이스북바로가기</a></li>
+        </ul>
+        <a href="#" class="goNts">국세청 바로가기</a>
+      </div>
+      <div class="inforWrap">
+        <ul>
+          <li><a href="#">1:1문의</a></li>
+          <li><a href="#">자주하는 질문</a></li>
+          <li><a href="#">오시는길</a></li>
+          <li><a href="#">개인정보처리방침</a></li>
+        </ul>
+        <p>서울특별시 마포구 마포대로 155 LG마포빌딩</p>
+        <p>경기도 평택시 진위면 엘지로 222 (복지재단)</p>
+        <p>서울특별시 영등포구 여의대로 128 (연암학원)</p>
+        <small>Copyright © 2022 LG Foundation. All Rights Reserved.</small>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
