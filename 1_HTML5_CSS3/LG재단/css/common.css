@@ -20,12 +20,14 @@ body { font-family: 'Lato', 'Noto Sans KR', sans-serif; }
 #headerWrap {
   position: absolute; top: 0; left: 0;
   z-index: 999;
-  /* border-bottom: 1px solid #000; */
   width: 100%; height: 92px;
   background: rgba(255, 255, 255, 0.9);
+  overflow: hidden;
 }
-#header { 
-  max-width: 1440px; margin: 0 auto;
+
+#header {
+  /* max-width: 1440px;  */
+  margin: 0 auto;
   position: relative;
 }
 #header .logo { 
@@ -40,32 +42,54 @@ body { font-family: 'Lato', 'Noto Sans KR', sans-serif; }
 }
 
 /* 메인메뉴 gnb */
-#gnb {}
+#gnb { }
 #gnb > ul {
-  /* border: 1px solid #000; */
+  /* border: 2px solid #000; */
   padding-top: 40px;
   display: flex;
   justify-content: center;
 }
 #gnbList > li {
   font-size: 18px;
-  padding: 0 32px; /* li끼리 떨어트리기(일정너비로) */
+  margin: 0 32px; /* li끼리 떨어트리기(일정너비로) */
 }
 #gnbList > li > a {
   display: block; height: 52px; 
   color: #000; font-weight: 600;
 }
+
+
 /* 서브메뉴 snb */
 #gnbList .snb { 
-  display: none;
   position: absolute; top: 92px; padding: 20px 0;
+  height: 0px;
+  opacity: 0;
 }
+
 #gnbList .snb > li {
   line-height: 50px; font-size: 16px;
+  position: relative;
 }
 #gnbList .snb > li > a {
   color: #000;
 }
+
+/* 서브메뉴 롤오버 */
+#headerWrap:hover { height: 392px;}
+#headerWrap::before {
+  content: "";
+  position: absolute; top: 92px; left: 0;
+  width: 100%; height: 300px;
+  /* background: rgba(255, 255, 255, 0.9); */
+}
+#headerWrap::after {
+  content: "";
+  position: absolute; top: 92px; left: 0;
+  width: 50%; height: 300px;
+  background: #f30e64; transform: translateX(-60%) ;
+}
+#gnbList>li:hover { border-bottom: 3px solid #f30e64;}
+#gnbList>li:hover .snb { opacity: 1; }
 
 /* 헤더기타메뉴 */
 #sideMenu {
@@ -167,7 +191,10 @@ body { font-family: 'Lato', 'Noto Sans KR', sans-serif; }
   max-width: 1440px; margin: 0 auto;
   position: relative;
 }
-#introduceProduct h3 { font-size: 2.5rem; color: #dd3156;}
+#introduceProduct h3 { 
+  font-size: 2.5rem; color: #dd3156;
+  margin-bottom: 30px;
+}
 #introduceProduct p { color: #777777; font-size: 1.125rem;}
 #introduceProduct ul {
   width: 2880px; /* li 4개 모두 합한 크기 (margin포함) */
@@ -176,8 +203,26 @@ body { font-family: 'Lato', 'Noto Sans KR', sans-serif; }
 }
 #introduceProduct ul li { 
   width: 700px; height: 376px; margin-right: 20px;
-  background: #9ae9f1; border: 1px solid #000;
+  background: #0b57a4; border: 1px solid #000;
+  position: relative;
+  overflow: hidden;
 }
+#introduceProduct ul li dl {
+  color: #fff;
+  display: block; position: absolute; bottom: 0;
+  margin: 30px;
+  transform: translateY(70%);
+  transition: 0.5s;
+}
+#introduceProduct ul li dl dt {
+  font-size: x-large; font-weight: 600;
+  margin-bottom: 30px;
+}
+#introduceProduct>ul>li:hover dl {
+  transform: translateY(0);
+}
+
+/* 자바스크립트 이후~~ */
 #introduceProduct ul li:nth-child(3),
 #introduceProduct ul li:nth-child(4) {opacity: 0.2;}
 /* section 버튼 32px x 32px */
@@ -268,7 +313,7 @@ body { font-family: 'Lato', 'Noto Sans KR', sans-serif; }
 /* 푸터 */
 #footerWrap, #footer a { color: #fff; font-size: 15px;}
 #footer {
-  background: #101010; padding: 70px 30px;
+  background: #101010; padding: 90px 30px 90px 40px;
 }
 #footerWrap {
   max-width: 1440px; margin: 0 auto;
@@ -277,13 +322,26 @@ body { font-family: 'Lato', 'Noto Sans KR', sans-serif; }
   justify-content: space-between;
 }
 /* SNS 바로가기 */
-.goSite {}
+.goSite {
+  /* border: 1px solid #fff; */
+  margin: 20px 0 0 20px;
+}
 .goSite ul {
   display: flex;
 }
-.goSite ul li { }
+.goSite ul li {
+  margin: 20px 10px;
+}
 /* SNS 아이콘*/
-.goYoutube {}
+.goYoutube {
+  width: 46px; height: 46px;
+  background-color: #242424;
+  border-radius: 23px;
+  transition: 0.5s;
+}
+.goYoutube:hover {
+  background-color: #f00;
+}
 .goYoutube a {
   display: block;
   width: 46px; height: 46px;
@@ -291,7 +349,15 @@ body { font-family: 'Lato', 'Noto Sans KR', sans-serif; }
   text-indent: -9999px;
   background-image: url(../images/icon-youtube-white.svg);
 }
-.goFacebook {}
+.goFacebook {
+  width: 46px; height: 46px;
+  background-color: #242424;
+  border-radius: 23px;
+  transition: 0.5s;
+}
+.goFacebook:hover {
+  background-color: #518bf9;
+}
 .goFacebook a {
   display: block;
   width: 46px; height: 46px;
@@ -300,8 +366,9 @@ body { font-family: 'Lato', 'Noto Sans KR', sans-serif; }
   background-image: url(../images/icon-facebook-white.svg);
 }
 .goNts {
+  margin-left: 30px;
   display: block;
-  width: 110px; height: 40px;
+  width: 96.25px; height: 35px;
   text-indent: -9999px;
   background: url(../images/logo-nts.png) no-repeat center / contain;
 }

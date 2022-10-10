@@ -87,6 +87,7 @@ body {
 
 /* 네비 */
 #gnb {
+  border: 1px solid #000;
   overflow: hidden;
 }
 
@@ -99,6 +100,8 @@ body {
   height: 0;
   background: #fff;
   transition: 0.5s;
+  border: 1px solid #000;
+
 }
 
 /* 마우스오버시 네비 아래쪽 범위 늘리기 */
@@ -163,7 +166,7 @@ body {
 }
 
 /* */
-section#test {
+.productWrap {
   width: 100%;
   height: 500px;
   position: relative;
