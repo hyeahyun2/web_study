@@ -7,7 +7,7 @@
   <title>2022 SEOUL MUSIC FESTIVAL</title>
 </head>
 <body>
-  <header>
+  <header id="header">
     <ul class="logo">
       <h1 class="hidden">서울 뮤직 페스티벌</h1>
       <li><a href="#">2022 Seoul Beauty Month</a></li>
@@ -60,18 +60,26 @@
       </select>
     </form>
   </header>
-  <main>
-    <section class="page1">
-      <img src="" alt="2022_SeoulMusicFestival_PosterLogo">
-      <h2>노들섬</h2>
-      <p>2022.10.13(목)~16(일) / 4일간</p>
+  <hr>
+  <main id="main">
+    <!-- page1 : Main Poster -->
+    <section id="page1">
+      <div class="p1_title">
+        <h2><img src="" alt="2022_SeoulMusicFestival_PosterLogo"></h2>
+      </div>
+      <div class="posterCalender">
+        <h3>노들섬</h3>
+        <p>2022.10.13(목)~16(일) / 4일간</p>
+      </div>
     </section>
-    <section class="page2">
+    <hr>
+    <!-- page2 : 개최 일정 설명 -->
+    <section id="page2">
       <div class="wave">
         <div></div> <!--웨이브 이미지 삽입 및 애니메이션 효과-->
       </div>
-      <div class="title">
-        <img src="" alt="2022 Seoul Music Festival">
+      <div class="p2_title">
+        <h2><img src="" alt="2022 Seoul Music Festival"></h2>
         <br>
         <p>아름다운 감성으로 서울 일대를 가득 채울<br>
         뮤직 페스티벌이 개최됩니다.</p>
@@ -102,33 +110,150 @@
         </ul>
       </div>
     </section>
-    <section class="page3">
+    <hr>
+    <!-- page3 : 공연 & 프로그램 설명 -->
+    <section id="page3">
       <div class="wave">
         <div></div> <!--웨이브 이미지 삽입 및 애니메이션 효과-->
       </div>
-      <div class="explan">
-        <h3>
-        <img src="" alt="문화감성도시 서울에서 펼쳐지는 다양한 K-MUSIC 축제, SMUF 2022">
-        </h3>
-        <p><span>SMUF 2022</span><br>STAGE</p>
+      <div class="p3_title">
+        <h2><img src="" alt="문화감성도시 서울에서 펼쳐지는 다양한 K-MUSIC 축제, SMUF 2022"></h2>
       </div>
-      <div class="Smuf2022_img">
+      <div class="Content">
         <ul>
-          <li class="stage">
-            <h4>다양한 취향을 저격할<br>다채로운 장르의 메인 공연</h4>
-            <ul class="type">
+          <li>
+            <h3><span>SMUF 2022</span><br>STAGE</h3>
+            <p>다양한 취향을 저격할<br>다채로운 장르의 메인 공연</p>
+            <ul>
               <li>Beautiful Stage</li>
               <li>Soulful Stage</li>
               <li>Powerful Stage</li>
               <li>Wonderful Stage</li>
             </ul>
           </li>
-          <li class="music"></li>
-          <li class="beauty"></li>
+          <li>
+            <h3><span>SMUF 2022</span><br>MUSIC</h3>
+            <p>K-MUSIC 및 대중문화의<br>모든 것을 경험하는 프로그램</p>
+            <ul>
+              <li>SMUF Talk - 뮤직</li>
+              <li>SMUF 버스킹</li>
+              <li>K-Culture 체험 Zone</li>
+            </ul>
+          </li>
+          <li>
+            <h3><span>SMUF 2022</span><br>BEAUTY</h3>
+            <p>메이크업&middot;패션 트렌드 등<br>K-뷰티를 경험하는 프로그램</p>
+            <ul>
+              <li>SMUF Talk - 뷰티</li>
+              <li>SMUF Beauty Zone</li>
+              <li>SMUF x 크리에이터 라이브 방송</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="ContentImg">
+        <div class="stageImg"></div>
+        <div class="musicImg"></div>
+        <div class="beautyImg"></div>
+      </div>
+      <div id="BtnWrap">
+        <button class="BtnNext">다음 컨텐츠</button>
+        <button class="BtnPrev">이전 컨텐츠</button>
+      </div>
+    </section>
+    <hr>
+    <!-- page4 : 프로그램 상세 페이지 링크 -->
+    <section id="page4">
+      <div class="p4_title">
+        <h2>SMUF 프로그램</h2>
+        <p>서울뮤직페스티벌의 특별한 프로그램을 만나보세요.</p>
+      </div>
+      <div class="programs">
+        <ul>
+          <li class="maingStage">MAIN<br>STAGE</li>
+          <li class="subStage">SUB<br>STAGE</li>
+          <li class="sideProgram">부대<br>프로그램</li>
         </ul>
       </div>
     </section>
+    <hr>
+    <!-- page5 : 공지사항 -->
+    <section id="page5">
+      <div class="p5_title"></div>
+      <table class="notice">
+        <tr class="notice_1">
+          <a href="#">
+            <th>2022.09<span>30</span></th>
+            <td>2022 서울뮤직페스티벌 입장 안내</td>
+          </a>
+        </tr>
+        <tr class="notice_2">
+          <a href="#">
+            <th>2022.09<span>22</span></th>
+            <td>
+              2022 서울뮤직 페스티벌 티켓 예매 안내<br>
+              [티켓 예약 방법] 1)네이버 로그인 2)네이버 검색창에 
+              '2022 서울뮤직페스티벌' 검색 3) 예매창 클릭 후 
+              &middot;&middot;&middot;
+            </td>
+          </a>
+        </tr>
+      </table>
+    </section>
+    <hr>
+    <!-- page6 : 갤러리 -->
+    <section id="page6">
+      <div class="p6_title">
+        <h2>갤러리</h2>
+        <p>서울뮤직페스티벌의 생생한 현장을 느껴보세요.</p>
+      </div>
+      <div class="gallery">
+        <ul>
+          <li>
+            <a href="#" class="post">
+              <dl>
+                <dt>2022 서울뮤직페스티벌 라인업 ...</dt>
+                <dd>
+                  대한민국을 대표하는 문화 감성 도시, 서울에서 
+                  펼쳐지는 올가을 최고의 뮤직 페스티벌! 청량한
+                  가읠밤 모두의 &middot;&middot;&middot;
+                </dd>
+                <dd>2022.09.20</dd>
+              </dl>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div id="BtnWrap">
+        <button class="BtnNext">다음 컨텐츠</button>
+        <button class="BtnPrev">이전 컨텐츠</button>
+      </div>
+    </section>
   </main>
-  <footer></footer>
+  <hr>
+  <!-- footer -->
+  <footer id="footer">
+    <div id="footerWrap">
+      <div class="footerLogo">
+        <img src="" alt="logo image">
+      </div>
+      <div class="goSite">
+        <ul>
+          <li class="goFacebook"><a href="#">페이스북바로가기</a></li>
+          <li class="goInstargram"><a href="#">인스타그램바로가기</a></li>
+        </ul>
+      </div>
+      <div class="inforWrap">
+        <ul>
+          <li>주소 : 서울시 강남구 도산대로 30길 13-9</li>
+          <li>연락처 : 070-4170-0944</li>
+          <li>이메일 : SEOULMUSICFESTIVAL@GMAIL.COM</li>
+        </ul>
+        <small>Copyright © 2022 Seoul Music Festival. All Rights Reserved.</small>
+      </div>
+    </div>
+  </footer>
+  <!-- 플로팅메뉴 -->
+  <div id="FloatingMenu"></div>
 </body>
 </html>
