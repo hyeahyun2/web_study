@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>변수타입(데이타타입)</title>
+  <script>
+    /*
+    ** 변수명 생성시 유의사항 **
+    1. 변수의 첫글자는 반드시 영문으로 시작
+      단, (_), ($) 특수기호는 가능
+    2. 대소문자 구분
+    3. 특수기호는 _ , $ 외에 사용 불가능
+    4. 숫자사용가능 (시작은 숫자로 x)
+    5. 내장키워드 사용불가
+      var true; <<< 이런거 사용불가
+    */
+
+    // var : variable, 가장 기본적인 변수 타입, old한 스타일
+    //typeof() : 데이터타입을 확인하는 명령어
+    // var 변수 = 값 ; : 리터럴 표기법(변수 정의함과 동시에 값 넣음)
+    // var 변수 = new 변수타입(); 변수 = 값; <- 이렇게도 사용 가능, 잘 사용은 안함
+    var string = "홍길동"; // 문자(string) 데이터 타입 , 문자 or 문자열 다 가능
+    console.log(string, typeof(string));
+
+    var num = 20; // 숫자(number) 데이터 타입
+    console.log(num, typeof(num));
+
+    var obj = { name: "홍길동", age: 20 }; // {속성 : 값 , 속성 : 값 ...}, object 데이터 타입, 여러개의 값 저장
+    console.log(obj, typeof(obj));
+
+    // arr, obj, null은 같은 object 데이터 타입이다(문법이 구분될 뿐)
+    var arr = ["서울", "부산", "인천"]; // array , 배열 object 데이터 타입
+    console.log(arr, typeof(arr));
+
+    
+    var state = true; // boolean 데이터 타입 (true or false중 하나의 값을 가짐)
+    console.log(state, typeof(state));
+    
+    var twice; // 변수에 값을 담지 않았을 때 
+    console.log(twice, typeof(twice)); // undefined출력됨, undefined 데이터 타입
+    // twice = 10; // 변수에 값 입력
+    // console.log(twice, typeof(twice)); // 숫자 데이터타입 출력됨 
+    twice = new Number();
+    console.log(twice, typeof(twice));
+
+    var twice2 = null; // 객체 값이 없을 때(변수에 값을 담지 않는거랑 다름), 데이터 타입을 정하지 않음(object 데이터 타입이라고 나온다)
+    console.log(twice2, typeof(twice2));
+
+    // 여러개 한번에 선언
+    var c = 40, d = 50;
+    var e, f;
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

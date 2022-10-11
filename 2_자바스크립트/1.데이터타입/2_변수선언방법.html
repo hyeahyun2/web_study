@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>변수, 상수</title>
+  <script>
+    /*
+    호이스팅 :
+      함수 안에 있는 선언들을 모두 끌어올려서
+      해당 함수 유효 범위의 최상단에 선언
+    */
+
+    // variable : 변수
+    // console.log(a); // 변수 선언x -> 오류
+    // console.log(b);
+    // var b = 10; //console을 한 이후에 선언을 해도 console실행은 됨(값은 안들어가있음)
+    // console.log(b);
+    // var b = 30; // 같은 변수 중복선언 가능
+    // console.log(b);
+
+    // let : 변수
+    // console.log(c); // 순차 실행(코드 순서대로 실행) -> console을 먼저 적었으니 console.log()부분에서 오류 뜸!
+    // let c = 100;
+    // console.log(c);
+    // c = 200;
+    // console.log(c);
+    // let c = 300; // 중복선언 불가 -> 오류뜸!!
+    
+    // const : 상수, 한 번 선언한 후 고정된 값을 가짐
+    // console.log(d); // 순차 실행 -> 오류
+    const d = 1;
+    console.log(d);
+    d = 2; // 값 변경(중복선언) 불가능 -> 오류
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

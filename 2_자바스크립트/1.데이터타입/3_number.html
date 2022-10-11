@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>number, 숫자타입</title>
+  <script>
+    let a = 100;
+    let b = 3.14;
+    let c = 1e-3;
+    console.log(a, typeof(a));
+    console.log(b, typeof(b));
+    console.log(c, typeof(c));
+    console.log(typeof(1), typeof('1'));
+
+    // let num = prompt("좋아하는 숫자를 입력", "num");
+    // console.log(num, typeof(num)); //숫자를 삽입해도 데이터 타입 string으로 인식
+    // let num2 = prompt("좋아하는 숫자를 입력", "num2");
+    // console.log(num2, typeof(num2));
+    // let total = num + num2;
+    // document.write(`num + num2의 합은 ${total}입니다.`); // num과 num2 두 변수의 단순 나열
+
+    // let num = Number(prompt("좋아하는 숫자를 입력", "num")); // number 타입으로 강제 형변환
+    // console.log(num, typeof(num)); //숫자를 삽입해도 데이터 타입 string으로 인식
+    // let num2 = prompt("좋아하는 숫자를 입력", "num2");
+    // console.log(num2, typeof(num2));
+    // let total = num + Number(num2);
+    // document.write(`num + num2의 합은 ${total}입니다.`); // 두 변수 연산됨
+
+    let height1 = prompt("키를 입력하시오", "cm단위"); // 숫자+문자 같이 입력하면
+    let height2 = prompt("키를 입력하시오", "cm단위");
+    console.log(height1, height2);
+    // let height3 = Number(height1) - Number(height2); // 연산 안됨 (NaN(Not a Number) 뜸)
+    // parse~ : (숫자+문자 결합된 변수에서)숫자로 시작하는 경우 뒤에 문자를 버리고 앞의 숫자만을 숫자타입으로 변환
+    // parseInt : 정수 , parseFloat : 실수
+    // let height3 = parseInt(height1) - parseInt(height2); 
+    let height3 = parseFloat(height1) - parseFloat(height2); 
+    document.write(`두명의 키차이는 ${height3}입니다.`); 
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

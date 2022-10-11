@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>string, 문자/문자열 타입</title>
+  <script>
+    let str1 = "hello";
+    let str2 = "world!";
+    // 문자 결합하기
+    // 방법1 : concat 사용
+    let str3 = str1.concat(",").concat(str2);
+    console.log(str3);
+    // 방법2 : + 사용하여 이어붙이기
+    let str4 = str1 + "," + str2;
+    console.log(str4);
+    // 방법3 : `${} ~~` 사용
+    let str5 = `${str1},${str2}`;
+    console.log(str5);
+
+    // 변수.length : 변수의 길이
+    let alpha = "ABCDEabcde";
+    console.log(alpha.length);
+    // 변수의 특정 값(문자) 선택하기
+    // 방법1 : 변수.charAt(인덱스번호)
+    console.log(alpha.charAt(0));
+    console.log(alpha.charAt(9));
+    console.log(alpha.charAt(10)); // -> 변수의 해당 인덱스 번호 외의 자릿값을 입력하면 빈값을 출력함 (값을 출력)
+    // 방법2 : 변수[인덱스번호]
+    console.log(alpha[0]);
+    console.log(alpha[10]); // 인덱스 번호 외의 자릿값을 입력시 undefined 출력 (데이터타입으로 출력)
+    //예제
+    let alpha2 = "12341324435345473765631231454554";
+    let num = alpha2.length;
+    console.log(alpha2[num-5]); // alpha2의 끝에서 5번째 값 선택
+    console.log(alpha2.charAt(alpha2.length-5));
+
+    // 2개 이상의 값(문자열)을 선택
+    // substr, substring
+    let slogan = "We have to study Javascript!";
+    console.log(slogan.length); //총 28글자
+    // substr(인덱스번호,불러올길이)
+    console.log(slogan.substr(3)); //인덱스 3부터 ~ 끝까지
+    console.log(slogan.substr(3,4)); // 인텍스 3부터, 길이가 4 (즉, 인덱스 3, 4, 5, 6 선택)
+    //substring(인덱스번호(시작),인덱스번호(끝))
+    console.log(slogan.substring(3)); //인덱스 3부터 ~ 끝까지
+    console.log(slogan.substring(3, 7)); // 인덱스 3부터, 인덱스 7까지 선택 (즉, 인덱스 3, 4, 5, 6 선택)
+    //예제
+    console.log(slogan.substr(slogan.length-1)); // 출력 : !
+    console.log(slogan.substr(-1)); // 출력 : !
+    console.log(slogan.substring(-1)); // 출력 : We have to study Javascript!
+    console.log(slogan.substr(-7,6)); // 출력 : script
+    console.log(slogan.substr(slogan.length-7,6)); // 출력 : script
+
+    // indexOf : 변수에 저장된 문자열 중 입력된 문자열의 인덱스번호(위치)
+    // 입력된 문자열이 변수에서 2번이상 중복될 경우
+    // indexOf  => 제일 처음 나오는 해당 문자열 기준
+    // laseIndexOf => 제일 마지막에 나오는 해당 문자열 기준
+    let str6 = "JavaScriptJavaScript";
+    console.log(str6.indexOf('Script')); // 출력 : 4
+    console.log(str6.lastIndexOf('Java')); // 출력 : 10
+    //indexOf()안의 문자열이 변수에 포함되어있지 않는 경우 -1 출력됨
+    console.log(str6.lastIndexOf('java')); // 출력 : -1
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

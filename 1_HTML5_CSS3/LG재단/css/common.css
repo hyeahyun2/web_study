@@ -42,7 +42,9 @@ body { font-family: 'Lato', 'Noto Sans KR', sans-serif; }
 }
 
 /* 메인메뉴 gnb */
-#gnb { }
+#gnb {
+  /* border: 2px solid #000; */
+}
 #gnb > ul {
   /* border: 2px solid #000; */
   padding-top: 40px;
@@ -50,6 +52,7 @@ body { font-family: 'Lato', 'Noto Sans KR', sans-serif; }
   justify-content: center;
 }
 #gnbList > li {
+  /* border: 2px solid #000; */
   font-size: 18px;
   margin: 0 32px; /* li끼리 떨어트리기(일정너비로) */
 }

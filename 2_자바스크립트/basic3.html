@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>간단한 기본명령어</title>
+  <script>
+    'use strict'; //옛날 방식에서 모던한 방식으로 자동 전환하기
+    var age = prompt("나이를 입력하시오", "숫자로만 입력");
+    document.write(`<p style="color:blue;">당신의 나이는 ${age}살입니다.</p>`);
+  </script>
+</head>
+<body>
+  <script>
+    //alert : 일반 메세지창(확인버튼만 있음)
+    // alert("메세지창 띄우기");
+    console.log("콘솔창에서 로그 확인(콘솔창에 출력)");
+
+    // 메세지창 띄워서 입력받는 확인창 띄우기
+    //primpt("설명하는 구간", "답을 입력하는 구간(없을시 빈칸)")
+    // 확인버튼 , 취소버튼 있음
+    // prompt("문제를 확인하시오", "ex)");
+    // var answer = prompt("문제를 확인하시오", "ex)"); // 입력받은 값이 answer에 저장됨
+    // console.log(answer); // answer에 입력된 값이 콘솔창에 출력됨, 취소버튼을 누르면 null 출력됨
+
+    // 확인/취소 누를 수 있는 메세지창
+    // confirm("정답이 맞습니까");
+    // var answer2 = confirm("정답이 맞습니까?");
+    // console.log(answer2); // 확인 클릭->true , 취소 클릭->false
+
+    // var name = prompt("이름을 입력하시오", "예)홍길동"); // name에 입력값 저장
+    // var conf = confirm(`${name}이 맞습니까`);0
+    //문서에 텍스트 출력(일반 입력값 + 변수에 저장된 입력값 불러와서 출력)
+    // document.write("나의 이름은 " + name + "입니다."); //방법1
+    // document.write(`나의 이름은 ${name}입니다.`); //방법2 <- 최근 자주사용
+
+    // "" or '' 여러겹으로 쓰는 방법
+    // document.write('나의 이름은 "홍길동"입니다.'); // 출력하기위해 사용한 " or '와 다른종류 사용하기
+    // document.write("나의 이름은 \"홍길동\"입니다."); // \" or \' 사용해서 출력"와 구분하기
+
+  </script>
+</body>
+</html>

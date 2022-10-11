@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>object, 객체</title>
+  <script>
+    /*
+    object : 
+    일반적으로 하나의 값으로 표현되는 자료형과 달리
+    속성과 값을 쌍으로 가지는 집합
+    복잡한 자료를 표현할 때 쓰는 자료형
+    */
+
+    // 빈 object 선언
+    // let people = new Object();
+    let people = {};
+    console.log(people, typeof(people)); // 출력 : {} 'object'
+    
+    // 객체(people)에 속성(name: "홍길동") 추가
+    // name : 키워드(속성명) , "홍길동" : 속성값
+    people.name = "홍길동"; // people = { name:"홍길동" }
+    console.log(people);
+    people.age = "20"; // people = { name:"홍길동", age: "20" }
+    people.job = "의적"; // people = { name:"홍길동", age: "20", job: "의적" }
+    console.log(people);
+    // 객체 object는 길이값 출력 x
+    console.log(people.length); // 출력 : undefined
+
+    // object 선언과 동시에 속성 추가
+    let people2 = { name: "이순신", age: "40", job: "장군"};
+    console.log(people2, typeof(people2))
+    // 속성값 바꾸기
+    people2['name'] = "홍길동"; 
+    console.log(people2);
+    people2.age = "20";
+    people2.job = "의적";
+    console.log(people2);
+
+    // 특정 속성(값)만 가져오기
+    console.log(people2.name);
+    console.log(people2['name']);
+
+    // 특정 키워드(속성명)만 가져오기
+    console.log(Object.keys(people)); // 속성명을 배열(array)형태로 출력
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

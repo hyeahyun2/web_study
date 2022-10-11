@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>자바스크립트 기본문법</title>
+  <!-- defer : 문서(html문서)를 모두 불러온(읽은) 이후 스크립트 실행 -->
+  <!-- <script src="./commen2.js" defer></script> -->
+  <!-- async : 문서를 읽는 중에 해당 선택자(스크립트를 실행할 요소)에 도달하면 스크립트를 실행하기 -->
+  <script src="./commen2.js" async></script>
+  
+  <!-- <script>
+    //document content , 이 문서의 document content 구조가 모두 로드 되었을 때 실행하라
+    //즉, 문서를 모두 불러온 이후 스크립트 실행하기
+    document.addEventListener("DOMContentLoaded", ()=>{
+      const btn = document.querySelector("button");
+      const heading = document.querySelector("h1");
+      btn.addEventListener("click", function(){
+        heading.innerText = "Hello, Js"
+      })
+    })
+  </script> -->
+</head>
+<body>
+  <button>제목변경</button>
+  <h1>자바스크립트</h1>
+
+  <!-- <script src="./commen2.js"></script> -->
+  
+  <!-- <script>
+    //해당 선택자를 모두 정의한 후에 script를 사용해야 오류 안남 -> body의 젤 하단에 위치
+
+    // 해당 태그 선택해서(선택자로) 변수에 저장하기
+    const btn = document.querySelector("button");
+    const heading = document.querySelector('h1');
+    // console에 로그로 출력하기
+    console.log(btn, heading);
+    //btn를 클릭했을때 이벤트 추가하기(함수 실행하기)
+    btn.addEventListener('click', function(){
+      //텍스트 바꾸기
+      heading.innerText = "Hello, Js!"
+    })
+  </script> -->
+</body>
+</html>
