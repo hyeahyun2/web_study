@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>함수</title>
+  <script>
+    /*
+    함수란?
+      어떤 입력을 받아 특정한 기능이나 계산을 수행한 후
+      값을 되돌려주는 코드
+      단, 입력이나 결과없이 특정기능만 수행도 가능
+      함수를 실행하는 걸 보통 '호출한다' 라고 표현
+    */
+
+    // 선언적 함수 : 함수 이름을 선언한 후 사용
+    // () : 매개변수를 적는 공간 (비우기 가능, but 생략은 불가능)
+    function test1(){
+      console.log('코드를 실행합니다');
+      return; // 값을 되돌려주는 명령어, 함수를 끝낸다 -> 함수 젤 마지막에 위치
+    };
+    test1();
+
+    function test2(){
+      return; // 값을 함수에 보내고 함수 끝내버림
+      console.log("실행되지 않는 코드"); // return 이후 나오는 명령어 다 무시됨
+    }
+    test2();
+
+    function test3(){
+      console.log("실행되는 코드");
+      test1(); // 함수 내에서 다른 함수 호출 가능
+    }
+    test3();
+
+    let test4 = function() { //익명함수 ,무명함수
+      console.log('4번째 실행코드');
+    }
+    test4();
+
+    function test5(){
+      let a = 1;
+      // return a; // return값으로 a를 줄 경우 test5를 출력했을 때 a값이 출력됨
+    }
+    console.log(test5()); // return값이 없을 경우 undefined가 출력됨
+    console.log(test5); // test5함수의 정의(코드 자체)를 모두 출력
+
+    function test6() {
+      let a = 10;
+      let b = 20;
+      // let c = a + b;
+      // return c;
+      return a + b;
+    }
+    console.log(test6());
+
+    function test7(a, b){ //매개변수 입력
+      let sum = a + b;
+      return sum;
+    }
+    console.log(test7(50, 100)); // 매개변수에 인자 입력
+
+    //함수, 변수 중복선언
+    // 선언함수의 경우 함수 호출 뒤 함수 정의 가능(순서상관x)
+    func1(); // 출력 : 선언함수
+    var func1 = function() {
+      document.write("무명함수<br>");
+    }
+    function func1(){
+      document.write("선언함수<br>");
+    }
+    // 익명함수의 경우 함수를 정의한 다음 함수 호출을 해야함 (순서 상관o)
+    // 익명함수(변수로 선언한 함수)가 우선순위에 있음
+    func1(); // 출력 : 무명함수
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

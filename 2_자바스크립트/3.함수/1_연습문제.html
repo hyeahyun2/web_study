@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>연습문제</title>
+  <style>
+    h1 { width: 300px; border: 1px solid #000; }
+  </style>
+</head>
+<body>
+  <br>
+  <h1>크기변경</h1>
+  <button>500</button>
+  <hr>
+  <script>
+    // 제목박스 크기변경
+    const heading = document.querySelector("h1");
+    const btn = document.querySelector("button");
+    // console.log(heading, btn);
+    
+    let num = btn.innerText;
+    // function sizeChange() {
+    //   // heading.style.width = '500px';
+    //   // stylesheet의 경우 단위를 반드시 가져야 됨!!
+    //   heading.style.width = `${num}px`;
+    // }
+    function sizeChange(n) {
+      heading.style.width = `${n}px`;
+    }
+    btn.addEventListener('click', function(){
+      sizeChange(num);
+    })
+
+    // 이름과 사는 곳 입력받아 호출하기
+    function info(name, area){
+      document.write(`안녕하세요 ${name}입니다.<br>`);
+      document.write(`사는 곳은 ${area}입니다.<br>`);
+      document.write('---------------------------<br>');
+    }
+    info('홍길동', '경기도 외곽');
+    info('이순신', '경기 남해');
+  </script>
+</body>
+</html>

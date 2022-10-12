@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>산술연산자</title>
+  <script>
+    // 산술연산자 : 숫자를 계산하는 연산자
+    // ex) 덧셈, 뺄셈, 곱셈, 나눗셈, 나머지
+    let a = 5, b = 3;
+    console.log(a+b); // 8
+    console.log(a-b); // 2
+    console.log(a*b); // 15
+    console.log(a/b); // 1.6666~
+    console.log(a%b); // 2
+    
+    // a, b : 피연산자 , + - * / % : 연산자
+    // 피연산자가 하나이면 단항연산자 
+    // 피연산자가 두개이상이면 다항연산자( 두개면-> 이항연산자 )
+    
+    // a = a + 1; //다항연산자
+    // a += 1; //다항연산자
+    // a++; //단항연산자
+    
+    let num = 1;
+    // console.log(num); //1
+    // console.log(num+1); //2
+    // console.log(num); //1
+
+    // console.log(num); //1
+    // console.log(++num); //2 // 1증가후 num출력
+    // console.log(num); //2
+
+    console.log(num); //1
+    console.log(num++); //1 // num출력후 1증가
+    console.log(num); //2
+
+    let str = "10";
+    let num2 = 5;
+    console.log(str+num2); //105 (문자열연산자로 처리됨)
+    console.log(str-num2); //5 (산술연산자로 처리됨)
+  </script>
+</head>
+<body>
+  <h1>숫자카운팅</h1>
+  <button>숫자올리기</button>
+  <script>
+    const heading = document.querySelector("h1");
+    const btn = document.querySelector("button");
+    // console.log(heading, btn);
+    let n = 0;
+    let count = ()=> { // 함수를 담는 변수 만들기
+      // n++; // n값 증가시키기
+      heading.innerText = ++n; //heading에 숫자1 담기 (Text변화)
+    }
+    btn.addEventListener('click', ()=>{
+      // console.log("test");
+      count(); // 변수 호출하기 -> 클릭을하면 count함수가 호출됨
+    })
+  </script>
+</body>
+</html>

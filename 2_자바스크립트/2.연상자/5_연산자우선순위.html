@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>연산자 우선순위</title>
+  <script>
+    // 연산자 우선순위
+    // 0. 문자열연산자(문자열이 있을 경우)
+    // 1. ++, --
+    // 2. !
+    // 3. * , / , + , -
+    // 4. > , >= , < , <= , == , != , === , !==
+    // 5. &&
+    // 6. ||
+
+    // 조건연산자
+    // 비교문 ? true:false;
+
+  </script>
+</head>
+<body>
+  <script>
+    // 브라우저 창의 화면 크기가 1000px 이상일때 배경색 빨간색 / 아닐경우 노란색
+    let wind = window.innerWidth; // 브라우저 창의 화면 크기 (개발자모드 같은 툴창 뺀 크기)
+    let wind2 = window.outerWidth; // 브라우저 전체 크기
+    console.log(wind, wind2); // wind와 wind2의 값은 number
+    wind > 1000 ? //윈도의 화면 크기가 1000보다 큰가?
+      document.body.style.backgroundColor = "#f00" // true인 경우
+      : document.body.style.backgroundColor = "#ff0"; // false인 경우
+  </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>연습문제2</title>
+  <script>
+    // 문제)
+    // 사는 지역을 입력받은 후 옳게 입력했다면 출력
+
+    let area = prompt("사는 지역을 입력하세요");
+    // let state = confirm('사는 지역이' + area + '가 맞나요?');
+    let state = confirm(`사는 지역이 ${area}가 맞나요?`);
+    if(state == true){
+      document.write(`현재 사는 지역은 <b>${area}</b>입니다.`);
+    }
+    else {
+      document.write("사는 지역을 다시 입력해주세요.");
+    }
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

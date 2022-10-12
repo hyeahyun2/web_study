@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>전역변수와 지역변수</title>
+  <script>
+    // var만 !! (const와 let은 다름)
+
+    // var kor = 100; // 전역변수
+    function grade(){
+      // var kor = 90; // 지역변수 (함수 안에만 통용됨)
+      kor = 80; 
+      // 함수 밖에 kor 선언이 된 경우 : 변수 선언이 아니라 변수의 값을 변경
+      // 함수 밖에 kor 선언이 안된 경우 : 전역변수로써 선언됨 -> 함수 밖에서 사용 가능
+    }
+    grade();
+    document.write(`국어점수는 ${kor}입니다`);
+
+    
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

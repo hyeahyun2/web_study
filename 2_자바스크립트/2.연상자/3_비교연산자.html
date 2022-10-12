@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>비교연산자</title>
+  <script>
+    // 비교연산자 (관계연산자)
+    // 두개의 피연산자를 비교하는 연산자
+
+    let a = 1, b = 2;
+    console.log(a > b); //false (=0 , 숫자로 false를 표현할 시)
+    console.log(a < b); //true (=1)
+    console.log(a >= b); //false
+    console.log(a <= b); //true
+    console.log(a == b); //false
+    console.log(a != b); //true
+
+    let aa = 1, bb = "1";
+    console.log(aa == bb); //true (== : 값만 동일할 경우 true)
+    console.log(aa === bb); //false (=== : 데이터 타입까지 동일할 경우 true)
+    console.log(aa != bb); //false (!= : 값이 다를 경우 true)
+    console.log(aa !== bb); //true (!== : 값 or 데이터 타입이 다른 경우 true)
+
+    let str1 = "a", str2 = "b";
+    //유니코드 숫자값으로 비교 가능(알파벳 뒤로갈수록 유니코드 큰 값 가짐)
+    console.log(str1 > str2); //false
+    console.log(str1 < str2); //true
+    console.log(str1 == str2); //false
+
+    let str3 = 'abcd', str4 ='abd';
+    // 맨 앞글자부터 비교 -> a == a , b == b , c < d 여서 -> str3 < str4 !!!
+    // 알파벳순으로 나열할 때 용이
+    console.log(str3 > str4); //false
+    console.log(str3 < str4); //true
+    
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

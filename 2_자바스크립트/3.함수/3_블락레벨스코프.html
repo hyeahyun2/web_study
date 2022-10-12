@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>let, const</title>
+  <script>
+    // 중괄호를 기준으로 영역레벨을 결정
+    let count = 10;
+    count = 20;
+    function counting() {
+      let count = 30;
+      // count = 30;
+      return count;
+    }
+    counting();
+    console.log(counting());
+    console.log(count);
+
+    { // 그냥 중괄호를 쓴 후 변수를 다시 선언해도 지역변수로 취급됨
+      let count = 40;
+    }
+    console.log(count);
+
+    const count2 = 100;
+    console.log(count2);
+    { 
+      // const count2 = 200; //지역변수로써 선언됨 -> 오류안뜸
+      count2 = 200; // 변수의 값을 변경 -> 오류뜸 (const는 값 변경 불가능하기 때문)
+    } 
+    console.log(count2);
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

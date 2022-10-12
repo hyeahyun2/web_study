@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>배열, array</title>
+  <script>
+    /*
+    배열?
+    연관된 데이터를 모아서 통으로 관리하기 위해서 사용
+    (데이터 타입은 object)
+    변수가 하나의 데이터를 저장하기 위한 것이라면
+    배열은 여러 개의 데이터를 하나의 변수에 저장하기 위한 것
+    */
+    
+    // 배열 정의하기
+    // let fruit = new Array();
+    // fruit[0] = '수박';
+    // fruit[2] = '메론'; // fruit[1]는 enpty로 출력됨(비어있음)
+
+    // let fruit = new Array("수박", "메론", "사과");
+
+    let fruit = ["수박", , "메론", "사과"]; //빈것까지 배열길이는 4
+    fruit[4] = "망고"; // 추가 가능 // 배열길이 5
+    fruit[0] = '포도'; // 변경 가능
+    console.log(fruit , typeof(fruit));
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

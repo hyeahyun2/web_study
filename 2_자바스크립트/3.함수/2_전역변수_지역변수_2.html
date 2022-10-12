@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>전역변수 / 지역변수</title>
+  <script>
+    var count = 0;
+    myFnc(); // 출력 : Hello2
+    function myFnc(){
+      count = 1;
+      count++;
+      document.write(`Hello${count}<br>`);
+    }
+    myFnc(); // 출력 : Hello2
+    function theFnc(){
+      count++;
+      document.write(`Bye${count}<br>`);
+    }
+    theFnc(); // 출력 : Bye3
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

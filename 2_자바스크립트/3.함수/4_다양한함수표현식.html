@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>함수표현식</title>
+  <script>
+    // 선언함수, 명명함수
+    function func1(name){
+      console.log(name);
+    }
+    func1("홍길동");
+    // 익명함수, 리터럴방식
+    let func2 = function(name){
+      console.log(name);
+    }
+    func2("이순신");
+
+    // 즉시실행함수 : 함수호출이 따로 필요 없음
+    (function(){
+      console.log("신사임당1");
+    })();
+    (function(name){
+      console.log(name);
+    })("신사임당2");
+
+    // 화살표 함수
+    // 반드시 변수 안에 선언해줘야됨
+    let func3 = (name)=>{ // 매개변수가 1개일 경우 소괄호() 생략 가능-> 매개변수만 적음
+      console.log(name);
+    }
+    func3("김구선생");
+  </script>
+  <style>
+    div {
+      width: 200px; height: 200px;
+      border: 1px solid #000;
+    }
+    div a {
+      display: block; height: 200px;
+    }
+  </style>
+</head>
+<body>
+  <div><a href="#">색상변경</a></div>
+  <script>
+    const div = document.querySelector("div");
+    // div.addEventListener("click", function(){
+    //   // div.style.backgroundColor = "#f00";
+    //   //this : 이벤트가 발생된 객체
+    //   this.style.backgroundColor = "#ff0";
+    //   console.log(this); // 변경된 객체의 로그 읽어오기
+    // })
+    // div.addEventListener("click", ()=>{
+    //   this.style.backgroundColor = "#f00"; //화살표 함수에서는 오류 뜸!
+    //   // 화살표함수에서는 this의 객체가 window이기 때문에
+    //   // window <-style 지정 불가능하기때문에 오류 뜸
+    // })
+    div.addEventListener("click",()=>{
+      //event.currentTarget : 이벤트가 발생된 객체
+      event.currentTarget.style.backgroundColor = "#f00";
+      console.log(this); // window가 찍힘
+      console.log(this.tagName); // 타겟이 없기 때문에 -> undefined
+      console.log(event.currentTarget);
+      console.log(event.target);
+      // 해당요소에 자식요소가 있을 경우 -> 자식요소가 target이 됨
+      // currentTarget은 여전히 해당요소!
+      console.log(event.currentTarget.tagName);
+      console.log(event.target.tagName);
+    })
+    //만약 e(event)를 사용?할 경우
+    // div.addEventListener("click",(e)=>{
+    //   e.currentTarget.style.backgroundColor = "#ff0";
+    // })
+  </script>
+</body>
+</html>

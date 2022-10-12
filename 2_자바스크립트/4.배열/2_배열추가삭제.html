@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>배열의 추가와 삭제</title>
+  <script>
+    let word = ['a','b','c','d','e'];
+    // 원소추가
+    word.push('f'); // 배열의 마지막에 원소 추가 (push : 배열요소)
+    word = word.concat(['g','h']); // 기존의 요소에 결합할 때 사용(concat : 문자열요소)
+    console.log(word);
+    
+    word.unshift("A"); // 배열의 시작위치에 원소 추가
+    console.log(word);
+
+    //spice(추가할 인덱스 번호, 기존원소삭제여부, 추가할 원소)
+    // 기존원소삭제여부 -> 1 : 삭제한다, 0 : 유지한다
+    word.splice(2, 1, "B");
+    console.log(word);
+    //splice(삭제 시작할 인덱스 번호, 삭제할 갯수)
+    // word.splice(2, 2);
+    // console.log(word);
+
+    // slice(cope를 시작할 인덱스 번호, cope를 끝낼 인덱스 번호)
+    // cope를 끝낼 인덱스 번호 : 3일 경우 2까지 cope!!!
+    let word2 = word.slice(1,3);
+    console.log(word2);
+
+    //원소 삭제
+    word.pop(); // 배열 마지막 원소 삭제
+    word.shift(); // 배열 시작 원소 삭제
+
+    //배열 정렬
+    let num = [5, 3, 7, 1, 9];
+    // num.reverse(); // 현재 배열의 역순으로 배열
+    num.sort(); // 오름차순 정렬
+    console.log(num);
+
+    //배열을 string으로
+    let str = ['A반', 'B반', 'C반'];
+    console.log(str, typeof(str));
+    let str2 = str.join(','); // string형식으로 변환 , ''<안에 글자를 배열 사이에 넣기
+    console.log(str2,typeof(str2));
+
+    //string을 배열로~~
+    let alphabet = "ABCDE";
+    console.log(alphabet, typeof(alphabet));
+    let alphaArray = alphabet.split(""); 
+    // split('') <- ''안에 입력값을 기준으로 원소를 나눔
+    console.log(alphaArray, typeof(alphaArray));
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
