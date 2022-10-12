@@ -8,8 +8,8 @@
 </head>
 <body>
   <header id="header">
+    <h1 class="hidden">서울 뮤직 페스티벌</h1>
     <ul class="logo">
-      <h1 class="hidden">서울 뮤직 페스티벌</h1>
       <li><a href="#">2022 Seoul Beauty Month</a></li>
       <li><a href="#">서울특별시</a></li>
     </ul>
@@ -64,6 +64,23 @@
   <main id="main">
     <!-- page1 : Main Poster -->
     <section id="page1">
+      <div class="p1_img">
+        <div class="p1_backgroundImg">
+          <div class="background1"></div>
+          <div class="background2"></div>
+          <div class="background3"></div>
+        </div>
+        <div class="p1_peopleImg">
+          <div class="people1"></div>
+          <div class="people2"></div>
+        </div>
+        <div class="p1_fire">
+          <div class="fire1"></div>
+          <div class="fire2"></div>
+          <div class="fire3"></div>
+          <div class="fire4"></div>
+        </div>
+      </div>
       <div class="p1_title">
         <h2><img src="" alt="2022_SeoulMusicFestival_PosterLogo"></h2>
       </div>
@@ -75,6 +92,10 @@
     <hr>
     <!-- page2 : 개최 일정 설명 -->
     <section id="page2">
+      <div class="p2_img">
+        <div class="p2_people1"></div>
+        <div class="p2_people2"></div>
+      </div>
       <div class="wave">
         <div></div> <!--웨이브 이미지 삽입 및 애니메이션 효과-->
       </div>
@@ -114,7 +135,7 @@
     <!-- page3 : 공연 & 프로그램 설명 -->
     <section id="page3">
       <div class="wave">
-        <div></div> <!--웨이브 이미지 삽입 및 애니메이션 효과-->
+        <div></div>
       </div>
       <div class="p3_title">
         <h2><img src="" alt="문화감성도시 서울에서 펼쳐지는 다양한 K-MUSIC 축제, SMUF 2022"></h2>
@@ -122,8 +143,10 @@
       <div class="Content">
         <ul>
           <li>
-            <h3><span>SMUF 2022</span><br>STAGE</h3>
-            <p>다양한 취향을 저격할<br>다채로운 장르의 메인 공연</p>
+            <dl>
+              <dt><span>SMUF 2022</span><br>STAGE</dt>
+              <dd>다양한 취향을 저격할<br>다채로운 장르의 메인 공연</dd>
+            </dl>
             <ul>
               <li>Beautiful Stage</li>
               <li>Soulful Stage</li>
@@ -132,8 +155,10 @@
             </ul>
           </li>
           <li>
-            <h3><span>SMUF 2022</span><br>MUSIC</h3>
-            <p>K-MUSIC 및 대중문화의<br>모든 것을 경험하는 프로그램</p>
+            <dl>
+              <dt><span>SMUF 2022</span><br>MUSIC</dt>
+              <dd>K-MUSIC 및 대중문화의<br>모든 것을 경험하는 프로그램</dd>
+            </dl>
             <ul>
               <li>SMUF Talk - 뮤직</li>
               <li>SMUF 버스킹</li>
@@ -141,8 +166,10 @@
             </ul>
           </li>
           <li>
-            <h3><span>SMUF 2022</span><br>BEAUTY</h3>
-            <p>메이크업&middot;패션 트렌드 등<br>K-뷰티를 경험하는 프로그램</p>
+            <dl>
+              <dt><span>SMUF 2022</span><br>BEAUTY</dt>
+              <dd>메이크업&middot;패션 트렌드 등<br>K-뷰티를 경험하는 프로그램</dd>
+            </dl>
             <ul>
               <li>SMUF Talk - 뷰티</li>
               <li>SMUF Beauty Zone</li>
@@ -152,11 +179,14 @@
         </ul>
       </div>
       <div class="ContentImg">
-        <div class="stageImg"></div>
-        <div class="musicImg"></div>
-        <div class="beautyImg"></div>
+        <div class="musicImg p3_privMusicImg"></div>
+        <div class="beautyImg p3_privBeautyImg"></div>
+        <div class="stageImg p3_mainStageImg"></div>
+        <div class="musicImg p3_nextMusicImg"></div>
+        <div class="beautyImg p3_nextBeautyImg"></div>
+        <div class="stageImg p3_nextStageImg"></div>
       </div>
-      <div id="BtnWrap">
+      <div class="BtnWrap">
         <button class="BtnNext">다음 컨텐츠</button>
         <button class="BtnPrev">이전 컨텐츠</button>
       </div>
@@ -164,6 +194,15 @@
     <hr>
     <!-- page4 : 프로그램 상세 페이지 링크 -->
     <section id="page4">
+      <div class="p3_img">
+        <div class="p3_musicImg1"></div>
+        <div class="p3_musicImg2"></div>
+        <div class="p3_musicImg3"></div>
+        <div class="p3_musicImg4"></div>
+      </div>
+      <div class="wave">
+        <div></div>
+      </div>
       <div class="p4_title">
         <h2>SMUF 프로그램</h2>
         <p>서울뮤직페스티벌의 특별한 프로그램을 만나보세요.</p>
@@ -179,6 +218,9 @@
     <hr>
     <!-- page5 : 공지사항 -->
     <section id="page5">
+      <div class="p5_img">
+        <div class="p5_people"></div>
+      </div>
       <div class="p5_title"></div>
       <ul class="notice">
         <li>
@@ -207,6 +249,9 @@
     <hr>
     <!-- page6 : 갤러리 -->
     <section id="page6">
+      <div class="p6_img">
+        <div class="p6_people"></div>
+      </div>
       <div class="p6_title">
         <h2>갤러리</h2>
         <p>서울뮤직페스티벌의 생생한 현장을 느껴보세요.</p>
@@ -228,7 +273,7 @@
           </li>
         </ul>
       </div>
-      <div id="BtnWrap">
+      <div class="BtnWrap">
         <button class="BtnNext">다음 컨텐츠</button>
         <button class="BtnPrev">이전 컨텐츠</button>
       </div>
@@ -237,6 +282,9 @@
   <hr>
   <!-- footer -->
   <footer id="footer">
+    <div class="wave">
+      <div></div>
+    </div>
     <div id="footerWrap">
       <div class="footerLogo">
         <img src="" alt="logo image">
@@ -257,7 +305,31 @@
       </div>
     </div>
   </footer>
+  <hr>
   <!-- 플로팅메뉴 -->
-  <div id="FloatingMenu"></div>
+  <div id="FloatingMenu">
+    <div class="reserve">
+      <a href="#" class="normal_btn">
+        <div class="titleAni">
+          <div class="circle">
+            <img src="" alt="ticket">
+            <p>일반좌석<br>예약하기</p>
+          </div>
+        </div>
+      </a>
+      <a href="#" class="picnic_btn">
+        <div class="titleAni">
+          <div class="circle">
+            <img src="" alt="ticket">
+            <p>피크닉석<br>예약하기</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="topMove">
+      <img src="" alt="위쪽 화살표">
+      <a href="#" class="top_btn">top</a>
+    </div>
+  </div>
 </body>
 </html>
