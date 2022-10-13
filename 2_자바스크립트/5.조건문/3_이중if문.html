@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>이중 if문</title>
+  <script>
+    const id = "admin";
+    const pw = "1234";
+    let idName = prompt("아이디를 입력하세요");
+    if(id === idName) {
+      let pwNum = prompt("비밀번호를 입력하세요");
+      if(pw === pwNum){
+        // 자바스크립트에서의 문서 연결
+        location.href = "loginSuccess.html";
+      }
+      else {
+        location.href = "loginError.html";
+      }
+    }
+    else {
+      location.href = "loginError.html";
+    }
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

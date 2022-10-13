@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>배열을 이용한 값 선택</title>
+  <!-- 해당 과일명 출력하기 -->
+</head>
+<body>
+  <button>과일선택하기</button>
+  <h1>당신이 선택한 과일은?</h1>
+</body>
+<script>
+  const fruitList = ['수박', '참외', '딸기', '포도', '사과'];
+  const heading = document.querySelector("h1");
+  const btn = document.querySelector("button");
+
+  let fruit = (n)=>{
+    heading.innerText = fruitList[n-1];
+  }
+  btn.addEventListener("click", ()=>{
+    let n = prompt("과일의 번호를 입력하세요", "1~5");
+    fruit(n);
+  })
+</script>
+</html>

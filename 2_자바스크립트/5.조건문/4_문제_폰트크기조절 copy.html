@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>폰트크기조절</title>
+  <!-- 함수 2개로, 단일if문 -->
+  <style>
+    div {
+      padding: 20px; background: #8fd8ff;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <button>크기+</button>
+  <button>크기-</button>
+  <div>텍스트 크기를 조절하시오</div>
+  <script>
+    const btn = document.querySelectorAll("button");
+    const div = document.querySelector("div");
+    // console.log(btn[0]);
+    // console.log(btn[1]);
+    // console.log(div);
+    let size = 20;
+    let click1 = ()=>{
+      if(size>=100){ return; }
+      size += 20;
+      div.style.fontSize = `${size}px`;
+    }
+    let click2 = ()=>{
+      if(size<20){ return; }
+      size -= 20;
+      div.style.fontSize = `${size}px`;
+    }
+    btn[0].addEventListener("click",click1);
+    btn[1].addEventListener("click",click2);
+  </script>
+</body>
+</html>

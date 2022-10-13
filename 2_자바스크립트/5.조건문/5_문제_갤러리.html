@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>갤러리</title>
+  <!-- if문을 이용해 버튼 클릭시 사진 변경(1~9) -->
+  <style>
+    body { text-align: center; }
+    figure { height: 250px;}
+  </style>
+</head>
+<body>
+  <figure>
+    <img src="./images/pic_1.jpg" alt="" width="200">
+  </figure>
+  <div>
+    <button>이전</button>
+    <button>다음</button>
+  </div>
+  <script>
+    const Img = document.querySelector("img");
+    const btn = document.querySelectorAll("button");
+
+    //태그의 속성 바꾸는 명령어
+    //Img.setAttribute("src", "images/pic_2.jpg")
+
+    let num = 1;
+    let state = true;
+    let slide = (state)=>{
+      if(state){ // 다음 클릭
+        if(num<9){ 
+          num++;
+        }
+      }
+      else { // 이전 클릭
+        if(num>1){ 
+          num--;
+        }
+      }
+      Img.setAttribute("src", `./images/pic_${num}.jpg`);
+    }
+    btn[0].addEventListener("click",()=>{ // 이전 클릭
+      slide(!(state));
+    })
+    btn[1].addEventListener("click",()=>{ // 다음 클릭
+      slide(state);
+    })
+  </script>
+</body>
+</html>

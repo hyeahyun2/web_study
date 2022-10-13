@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>for 반복문</title>
+  <script>
+    // 반복문 : 특정코드를 반복해서 처리해야 하는 경우에 사용
+    // for문 , while문, do while문
+    /*
+    for(초기화값; 조건; 반복구문){
+      실행명령;
+    }
+    */
+    for(i=0; i<10;i++){
+      console.log(i);
+    }
+
+    // 구구단 출력하기
+    for(i=2; i<10; i++){
+      document.write(`-------${i}단입니다--------<br>`);
+      for(j=1; j<10; j++){
+        document.write(`${i} x ${j} = ${i*j}<br>`);
+        
+      }
+    }
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

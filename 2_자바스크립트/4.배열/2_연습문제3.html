@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>박스 크기 키우기</title>
+  <style>
+    div {
+      width: 100px; height: 100px;
+      background: #836bef;
+      transition: 0.5s;
+    }
+  </style>
+</head>
+<body>
+  <div>박스야 커져라!</div>
+  <script>
+    // 박스의 크기 100px~1000px 사이 100단위로 랜덤 변화
+    const box = document.querySelector("div");
+    
+    let sizing = ()=>{
+      let num1 = 100 * (Math.ceil(Math.random()*10));
+      let num2 = 100 * (Math.ceil(Math.random()*10));
+      box.style.width = `${num1}px`;
+      box.style.height = `${num2}px`;
+    }
+    box.addEventListener("click", sizing);
+  </script>
+</body>
+</html>

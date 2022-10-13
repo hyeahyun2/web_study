@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>switch cass문</title>
+  <script>
+    // 비교해야할 경우의 수가 다양한 경우 주로 사용
+    // 표현식이 Boolean 보다는 문자열 또는 숫자값이 많음
+    /*
+    switch(변수명) { // 변수명 : 비교대상
+      case A : 명령문;
+        break;
+      case B : 명령문;
+        break;
+      .
+      .
+      default : 모든 case에 해당하지 않을 경우 실행될 명령문;
+      //default는 생략 가능하다
+    }
+    */
+  </script>
+</head>
+<body>
+  <h1>좋아하는 과일 출력</h1>
+  <script>
+    let heading = document.querySelector("h1");
+    let fruit = prompt("좋아하는 과일을 입력하시오");
+    switch(fruit){
+      case "사과" : heading.innerText = fruit; break;
+      case "자몽" : heading.innerText = fruit; break;
+      case "딸기" : heading.innerText = fruit; break;
+      case "수박" : heading.innerText = fruit; break;
+      case "메론" : heading.innerText = fruit; break;
+      default : heading.innerText = "오타";
+    }
+  </script>
+</body>
+</html>
