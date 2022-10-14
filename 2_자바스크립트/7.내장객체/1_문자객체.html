@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>문자객체</title>
+  <script>
+    // 문서의 최상위 객체 모델 : document
+    // 브라우저의 객체 모댈 : history, screen, location  등등
+
+    let str = "Hello, Thank you good luck to you";
+    document.write(str.length+"<br>");
+    document.write(str.charAt(7)+"<br>"); // 인덱스번호에 해당하는 값 가져오기
+    document.write(str[7]+"<br>");
+    document.write(str.indexOf("you")+"<br>"); // 해당 원소의 인덱스 번호 가져오기(해당 원소의 첫글자 기준) 
+    document.write(str.indexOf("you", 16)+"<br>"); // 16번째 인덱스 번호 이후의 해당 원소의 인덱스 번호 
+    document.write(str.indexOf("your")+"<br>"); // 해당 원소를 가지고 있지 않을 때 -> 출력값 : -1
+    document.write(str.lastIndexOf("you")+"<br>"); // 해당 원소의 인덱스 번호(젤 뒷자리부터 ~ 젤 먼저 해당되는 원소)
+    document.write(str.includes("you")+"<br>") // 해당 원소가 있는지 확인해서 boolean값으로 반환
+    document.write(str.search("you")+"<br>") // 해당 원소가 있는지 찾아 인덱스 번호를 반환
+    document.write(str.match("luck")+"<br>") // 해당 원소를 단순 출력 
+    document.write(str.match("lucky")+"<br>") // 해당 원소 없을 경우 -> null 출력 
+    document.write(str.substr(7,5)+"<br>") // (불러올 원소의 인덱스 번호, 불러올 길이)
+    document.write(str.substring(7,12)+"<br>") // (불러올 원소의 시작 인덱스 번호, 끝 인덱스 번호)
+    // document.write(str.replace('you','me')+"<br>") // 해당 원소를 다른 값으로 바꿔줌(중복될경우 첫원소만)
+    // document.write(str.replaceAll('you','me')+"<br>") // 해당 원소를 다른 값으로 바꿔줌(중복될경우 모두)
+    document.write(str.replace(/you/g, "me")+"<br>"); // /해당원소/g : 해당 원소를 모두 바꿔라(중복도)
+    document.write(str.toLowerCase()+"<br>"); // 알파벳 모두 소문자로
+    document.write(str.toUpperCase()+"<br>"); // 알파벳 모두 대문자로
+    document.write("A".charCodeAt()+"<br>"); // 원소의 해당 유니코드 값 불러오기
+    document.write("가".charCodeAt()+"<br>");
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

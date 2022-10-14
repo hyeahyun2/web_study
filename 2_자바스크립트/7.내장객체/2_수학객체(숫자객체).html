@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>수학객체와 숫자객체</title>
+  <script>
+    let maxNum = Math.max(10, 30, 20, 50); // 요소 중 제일 큰 요소 반환
+    document.write(maxNum+"<br>");
+    let minNum = Math.min(10, 30, 20, 50); // 요소 중 제일 작은 요소 반환
+    document.write(minNum+"<br>");
+    let piNum = Math.PI; // pi값 (3.141592 ..... )
+    document.write(piNum+"<br>");
+    let num = 3.56;
+    let roundNum = Math.round(num); // 반올림
+    let floorNum = Math.floor(num); // 내림
+    let ceilNum = Math.ceil(num); // 올림
+    document.write(`${roundNum}, ${floorNum}, ${ceilNum}<br>`);
+
+    let num1 = 70000;
+    // 지수 표기법 (소수점 n자리로 문자형 데이터로 변환)
+    document.write(num1.toExponential(1)+"<br>"); // 출력 : 7.0e+4 // 소수점 1자리
+    let num2 = 3.456789;
+    // 소수점 n자리로 반올림해서 문자형 데이터로 변환
+    document.write(num2.toFixed(2)+"<br>"); // 출력 : 3.46
+    document.write(num2.toPrecision(2)+"<br>"); // 출력 : 3.5 // 유효숫자 n을 제외한 나머지 값 반올림
+    // 즉, 여기서는 유효숫자 2자리 (3과4) 밑에 수에서 반올림
+    num2 = num2.toString(); // 변수의 타입을 string으로 변환 ( = String(mum2) )
+    document.write(typeof(num2)+"<br>");
+
+    let num3 = "50.5px";
+    // 문자원소를 버리고 앞의 숫자만, 데이터타입 int(number)로 바꾸기
+    document.write(parseInt(num3)+"<br>"); // 출력 : 50
+    // 문자원소를 버리고 앞의 숫자만, 데이터타입 float(number)로 바꾸기
+    document.write(parseFloat(num3)+"<br>"); // 출력 : 50.5
+
+    let num4 = "50.5";
+    document.write(Number(num4), typeof(Number(num4))); // 출력 : 50.5 number
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

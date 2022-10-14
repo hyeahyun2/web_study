@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>색4개</title>
+  <style>
+    div {
+      width: 150px; height: 150px;
+      border: 1px solid #000;
+      float: left;
+    }
+  </style>
+</head>
+<body>
+  <!-- data-변수명 = "변수" -->
+  <div data-color="red">빨강</div>
+  <div data-color="yellow">노랑</div>
+  <div data-color="green">초록</div>
+  <div data-color="blue">파랑</div>
+  <script>
+    const div = document.querySelectorAll("div");
+    // let colors = ['red','yellow','green','blue'];
+    // for(let i=0; i<div.length; i++){
+    //   div[i].addEventListener("click",()=>{
+    //     div[i].style.backgroundColor = colors[i];
+    //   })
+    // }
+    
+    // div.forEach((element,i) => {
+    //   element.addEventListener("click",()=>{
+    //     element.style.backgroundColor = colors[i];
+    //   })
+    // });
+
+    let baChange = (element)=>{
+      element.style.backgroundColor = element.getAttribute("data-color");
+    }
+    div.forEach((element,i) => {
+      element.addEventListener("click",()=>{
+        // element.style.backgroundColor = colors[i];
+        baChange(element);
+      })
+    });
+  </script>
+</body>
+</html>

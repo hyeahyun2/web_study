@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>날짜 정보 객체</title>
+  <script>
+    // let ball = new Date(2002, 4, 31); //2022.5.31일의 날짜정보 가져오기
+    // let bYear = ball.getFullYear();
+    // let bMonth = ball.getMonth();
+    // let bDate = ball.getDate();
+    // document.write(`${bYear}년 월드컵은 ${bMonth+1}월 ${bDate}일에 개최`)
+
+    // D-day 계산하기
+    let today = new Date();
+    let nowYear = today.getFullYear();
+    let lastDay = new Date(nowYear, 11, 31);
+    
+    let result = lastDay-today;
+    console.log(result); // ms단위로 나옴 -> 6682123147 이런식
+    result = result / (24*60*60*1000); // 24시간 60분 60초 , 1초=1000ms 니까!
+    let Dday = Math.ceil(result); // 소수점 자리 나옴 -> 올림
+    console.log(result);
+    document.write(`올해 남은 기간은 ${Dday}일 입니다`);
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>배열활용 for문</title>
+  <style>
+    div { 
+      width: 100px; height: 100px; 
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+<body>
+  <button>색상변경</button>
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+  <script>
+    const btn = document.querySelector("button");
+    const div = document.querySelectorAll("div");
+    // console.log(btn, div);
+
+    let colorChange = ()=>{
+      // for(let i=0; i<div.length; i++){
+      //   div[i].style.backgroundColor = "orange";
+      // }
+      
+      // forEach구문
+      div.forEach((box)=>{
+        box.style.backgroundColor = "orange";
+      })
+    }
+    btn.addEventListener("click",()=>{
+      colorChange();
+    })
+  </script>
+</body>
+</html>
