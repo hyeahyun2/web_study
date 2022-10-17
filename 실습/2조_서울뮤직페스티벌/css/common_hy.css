@@ -1,0 +1,225 @@
+@charset "utf-8";
+:root {
+    --basic-purple-color: 65, 42, 102;
+    --nav-hover-purple-color : 65, 42, 102;
+    /* linear-gradient(90deg, rgba(227,67,149,1) 0%, rgba(0,174,183,1) 100%) */
+    /* --nav-scroll-color: 127, 127, 127; */
+    --aside-basic-color: 99, 171, 181;
+    --aside-basic2-color:215, 129, 105;
+    --aside-hover-color: 188, 90, 147;
+    --aside-hover2-color: 109, 42, 130;
+    --aside-top-bgColor: 65, 42, 102;
+    --aside-top-textColor:95, 171, 181;
+
+    --sect-bark-green:61, 74, 77;
+
+    --footer-basic-color: 92, 171, 181;
+
+    --basic-max-width: 1400px;
+}
+
+/* 초기화 기본식. */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', 'Noto Sans KR', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+fieldset,
+img {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+input {
+    margin: 0;
+    padding: 0;
+    background-color: inherit;
+    border: unset;
+    color: inherit;
+    font: inherit;
+    outline: none;
+}
+
+ul,
+ol,
+li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+table,
+th,
+td {
+    margin: 0;
+    padding: 0;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+figure {
+    /* 이미지 그룹화 하는 태그 */
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: unset;
+    font-weight: unset;
+    margin: 0;
+    padding: 0;
+}
+
+dl,
+dt,
+dd,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+a:link,
+a:visited,
+a {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: inherit;
+}
+
+address {
+    font-style: normal;
+    font-size: unset;
+    font-weight: unset;
+}
+
+small {
+    font-size: unset;
+    font-weight: unset;
+}
+
+hr {
+    display: none;
+}
+
+.hidden {
+    position: absolute;
+    left: -999999px;
+}
+
+button {
+    margin: 0;
+    padding: 0;
+    background-color: inherit;
+    border: unset;
+    color: inherit;
+    font: inherit;
+    outline: none;
+}
+
+/* 초기화 끝!!!! */
+body {background-color: #b3b3b3;}
+
+/* header (height : 120px) */
+#header {
+    border: 1px solid #000;
+    text-transform: uppercase;
+    width: 100%; height: 120px;
+    max-width: 1400px;
+    display: flex; 
+    justify-content: space-between; align-items: center;
+    margin: 0 auto;
+    position: relative;
+}
+#header ul {}
+
+/* logo */
+#header > ul {
+    display: flex;
+    justify-content: space-between;
+    margin: auto 0;
+    width: 290px; height: 87px;
+    border: 1px solid #000;
+}
+#header > ul > li {
+    margin: auto 0;
+    height: 87px; 
+    /* border: 1px solid #000; */
+}
+#header > ul > li > a{ display: block; text-indent: -9999px; }
+#header > ul > li:nth-of-type(1) { 
+    width: 110px; height: 86px;
+}
+#header > ul > li:nth-of-type(1) > a {
+    width: 110px; height: 86px;
+    background: url(../images/logo.png) no-repeat left center / cover;
+}
+#header ul li:nth-of-type(2) { 
+    width: 125px; height: 33px;
+}
+#header > ul > li:nth-of-type(2) > a {
+    width: 125px; height: 33px;
+    background: url(../images/seoul_logoW.png) no-repeat right center / cover;
+}
+
+/* 메인메뉴 gnb */
+#gnb {
+    border: 1px solid #000;
+    /* height: 29px; */
+}
+#gnb > ul {
+    display: flex; 
+    justify-content: space-between ;
+    flex-direction: row;
+    align-items: center;
+    width: 934.09px;
+}
+#gnbList > li {
+    flex:1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 20px;
+    position: relative;
+    /* border: 1px solid #000; */
+}
+#gnbList > li > a {
+    width: 100%;
+    text-align: center;
+    display: block;
+}
+
+/* 서브메뉴 snb */
+.snb {
+    position: absolute;
+    top: 100px;
+    border: 1px solid #000;
+}
+.snb li {
+    /* line-height: 33px; */
+    text-align: center;
+    
+}
+.snb li a {}
+/* 서브메뉴 롤오버 */
+#gnbList:hover {}
+
+/* 언어선택 */
+#LangSelect {
+    width: 68px; height: 20px;
+    border: 1px solid #000;
+}
