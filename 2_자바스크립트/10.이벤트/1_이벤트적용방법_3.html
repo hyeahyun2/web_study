@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>실행위치</title>
+  <script src="./1_event.js" async></script>
+
+  <!-- 실행순서 : 1 > 5 > 4 > 2 > 3 -->
+  <script>
+    // head에 script 적용할 때 -> 문서를 모두 읽은 후 script실행하기
+    // 옛날 방식
+    window.onload = function(){
+      alert("2");
+    }
+
+    // addEventListener이용하기
+    // load : 모든 대상 불러오기
+    window.addEventListener("load",()=>{
+      alert("3");
+    })
+    // DOMContentLoaded
+    window.addEventListener("DOMContentLoaded",()=>{
+      alert("4");
+    })
+    // 최종. 최신 방법 : head에 적용한 스크립트 방법 중 가장 빠름
+    document.addEventListener("DOMContentLoaded",()=>{
+      alert("5");
+    })
+  </script>
+</head>
+<body>
+  <div>색상적용</div>
+  <script>
+    alert("1");
+  </script>
+</body>
+</html>

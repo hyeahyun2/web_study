@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>속성접근</title>
+  <style>
+    /* 추가된 속성(클레스명)을 이용해 스타일시트 적용도 가능! */
+    .goLink { color: red;}
+  </style>
+</head>
+<body>
+  <div id="target" class="active">
+    <a href="#">네이버</a>
+  </div>
+  <script>
+    const div = document.getElementById("target");
+    console.log(div);
+    // 변수의 해당 속성의 속성값 가져오기
+    // let idName = div.getAttribute("id");
+    let idName = div.id;
+    // let className = div.getAttribute("class");
+    let className = div.className;
+    //let hrefName = lk.href; <- a태그를 변수 lk에 담았을 때 속성href의 값 가져오기
+    console.log(idName);
+    console.log(className);
+
+    // 해당 속성의 속성값 변경하기
+    // div.setAttribute("id", "target2");
+    div.id = "target2";
+    // div.setAttribute("class","active2");
+    div.className = "active2";
+
+    const anchor = document.querySelector("a");
+    anchor.setAttribute("href","http://www.naver.com/");
+    // setAttribute를 이용해 지정되어있지 않은 속성도 바로 추가 가능
+    anchor.setAttribute("target","_blank");
+    anchor.id = "naver"; // 속성 id명 추가
+    anchor.className = "goLink"; // 속성 class명 추가
+
+    anchor.addEventListener("click",()=>{
+      // 클릭했을때 anchor의 색 green으로 변경
+      event.currentTarget.style.color = "green";
+    })
+  </script>
+</body>
+</html>

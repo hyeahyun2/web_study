@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>요소접근</title>
+  <!-- 요소 : element -->
+  <!-- 태그들을 자바스크립트에서 쓸 때 사용하는 접근 방식 -->
+</head>
+<body>
+  <h1 id="logo">제목</h1>
+  <p>문단입니다1</p>
+  <p>문단입니다2</p>
+  <ul>
+    <li class="list">리스트1</li>
+    <li class="list">리스트2</li>
+    <li class="list">리스트3</li>
+  </ul>
+  
+  <script>
+    // 태그명(TagName)으로 요소에 접근하기
+    // 문서 내에 중복될 수 있으므로 복수명령어 -> collection
+    // HTML 문서 내에서의 element 요소를 가짐
+    const pTag = document.getElementsByTagName("p");
+    console.log(pTag); // 배열로 인식 (출력 : HTMLCollection(2) [p, p])
+    console.log(pTag[0]); // 태그로 인식 (출력 : <p>문단입니다1</p>)
+    // pTag[0].style.color = "red";
+    // pTag[1].style.color = "blue";
+    for(let i=0; i<pTag.length; i++){
+      pTag[i].style.color = "red";
+    }
+    // pTag.forEach(element => {
+    //   element.style.color = "red";
+    //   // console.log(element);
+    // }); //에러뜸
+    // forEach구문 -> node에만 적용되는 반복문
+    // node > element : node가 더 큰 개념
+
+    // 아이디명으로 요소에 접근하기(아이디는 문서 내에 중복될 수 없으므로 단수명령어)
+    const logo = document.getElementById("logo");
+    console.log(logo); // 태그로 인식
+    logo.style.color = "green";
+
+    // 클래스명으로 요소에 접근하기(복수명령어 -> 배열처리)
+    const list = document.getElementsByClassName("list");
+    console.log(list);
+    list[0].style.background = "#d5bd97";
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>hasAttribute, removeAttribute</title>
+  <!-- 속성추가, 속성지우기 -->
+  <style>
+    div {
+      width: 200px; height: 200px;
+      border: 1px solid #000;
+    }
+    div.active { background: #9af17c; }
+  </style>
+</head>
+<body>
+  <div id="target" class="active">속성제거</div>
+
+  <script>
+    const target = document.getElementById("target");
+    target.addEventListener("click",(e)=>{
+      // 타겟이 class라는 속성을 가지고 있다면
+      if(target.hasAttribute("class")){
+      console.log(true);
+      // 현재 타겟의 class 속성을 삭제 (class명으로 지정된 stylesheet도 모두 삭제됨)
+      e.currentTarget.removeAttribute("class");
+    }
+      else {
+        console.log(false);
+        e.currentTarget.setAttribute("class","active");
+      }
+    })
+  </script>
+</body>
+</html>

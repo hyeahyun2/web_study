@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>버튼클릭으로 객체 생성</title>
+  <style>
+    div {
+      padding: 10px;
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+<body>
+  <button>객체추가</button>
+
+  <script>
+    // 버튼을 클릭할 때마다 div 객체 생성
+    // div의 텍스트는 'n번째 생성된 div입니다'
+    // 생성된 div 클릭시 삭제되도록
+    let div;
+    const btn = document.querySelector("button");
+    let n = 0;
+    let createDIV = ()=>{
+      div = document.createElement("div");
+      document.body.append(div);
+      n++;
+      div.innerText = `${n}번째 생성된 div입니다.`;
+      div.addEventListener("click", (e)=>{
+        e.currentTarget.remove();
+      })
+    }
+    btn.addEventListener("click",()=>{
+      createDIV();
+    })
+  </script>
+</body>
+</html>

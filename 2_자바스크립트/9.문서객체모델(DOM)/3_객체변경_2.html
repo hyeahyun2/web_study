@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>객체의 추가/삭제/복제</title>
+</head>
+<body>
+  <div>
+    <h2>큰제목이 필요합니다</h2>
+  </div>
+  <a href="#">링크</a>
+
+  <script>
+    const div = document.querySelector("div");
+    const h2 = document.querySelector("h2");
+    const anchor = document.querySelector("a");
+
+    // 객체 생성
+    const h1 = document.createElement("h1");
+    h1.innerText = "큰제목이 추가되었습니다.";
+    // 추가 및 이동 : prepend(), append() (없는객체-추가, 이미 존재하는 객체-위치이동)
+    //prepend(), append() : 다수의 객체 옮기기 가능
+    // 해당 부모요소의 첫번째 자식요소로 추가
+    div.prepend(h1);
+    // 사용불가!!!!!!!! : div.prependChild(h1); // 에러
+    // 해당 부모요소의 마지막 자식요소로 이동
+    div.append(h1);
+    // appendChild() : 하나의 객체만 옮기기 가능 -> 거의 사용x
+    div.appendChild(h1);
+
+    // 형제태그의 추가 및 이동 : insertBefore(새로운(옮길) 요소, 기준요소)
+    // 기준요소의 바로 앞(Before)으로 이동
+    document.body.insertBefore(anchor, div);
+
+    // 삭제
+    // 해당 태그 삭제
+    // h2.remove();
+    //특정 요소(부모요소)의 해당 하위요소(자식요소) 삭제
+    // div.removeChild(h2);
+    div.removeChild(div.childNodes[1]); // = div.removeChild(h2)
+
+    // 복제 (기본값 - 해당태그만 복제(자식요소 / 태그값은 복사x))
+    // 복제될 대상.cloneNode()
+    // const anchor2 = anchor.cloneNode();
+    // true 입력 : 복제될 대상의 태그값, 자식요소도 모두 복사
+    const anchor2 = anchor.cloneNode(true);
+    div.append(anchor2);
+  </script>
+</body>
+</html>

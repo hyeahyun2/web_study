@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>움직이는 나비</title>
+  <style>
+    body { 
+      margin: 0; height: 100vh;
+      background: #000; 
+      display: flex; justify-content: center; align-items: center;
+    }
+    img { width: 200px; }
+  </style>
+</head>
+<body>
+  <img src="./nabi/nabi_1.png" alt="나비">
+  <script>
+    const nabi = document.querySelector("img");
+    let n = 1;
+    function wing(){ // 함수 정의하기
+      n++;
+      // setAttribute("속성명","바꿀 속성값") : 태그의 속성 바꾸기
+      nabi.setAttribute("src", `./nabi/nabi_${n}.png`);
+      if(n>=6) n=0;
+    }
+    setInterval(wing, 100); // wing 함수 0.1초마다 호출하기
+  </script>
+</body>
+</html>

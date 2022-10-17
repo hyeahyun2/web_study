@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>classList</title>
+  <style>
+    div {
+      width: 200px; height: 100px;
+    }
+    .active { border: 1px solid #000; }
+    .target {border: 5px solid #f00;}
+    .on1 { background: #4134b8; color: #fff; }
+    .on2 { font-size: 30px;}
+  </style>
+</head>
+<body>
+  <div id="target" class="active">클래스바꾸기</div>
+  <button class="btn">클래스추가</button>
+  <button class="btn">클래스제거</button>
+  <button class="btn">클래스변경</button>
+  <button class="btn">클래스토글</button>
+
+  <script>
+    const target = document.getElementById("target");
+    const btn = document.querySelectorAll(".btn");
+    // console.log(target, btn);
+    btn[0].addEventListener("click",()=>{
+      // class명 "on1"을 추가! -> class="btn on1"
+      target.classList.add("on1");
+    })
+    btn[1].addEventListener("click",()=>{
+      // class명 "active" 삭제
+      target.classList.remove("active");
+      // class명 여러개 한번에 삭제
+      // target.classList.remove("active", "on1");
+    })
+    btn[2].addEventListener("click",()=>{
+      // class명 변경 (변경할 class명, 변경후 class명)
+      target.classList.replace("active","target");
+    })
+    btn[3].addEventListener("click",()=>{
+      // 해당 클래스명이 있는 경우-> 삭제, 없는 경우 -> 추가
+      //toggle : 2가지 명령어 한번에 처리
+      target.classList.toggle("on2");
+    })
+  </script>
+</body>
+</html>

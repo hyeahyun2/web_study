@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>window-setInterval</title>
+</head>
+<body>
+  <h1>카운팅</h1>
+  <button>카운팅 멈추기</button>
+  <script>
+    const heading = document.querySelector("h1");
+    const btn = document.querySelector("button");
+    let n = 0;
+    // 반복되는 함수(시간을 기준으로)
+    let timer = setInterval(function(){
+      heading.innerText = ++n;
+    }, 2000) // 2초마다 반복
+    btn.addEventListener("click",()=>{
+      //clearInterval(변수명) : setInterval을 멈추는 명령어 
+      clearInterval(timer);
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>요소접근2</title>
+</head>
+<body>
+  <h1 id="logo">제목</h1>
+  <p>문단입니다1</p>
+  <p>문단입니다2</p>
+  <ul>
+    <li class="list">리스트1</li>
+    <li class="list">리스트2</li>
+    <li class="list">리스트3</li>
+  </ul>
+
+  <script>
+    // 앞서 했던 getElement~~~ 들 모두 통합
+    // querySelector : 단일요소 (태그가 여러개일 경우 제일 처음 태그만 적용됨)
+    const logo = document.querySelector("#logo");
+    // id일 경우 : getElementById 사용하는게 훨 유리
+    console.log(logo);
+    logo.style.color = "red";
+
+    // querySelectorAll : 다수요소
+    // 다수일 경우 getElements~~ 보다 querySelectorAll 사용 권장!
+    const pTag = document.querySelectorAll("p");
+    console.log(pTag); // 중복 : NodeList(2) [p, p]
+    // pTag.style.color = "blue";
+    // for(let i=0; i<pTag.length; i++){
+    //   pTag[i].style.color = "red";
+    // }
+    pTag.forEach(element => {
+      element.style.color = "red";
+      // console.log(element);
+    });
+
+    const list = document.querySelectorAll("li");
+    console.log(list);
+    list[1].style.background = "#d5bd97";
+  </script>
+</body>
+</html>

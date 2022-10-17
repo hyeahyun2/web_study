@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>이벤트 적용방법</title>
+</head>
+<body>
+  <!-- html문서에서 바로 함수 호출 -->
+  <!-- onclick : 클릭 이벤트 발생 시 -->
+  <button onclick="change1()">적용1</button>
+  <button>적용2</button>
+  <button>적용3</button>
+
+  <script>
+    const btn = document.querySelectorAll("button");
+    // 이벤트 발생했을 때 호출 할 함수 생성
+    let change1 = ()=>{
+      document.body.style.background = "green";
+    }
+    let change2 = ()=>{
+      document.body.style.background = "pink";
+    }
+    let change3 = ()=>{
+      document.body.style.background = "orange";
+    }
+    // on이벤트 : 옛날 방식 (onclick , onscroll, onmouseover 등등)
+    // btn[1].onclick = function(){ change2(); }
+    btn[1].onclick = change2;
+    
+    btn[2].addEventListener("click", change3);
+  </script>
+</body>
+</html>

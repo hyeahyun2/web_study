@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>요소접근 - 부모/자식</title>
+</head>
+<body>
+  <div id="food">
+    <h2>한식</h2>
+    <ul>
+      <li class="rice">김치볶음밥</li>
+      <li>비빔밥</li>
+      <li>전골</li>
+    </ul>
+  </div>
+  <a href="#">이동</a>
+  
+  <script>
+    //nodeType=1 : element_node
+    //nodeType=2 : attribute_node
+    const anchor = document.querySelector("a");
+    if(anchor.nodeType==1) console.log("true");
+    else console.log("false");
+    if(anchor.getAttribute("href").nodeType==2) console.log("true");
+    else console.log("false");
+
+    const food = document.getElementById("food");
+    //자식요소 : children[], childNodes[]
+    // childNodes[]에선 첫번째 자식요소가 부모요소 오른쪽에 위치(공백도 포함)
+    console.log(food.children[0]);
+    console.log(food.childNodes[0]);// 출력 : #text (노드요소로 인식되기 때문)
+    // (공백이 부모요소 오른쪽에 위치한 자식요소로 인식)
+    // food.children[0].style.color = "red";
+    food.childNodes[1].style.color = "red";
+    // food.childNodes[0] = food.children[0] = food.firstChild
+    // food.lastChild.style.color = "green"; // 이것도 </div>의 바로 왼쪽에 위치한 코드
+
+    const rice = document.querySelector(".rice");
+    console.log(rice);
+    //부모요소 : parentElement, parentNode
+    console.log(rice.parentElement);
+    console.log(rice.parentNode);
+    rice.parentElement.style.border = "1px solid #000";
+    // rice.parentNode.style.border = "1px solid #000";
+
+    // 형제요소 : nextSibling, prevSibling
+    console.log(rice.nextSibling); // 출력 : #text (노드요소 -> 공백이 인식된 것)
+    console.log(rice.nextSibling.nextSibling); // 출력 : <li>~~</li>
+
+    // 현재 문서에 사용중인 node들의 이름과 해당 번호 모두 출력하기
+    // 이 nodeType들을 이용해 조건식 등으로 활용 가능
+    for(let name in Node){
+      console.log(name, Node[name]);
+    }
+  </script>
+</body>
+</html>
