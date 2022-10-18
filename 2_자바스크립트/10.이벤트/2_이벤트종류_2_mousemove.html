@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mousemove</title>
+  <style>
+    div {
+      width: 300px; height: 300px;
+      margin: 50px 0 0 50px;
+      border: 1px solid #000;
+    }
+    p { font-size: 30px; }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded",()=>{
+      const div = document.querySelector("div");
+      const p = document.querySelectorAll("p");
+      div.addEventListener("mousemove",(e)=>{
+        // screenX, screenY : 스크린(모니터 화면) 위치 기준 (x, y값)
+        p[0].innerHTML = `screenX : ${e.screenX}, scrrenY : ${e.screenY}`;
+        // pageX, pageY : 문서 기준
+        p[1].innerHTML = `pageX : ${e.pageX}, pageY : ${e.pageY}`;
+        // clientX, clientY : 브라우저 창 기준 (스크롤 발생했을 때 pageXY와 차이남)
+        p[2].innerHTML = `clientX : ${e.clientX}, clientY : ${e.clientY}`;
+        // offsetX, offsetY : 이벤트 발생한 태그(여기선 div) 기준
+        p[3].innerHTML = `offsetX : ${e.offsetX}, offsetY : ${e.offsetY}`;
+        // clientX / clientY 와 같은 명령어(줄임말)
+        p[4].innerHTML = `X : ${e.x}, Y : ${e.y}`;
+      })
+    })
+  </script>
+</head>
+<body>
+  <div>마우스위치알아내기</div>
+  <p></p>
+  <p></p>
+  <p></p>
+  <p></p>
+  <p></p>
+</body>
+</html>

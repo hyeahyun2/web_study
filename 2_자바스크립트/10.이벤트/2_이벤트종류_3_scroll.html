@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>스크롤(scroll) 이벤트</title>
+  <style>
+    body { 
+      height: 300vh;
+      background: linear-gradient(to bottom, rgb(151, 255, 147), rgb(147, 230, 255), rgb(204, 160, 255));
+    }
+    div {
+      position: fixed; top: 10px;
+    }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded",()=>{
+      const btn = document.querySelectorAll("button");
+      console.log(btn);
+      btn[0].addEventListener("click",()=>{
+        //scrollTo(x축값, y축값) : 스크롤의 이동 (단위 : px)
+        // scrollTo에서 xy값은 절대값(x=0, y=0에서의 값)
+        window.scrollTo(0,300);
+        //scrollY : 현재 스크롤 위치
+        console.log(window.scrollY);
+      })
+      btn[1].addEventListener("click",()=>{
+        // scrollBy(x축값, y축값) : 스크롤의 이동(현재위치에서의 이동)
+        window.scrollBy(0,100);
+        console.log(window.scrollY);
+      })
+      btn[2].addEventListener("click",()=>{
+        window.scrollBy(0,-100);
+        console.log(window.scrollY);
+      })
+      
+    })
+  </script>
+</head>
+<body>
+  <div>
+    <button>상단에서 300px 아래로</button>
+    <button>현재위치에서 100만큼 아래로</button>
+    <button>현재위치에서 100만큼 위로</button>
+  </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>scroll을 이용한 배경색 변경</title>
+  <style>
+    body { height: 300vh; }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded",()=>{
+      // const body = document.querySelector("body");
+      window.addEventListener("scroll",()=>{
+        if(window.scrollY >= 500){
+          window.document.body.style.backgroundColor = "pink";
+        }
+        else {
+          window.document.body.style.backgroundColor = "unset";
+        }
+      })
+    })
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

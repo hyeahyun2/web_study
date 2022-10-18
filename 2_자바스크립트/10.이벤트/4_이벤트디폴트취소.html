@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>이벤트 실행시 디폴트 값 취소</title>
+  <style>
+    div {
+      width: 100px; height: 100px;
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+<body>
+  <a href="https://www.naver.com/" target="_blank">네이버로 이동</a>
+  <div>색상변경</div>
+  <form>
+    <input type="checkbox">맥주
+    <input type="checkbox">음료
+  </form>
+  <script>
+    const anchor = document.querySelector("a");
+    const div = document.querySelector("div");
+    const check = document.querySelectorAll("input");
+
+    anchor.addEventListener("click",(e)=>{
+      // 이벤트가 발생했을 때 해당 태그의 기본 기능을 막는 명령어
+      // 여기선 a태그로 인한 링크 이동 기능 없앰
+      // e.preventDefault();
+      div.style.background = "pink";
+      let select = confirm("해당 페이지로 이동하시겠습니까?");
+      if(select === false){
+        e.preventDefault();
+      }
+    })
+    // 체크박스가 체크되지 않게
+    check[0].addEventListener("click",(e)=>{
+      e.preventDefault();
+    })
+  </script>
+</body>
+</html>

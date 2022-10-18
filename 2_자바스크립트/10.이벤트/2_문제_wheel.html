@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>wheel을 이용한 투명도 조절</title>
+  <style>
+    body { background: #000; }
+    div {
+      width: 500px; height: 500px;
+      /* border: 2px solid #fff; */
+      background: #fff;
+      opacity: 0;
+      line-height: 500px; text-align: center;
+      font-size: 30px; font-weight: 600;
+    }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded",()=>{
+      const div = document.querySelector("div");
+      let op = 0;
+      window.addEventListener("wheel",(e)=>{
+        // 휠 내릴 경우
+        if(e.wheelDelta < 0){
+          if(op<1){
+            op += 0.05;
+          }
+          else op = 1;
+        }
+        // 휠 올릴 경우
+        else {
+          if(op>0){
+            op -= 0.05;
+          }
+          else op = 0;
+        }
+        console.log(op);
+        div.style.opacity = op;
+      })
+    })
+  </script>
+</head>
+<body>
+  <div>투명도 조절</div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>특정시간이 지난 후 한번 실행</title>
+  <style>
+    div {
+      height: 1000px;
+      border-bottom: 5px solid #000;
+    }
+    p { 
+      width: 100px;
+      padding: 20px;
+      border: 1px solid #000;
+      font-size: 50px;
+      font-weight: bold;
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+  <div>영역</div>
+  <div>
+    <p>1</p>
+  </div>
+
+  <script>
+    const p = document.querySelector("p");
+    let n = 1;
+    let state = 1;
+    let counting = ()=>{
+      p.innerText = ++n;
+      if(n>=200) return;
+      // 특정시간(ms단위) 이후 해당 함수를 한번만 실행시키는 함수
+      setTimeout(function(){
+      // counting();
+      },1000)
+    }
+    window.addEventListener("scroll",()=>{
+      if(window.scrollY >= 1000 && state == 1){
+        state = 0;
+        counting();
+      }
+    });
+  </script>
+</body>
+</html>

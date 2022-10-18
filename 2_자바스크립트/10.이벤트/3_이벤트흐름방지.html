@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>이벤트 흐름방지</title>
+  <!-- 버블링 현상 방지 -->
+  <!-- 버블링 : 자식요소의 이벤트가 부모요소에게도 적용되는 현상 -->
+  <style>
+    div {
+      width: 100px; height: 100px;
+      padding: 50px; border: 1px solid #000;
+    }
+    p {
+      width: 100px; height: 100px;
+      margin: 0;
+      border: 1px solid #000;
+      background: red;
+      /* pointer-events: none; */
+    }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded",()=>{
+      const div = document.querySelector("div");
+      const pTag = document.querySelector("p");
+      const span = document.querySelector("span");
+
+      let count = 0;
+      let clickFuntion = (e)=>{
+        e.currentTarget.style.background = "yellow";
+        count ++;
+        span.innerText = count;
+        // 자식의 이벤트가 부모요소에게 전달되는 것을 방지하는 명령어
+        // 즉, 버블링 현상 방지 명령어
+        e.stopPropagation();
+      }
+      div.addEventListener("click", clickFuntion);
+      pTag.addEventListener("click", clickFuntion);
+    })
+    
+  </script>
+</head>
+<body>
+  <div>
+    <p>클릭하세요</p>
+  </div>
+  <span>카운팅</span>
+</body>
+</html>

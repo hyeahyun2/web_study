@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>wheel</title>
+  <script>
+    document.addEventListener("DOMContentLoaded",()=>{
+      const heading = document.querySelector("h1");
+      window.addEventListener("wheel",(e)=>{
+        // 휠 내릴 때 : 매개변수.wheelDelta = -120 저장됨
+        if(e.wheelDelta < 0){
+          heading.innerText = "아래방향입니다";
+          document.body.style.background = "pink";
+        }
+        // 휠 올릴 때 : 매개변수.wheelDelta = 120 저장됨
+        else {
+          heading.innerText = "윗방향입니다";
+          document.body.style.background = "lightblue";
+        }
+      })
+    })
+  </script>
+</head>
+<body>
+  <h1>휠 방향 출력하기</h1>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>특정위치에서 숫자카운팅</title>
+  <style>
+    div {
+      height: 1000px;
+      border-bottom: 5px solid #000;
+    }
+    p { 
+      width: 100px;
+      padding: 20px;
+      border: 1px solid #000;
+      font-size: 50px;
+      font-weight: bold;
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+  <div>영역</div>
+  <div>
+    <p>1</p>
+  </div>
+
+  <script>
+    const p = document.querySelector("p");
+    let n = 1;
+    let state = 1;
+    window.addEventListener("scroll",()=>{
+      if(window.scrollY >= 1000 && state == 1){
+        state = 0;
+        // 0.01초마다 n값을 1씩 증가 -> 200 될 때 까지
+        // 특정위치에 오면 숫자 1~200까지 카운팅
+        let counting = setInterval(function(){
+          p.innerText = ++n;
+          if(n==200) {
+            clearInterval(counting);
+          }
+        }, 10)
+      }
+    });
+  </script>
+</body>
+</html>

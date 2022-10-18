@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>scroll을 이용한 네비게이션 고정</title>
+  <style>
+    body {height: 300vh;}
+    body, ul, li { margin: 0; padding: 0;}
+    a { color: #000; text-decoration: none;}
+    li { list-style: none; }
+    nav {
+      width: 100%; height: 100px;
+      position: absolute; top: 0; left: 0;
+      background: #fff;
+      transition: 0.5s top;
+    }
+    ul {
+      display: flex;
+      height: 100%;
+      justify-content: center; align-items: center;
+    }
+    li {
+      text-align: center;
+      margin: 0 50px;
+    }
+    a {
+      font-size: 20px; font-weight: 600;
+      /* display: block; */
+    }
+    /* 스크롤발생시 css */
+    nav.active {
+      position: fixed; background: #000;
+      transition: 0.5s top; 
+    }
+    nav.slid {
+      animation: sliding 1s;
+    }
+    nav.active ul li a { color: #fff; }
+
+    /* 섹션 */
+    section {
+      height: 800px; background: #0099c9;
+    }
+  </style>
+  <script>
+    // 윈도우 세로스크롤값이 500 이상일 경우
+    // nav에 클래스 active가 추가되도록, 500이하면 삭제
+    // 애니메이션 추가
+    document.addEventListener("DOMContentLoaded",()=>{
+      const navi = document.querySelector("nav");
+      window.addEventListener("scroll",()=>{
+        if(window.scrollY>=500){
+          navi.classList.add("active");
+          navi.style.top = "0px";
+        }
+        else if(window.scrollY<500 && window.scrollY>0){
+          navi.style.top = "-100px";
+        }
+        else{
+          navi.classList.remove("active");
+          navi.style.top = "0";
+        }
+      })
+
+    })
+  </script>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="#">메뉴</a></li>
+      <li><a href="#">메뉴</a></li>
+      <li><a href="#">메뉴</a></li>
+      <li><a href="#">메뉴</a></li>
+      <li><a href="#">메뉴</a></li>
+    </ul>
+  </nav>
+  <section></section>
+</body>
+</html>

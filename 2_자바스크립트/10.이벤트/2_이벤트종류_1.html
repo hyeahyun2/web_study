@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>이벤트의 종류</title>
+  <style>
+    div { 
+      width: 100px; height: 100px; 
+      border: 1px solid #000;
+      float: left;
+    }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded",()=>{
+      const div = document.querySelectorAll("div");
+      
+      // 클릭 이벤트
+      div[0].addEventListener("click",(e)=>{
+        e.currentTarget.style.background = "red";
+      });
+
+      // 더블클릭 이벤트
+      div[1].addEventListener("dblclick",(e)=>{
+        e.currentTarget.style.background = "blue";
+        e.currentTarget.style.color = "white";
+      });
+
+      // 마우스오버시 이벤트
+      // div[2].addEventListener("mouseover",(e)=>{
+      //   e.currentTarget.style.background = "green";
+      // });
+      
+      // // 마우스아웃시 이벤트(마우스가 영역 범위 밖)
+      // div[2].addEventListener("mouseout",(e)=>{
+      //   e.currentTarget.style.background = "none";
+      // });
+      // 마우스오버시 이벤트(자식요소있을때 -> ?? )
+      div[2].addEventListener("mouseenter",(e)=>{
+        e.currentTarget.style.background = "green";
+      });
+      // 마우스아웃시 이벤트(마우스가 영역 범위 밖)
+      div[2].addEventListener("mouseleave",(e)=>{
+        e.currentTarget.style.background = "none";
+      });
+
+      // 마우스 클릭 중 이벤트
+      div[3].addEventListener("mousedown",(e)=>{
+        e.currentTarget.style.background = "yellow";
+      });
+      // 마우스 클릭을 끝냈을 때 이벤트
+      div[3].addEventListener("mouseup",(e)=>{
+        e.currentTarget.style.background = "none";
+      });
+    })
+  </script>
+</head>
+<body>
+  <div id="box1">클릭</div>
+  <div id="box2">더블클릭</div>
+  <div id="box3">롤오버</div>
+  <div id="box4">마우스다운업</div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>마우스 커서 따라다니는 이미지</title>
+  <style>
+    /* 커서 안보이게 */
+    * { cursor: none; }
+    img {
+      width: 50px; height: 50px;
+      position: absolute;
+      pointer-events: none; /* 마우스 대체해서 이미지를 사용할 경우 필요 */
+      /* 이미지태그가 클릭 안되도록 해줌 */
+    }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded",()=>{
+      const img = document.querySelector("img");
+      let deg = 0;
+      let moving = (e)=>{
+        img.style.top = `${e.clientY}px`;
+        img.style.left = `${e.clientX}px`;
+        deg += 5
+        img.style.transform = `rotate(${deg}deg)`
+      }
+      window.addEventListener("mousemove", moving);
+    })
+  </script>
+</head>
+<body>
+  <a href="https://www.naver.com">클릭하여 이동하시오</a>
+  <img src="./icon/icon1.png" alt="icon">
+</body>
+</html>

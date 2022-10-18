@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>resize</title>
+</head>
+<body>
+  <h1>카운팅</h1>
+  <script>
+    const heading = document.querySelector("h1");
+    let resizing = ()=>{
+      heading.innerText = window.innerWidth;
+      if(window.innerWidth>1000){
+        document.body.style.background = "pink";
+      }
+      else {
+        document.body.style.background = "lightblue";
+      }
+    }
+    // 페이지 처음 열었을때의 초기값 주기(윈도우 크기에 따라)
+    resizing();
+    // window의 창 크기가 변화할 때 이벤트
+    window.addEventListener("resize",()=>{
+      resizing();
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>asd</title>
+  <style>
+    div {
+      display: flex;
+    }
+    a {
+      margin-top: 50px;
+      padding: 0 20px;
+      text-decoration: none; color: #727272;
+      display: block;
+      border: 1px solid #000;
+      transition: 1s;
+      position: relative;
+    }
+    a::after {
+      content: "";
+      display: block;
+      width: 100px; 
+      height: 10px;
+      background: #dea5ed;
+      position: absolute;
+      bottom: 0; left: 0;
+      z-index: -1;
+    }
+    a:hover {
+      /* background: #dea5ed; */
+      color: #000;
+    }
+    @keyframes ani {
+      0% { width: 0;}
+      100% { width: 50px;}
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <a href="#">보도자료</a>
+    <a href="#">공지사항</a>
+  </div>
+</body>
+</html>

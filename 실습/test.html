@@ -4,30 +4,61 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>table</title>
+  <title>floatingMenu</title>
   <style>
-    td {border: 1px solid #000;}
+    section {
+      height: 300vh;
+    }
+    ul { position: fixed;}
+    li { list-style: none; margin: 20px;}
+    li {
+      width: 200px; height: 200px;
+      border: 1px solid #000;
+      border-radius: 20px;
+      /* transform: rotate(180deg); */
+      position: relative;
+    }
+    a {
+      display: block;
+      width: 200px; height: 200px;
+      position: absolute;
+    }
+    p {
+      position: absolute;
+      margin: 0; padding: 0;
+      top: 50%; left: 50%;
+      transform: translate(-50%,-50%);
+    }
   </style>
 </head>
 <body>
-  <table>
-    <tr>
-      <a href="#">
-      <td><a href="#">2022.09<span>30</span></a></td>
-      <td><a href="#">2022 서울뮤직페스티벌 입장 안내</a></td>
-    </tr>
-    <tr>
-      <td><a href="#">2022.09<span>22</span></a></td>
-      <td>
-        <a href="#">2022 서울뮤직 페스티벌 티켓 예매 안내
-          <p>
-            [티켓 예약 방법] 1)네이버 로그인 2)네이버 검색창에 
-            '2022 서울뮤직페스티벌' 검색 3) 예매창 클릭 후 
-            &middot;&middot;&middot;
-          </p>
+  <section id="reservation">
+    <ul>
+      <li>
+        <a href="#">
+          <p>일반좌석<br>예약하기</p>
         </a>
-    </td>
-    </tr>
-  </table>
+      </li>
+      <li>
+        <a href="#">
+          <p>피크닉석<br>예약하기</p>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <script>
+    const list = document.querySelectorAll("li");
+    const a = document.querySelectorAll("a");
+    let deg = 0;
+    window.addEventListener("wheel",(e)=>{
+      if(e.wheelDelta < 0){
+        deg += 30;
+      }
+      else deg -= 30;
+      list[0].style.transform = `rotate(${deg}deg)`;
+      list[0].children[0].style.transform = `rotate(${-deg}deg)`;
+    })
+  </script>
 </body>
 </html>
