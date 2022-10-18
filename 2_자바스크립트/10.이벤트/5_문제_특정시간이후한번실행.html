@@ -35,8 +35,8 @@
       if(n>=200) return;
       // 특정시간(ms단위) 이후 해당 함수를 한번만 실행시키는 함수
       setTimeout(function(){
-      // counting();
-      },1000)
+      counting();
+      },10)
     }
     window.addEventListener("scroll",()=>{
       if(window.scrollY >= 1000 && state == 1){

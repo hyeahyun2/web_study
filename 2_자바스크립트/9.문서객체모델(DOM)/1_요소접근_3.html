@@ -42,12 +42,13 @@
     //부모요소 : parentElement, parentNode
     console.log(rice.parentElement);
     console.log(rice.parentNode);
-    rice.parentElement.style.border = "1px solid #000";
-    // rice.parentNode.style.border = "1px solid #000";
+    // rice.parentElement.style.border = "1px solid #000";
+    rice.parentNode.style.border = "1px solid #000";
 
     // 형제요소 : nextSibling, prevSibling
     console.log(rice.nextSibling); // 출력 : #text (노드요소 -> 공백이 인식된 것)
     console.log(rice.nextSibling.nextSibling); // 출력 : <li>~~</li>
+    console.log(anchor.previousElementSibling); // 출력 : #text (노드요소 -> 공백이 인식된 것)
 
     // 현재 문서에 사용중인 node들의 이름과 해당 번호 모두 출력하기
     // 이 nodeType들을 이용해 조건식 등으로 활용 가능
