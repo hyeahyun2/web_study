@@ -53,6 +53,13 @@
     background: url(../images/ticket_icon.png) no-repeat top 30% center;
     background-color: rgb(var(--aside-basic2-color));
 }
+/* 롤오버시 배경색 변경 */
+#reservation > ul > li:nth-of-type(1) > a:hover > p {
+    background-color: rgb(var(--aside-hover-color));
+}
+#reservation > ul > li:nth-of-type(2) > a:hover > p {
+    background-color: rgb(var(--aside-hover2-color));
+}
 
 /* top 버튼 */
 .topMove {
