@@ -3,7 +3,7 @@
     justify-content: center;
     height: 100vh;
     width: 99vw;
-    padding-top: 90px;
+    padding-top: 200px;
 }
 #textbox {
     /* z-index: 8;  */
@@ -11,6 +11,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;    
+    color: white;
 }
 
 #textbox p:nth-child(2) { font-size: 27px; margin-top: 25px; }
@@ -21,15 +22,15 @@
 }
 .sec1Front-image-container img:first-child {
     bottom: -120px;
-    right: 40px;
+    right: 100px;
     width: 17%;
     height: 40%;
 }
 .sec1Front-image-container img:last-child {
-    left: 90px;
-    bottom: -120px;
-    width: 6%;
-    height: 14%;
+    left: 120px;
+    bottom: -100px;
+    width: 5vw;
+    height: 14vh;
 }
 .back-image-container {
     z-index: -1;
@@ -103,7 +104,7 @@
     position: absolute;
 }
 .sec2Front-image-container img:first-child {
-    bottom: -50px;
+    bottom: -30px;
     right: 0;
 }
 .sec2Front-image-container img:last-child {
@@ -140,6 +141,7 @@
     line-height: 40px;
     border-radius: 50px;
     font-size: 20px;
+    color: white;
 }
 .schedule_explain dl dd {
     color: black;
@@ -174,16 +176,18 @@
     height: 50vh;
     overflow: hidden;
 }
+.programs_Content li dl { color: white; }
 .programs_Content li dl dt {
     font-size: 5rem;
     font-weight: bold;
+    line-height: 70px;
 }
 .programs_Content li dl dt span {
     font-size: 4rem;
 }
 .programs_Content li dl dd {
     font-size: 1.5rem;
-    padding: 20px 0 40px;
+    padding: 40px 0 40px;
 }
 .programs_Content li ul li {
     font-size: 1.2rem;

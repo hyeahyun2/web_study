@@ -36,7 +36,7 @@ window.addEventListener("scroll",()=>{
 // 언어선택에 마우스오버시 선택창
 LangPTag.addEventListener("mouseenter",()=>{
   LangList.style.opacity = 1;
-  LangList.style.height = `300%`;
+  LangList.style.height = `60%`;
 })
 LangSelect.addEventListener("mouseleave",()=>{
   LangList.style.opacity = 0;

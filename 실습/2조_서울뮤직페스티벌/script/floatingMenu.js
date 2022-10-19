@@ -1,6 +1,15 @@
 const floatingList = document.querySelectorAll(".reservatList");
 const reservation = document.getElementById("reservation");
 const floatingATag = reservation.querySelectorAll("a");
+
+const topBtn = document.querySelector(".topMove > a");
+console.log(topBtn);
+topBtn.addEventListener("click",(e)=>{
+  e.preventDefault();
+  // 스크롤 스무스하게 올라가게
+  window.scrollTo({top: 0, behavior: 'smooth'});
+})
+
 let deg = 0;
 window.addEventListener("wheel", (e) => {
   if (e.wheelDelta < 0) {

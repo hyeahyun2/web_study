@@ -10,10 +10,12 @@
     overflow: hidden;
 }
 #header {
+    /* border: 3px solid #000; */
     text-transform: uppercase;
     max-width: 1400px; height: 120px; color: #fff;
     display: flex; 
-    justify-content: left; 
+    /* justify-content: left;  */
+    /* justify-content: first baseline; */
     /* align-items: center; */
     margin: 0 auto;
     position: relative;
@@ -25,14 +27,13 @@
     background-color: rgb(var(--nav-hover-purple-color));
 }
 
-#header > ul {}
 /* logo (hight : 87px) */
 #header > ul {
     /* border: 1px solid #000; */
     display: flex;
     justify-content: space-between;
     margin: 20px 20px 0;
-    width: 290px; height: 87px;
+    width: 20%; height: 87px;
 }
 #header > ul > li {
     margin: auto 0;
@@ -58,13 +59,16 @@
 #gnb {
     margin-top: 44px;
     height: 29px;
+    width: 70%;
+    /* border: 1px solid #000; */
 }
 #gnb > ul {
     /* border: 1px solid #000; */
     display: flex; 
     justify-content: space-around ;
     align-items: center;
-    width: 934.09px;
+    width: 90%;
+    /* width: 934.09px; */
 }
 #gnbList > li {
     flex:1;
@@ -130,15 +134,16 @@
 
 /* 언어선택 */
 #LangSelect {
+    /* border: 1px solid #000; */
     z-index: 11;
     text-transform: uppercase;
     color: #fff;
-    width: 68px; height: 20px;
-    margin-top: 60px;
-    transform: translateY(-50%);
+    width: 68px; height: 120px;
+    /* margin-top: 60px; */
+    /* transform: translateY(-50%); */
     font-size: 20px;
     position: fixed;
-    right: 10%;
+    right: 5%; top: 40px;
 }
 #LangSelect p {
     background: url(../images/sh01.png) no-repeat right center;
@@ -159,6 +164,7 @@
     text-align: center;
     font-size: 16px;
     height: 40%;
+    overflow: hidden;
 }
 #LangSelect ul li a {
     display:block;
