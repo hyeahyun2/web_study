@@ -1,143 +1,12 @@
 @charset "utf-8";
-:root {
-    --basic-purple-color: 65, 42, 102;
-    --nav-hover-purple-color : 65, 42, 102;
-    /* linear-gradient(90deg, rgba(227,67,149,1) 0%, rgba(0,174,183,1) 100%) */
-    /* --nav-scroll-color: 127, 127, 127; */
-    --aside-basic-color: 99, 171, 181;
-    --aside-basic2-color:215, 129, 105;
-    --aside-hover-color: 188, 90, 147;
-    --aside-hover2-color: 109, 42, 130;
-    --aside-top-bgColor: 65, 42, 102;
-    --aside-top-textColor:95, 171, 181;
-
-    --sect-bark-green:61, 74, 77;
-
-    --footer-basic-color: 92, 171, 181;
-
-    --basic-max-width: 1400px;
-}
-
-/* 초기화 기본식. */
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Lato', 'Noto Sans KR', sans-serif;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-fieldset,
-img {
-    border: 0;
-    margin: 0;
-    padding: 0;
-}
-
-input {
-    margin: 0;
-    padding: 0;
-    background-color: inherit;
-    border: unset;
-    color: inherit;
-    font: inherit;
-    outline: none;
-}
-
-ul,
-ol,
-li {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-table,
-th,
-td {
-    margin: 0;
-    padding: 0;
-}
-
-table {
-    border-collapse: collapse;
-}
-
-figure {
-    /* 이미지 그룹화 하는 태그 */
-    margin: 0;
-    padding: 0;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-size: unset;
-    font-weight: unset;
-    margin: 0;
-    padding: 0;
-}
-
-dl,
-dt,
-dd,
-p {
-    margin: 0;
-    padding: 0;
-}
-
-a:link,
-a:visited,
-a {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-    color: inherit;
-}
-
-address {
-    font-style: normal;
-    font-size: unset;
-    font-weight: unset;
-}
-
-small {
-    font-size: unset;
-    font-weight: unset;
-}
-
-hr {
-    display: none;
-}
-
-.hidden {
-    position: absolute;
-    left: -999999px;
-}
-
-button {
-    margin: 0;
-    padding: 0;
-    background-color: inherit;
-    border: unset;
-    color: inherit;
-    font: inherit;
-    outline: none;
-}
-
-/* 초기화 끝!!!! */
 
 /* floating Menu */
 .foating-container {
     position: fixed;
-    top: 50%; right: 0;
+    top: 42%; right: 3%;
     transform: translateY(-10%);
+    color: #fff;
+    z-index: 20;
 }
 #reservation {
     transform: translateY(-20%);
@@ -158,6 +27,7 @@ button {
     width: 192px; height: 192px;
     position: relative;
     border-radius: 100%;
+    /* transition: 0.1s; */
 }
 #reservation > ul > li:nth-of-type(1) > a {
     background: url(../images/ticket_circle.png) no-repeat center / contain;
@@ -166,15 +36,41 @@ button {
     background: url(../images/ticket_circle_2.png) no-repeat center / contain;
 }
 #reservation > ul > li > a > p {
+    /* border: 1px solid #000; */
     width: 150px; height: 150px;
     border-radius: 100%;
     text-align: center;
     position: absolute;
     top: 21px; left: 21px;
+    vertical-align: 30px;
+    padding-top: 45%;
 }
 #reservation > ul > li:nth-of-type(1) > a > p {
-    background: rgb(var(--aside-basic-color));
+    background: url(../images/ticket_icon.png) no-repeat top 30% center;
+    background-color: rgb(var(--aside-basic-color));
 }
 #reservation > ul > li:nth-of-type(2) > a > p {
-    background: rgb(var(--aside-basic2-color));
+    background: url(../images/ticket_icon.png) no-repeat top 30% center;
+    background-color: rgb(var(--aside-basic2-color));
+}
+
+/* top 버튼 */
+.topMove {
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+}
+.topMove > a {
+    display: block;
+    border-radius: 100%;
+    width: 110px; height: 110px;
+    background: url(../images/topBtnArrow.png) no-repeat top 30% center;
+    background-color: rgb(var(--aside-top-bgColor));
+    text-align: center;
+    line-height: 150px;
+    color: rgb(var(--aside-top-textColor));
+}
+.topMove > a > span {
 }

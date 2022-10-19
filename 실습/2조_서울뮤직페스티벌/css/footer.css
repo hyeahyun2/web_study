@@ -1,0 +1,53 @@
+#footer {
+    background: #00aeb7;
+    width: 100%;
+    height: 40vh;
+    position: relative;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#footer > .wave {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    background: url(../images/g_wave.png) no-repeat 0 bottom / 100% 6vw; 
+    top: -99px;
+    left: 0;
+}
+
+#footer > div.title_logo {
+    margin-right: 4rem;
+    width: 80px;
+    height: 84px;
+    background:url(../images/smf_logoW.png) no-repeat;
+}
+#footer > div > div.infoWrap {
+    margin-right: 4rem;
+}
+#footer > div > div.infoWrap > * {
+    color: white;
+    font-weight: 500;
+    line-height: 200%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

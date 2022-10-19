@@ -1,0 +1,34 @@
+@charset "utf-8";
+/* 초기화 */
+* { margin: 0; padding: 0; text-align: center;}
+li { list-style: none;}
+
+/* 슬라이더 */
+h1 {}
+#sliderWrap {
+  overflow: hidden;
+}
+#sliderList {
+  display: flex;
+}
+#sliderList li {
+  width: 100%; height: 500px;
+  font-size: 100px;
+  color: #fff;
+}
+#sliderList li.list1 {
+  background: #27ad78;
+}
+#sliderList li.list2 {
+  background: #673dc0;
+}
+#sliderList li.list3 {
+  background: #4aacd7;
+}
+
+/* btnList */
+#btnList {}
+#btnList button {
+  margin: 50px 20px 0;
+  font-size: 30px;
+}
