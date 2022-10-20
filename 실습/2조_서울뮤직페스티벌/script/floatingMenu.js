@@ -11,14 +11,25 @@ topBtn.addEventListener("click",(e)=>{
 })
 
 let deg = 0;
+let Y = window.scrollY;
 window.addEventListener("wheel", (e) => {
-  if (e.wheelDelta < 0) {
-    // console.log(list[0]);
-    deg += 10;
+  // 현재 문서의 총 길이
+  let lastY = document.body.scrollHeight - window.innerHeight;
+  // console.log(Y);
+  // console.log(lastY);
+  // console.log(window.scrollY);
+  if(window.scrollY != 0 && window.scrollY <= lastY){
+    if (e.wheelDelta < 0) {
+      // console.log(list[0]);
+      deg += 10;
+    }
+    else deg -= 10;
+    floatingATag.forEach(element => {
+      element.style.transform = `rotate(${deg}deg)`;
+      element.style.transition = "0.2s";
+      element.children[0].style.transform = `rotate(${-deg}deg)`;
+      element.children[0].style.transition = "0.2s";
+    });
+    Y = window.scrollY;
   }
-  else deg -= 10;
-  floatingATag.forEach(element => {
-    element.style.transform = `rotate(${deg}deg)`;
-    element.children[0].style.transform = `rotate(${-deg}deg)`;
-  });
 })

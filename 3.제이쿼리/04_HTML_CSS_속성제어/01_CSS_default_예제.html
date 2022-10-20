@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title></title>
+<!-- jQuery library -->
+<script src="jquery-1.7.2.min.js"></script>
+</head>
+<body>
+
+	<div>test</div>
+
+	<!---------- jQuery code Start ---------->
+	<script>
+		// $("div").css("width","100px").css("backgroundColor","yellow");
+		// css속성 여러개 한번에 적용하기
+		$("div").css({
+			width:"200px", // 속성명 -> ""생략 가능, 생략할때는 (-)가 없어야됨
+			"height": 200, // 속성값 -> "" 생략할 때 px단위 생략해서 작성
+			"background-color": "yellow", // px단위가 아닌 속성값은 "" 생략 불가
+			border: "1px solid #000",
+			padding: 10,
+			margin: 10,
+			fontSize: "50px", // font-size
+			lineHeight : 2 // 단위를 생략하면 배수 단위로 입력됨(font-size의 배수)
+			// -> lineHeight의 단위는 생략하지않거나, 생략한다면 배수단위로 적어야됨!!
+		});
+		console.log($("div").css("width"));
+		console.log($("div").css("line-height"));
+
+		// 밑의 명령어들 -> 모두 number타입
+		console.log($("div").width()); // 해당요소의 너비
+		console.log($("div").innerWidth()); // 너비(padding포함) 
+		console.log($("div").outerWidth()); // 너비 (padding + border 포함)
+		console.log($("div").outerWidth(true)); // 너비(padding + border + margin 포함)
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title> addClass() </title>
+<script src="jquery-1.7.2.min.js"></script>
+<style>
+ 
+	img { padding:5px; background:#666;}
+
+	img.type1 { padding:5px; background: orange;}
+	img.type2 { padding:5px; background: blue;}
+	img.type3 { padding:5px; background: pink;}
+  
+</style>
+</head>
+
+<body>
+	<img src="th1.jpg" alt="" />
+	<img src="th2.jpg" alt="" />
+	<img src="th3.jpg" alt="" />
+
+	<!---------- jQuery code Start ---------->
+
+	<script>
+		// 이미지 클릭시 클래스 type1을 추가하고,
+		// 이미지 한개씩 type1이 추가되도록 하시오
+
+		// const imgTag = document.querySelectorAll("img");
+		// imgTag.forEach(element => {
+		// 	element.addEventListener("click",(e)=>{
+		// 		for(let i of imgTag){
+		// 			i.classList.add("type1");
+		// 		}
+		// 	})
+		// });
+
+		// $(this) 활용
+		 // img태그를 클릭하면
+		$("img").on("click", function(){
+			// img태그(중복태그 모두) 적용됨
+			// .addClass() = .classList.add()
+			// $("img").addClass("type1");
+
+			// 클릭한 대상만 바꾸고 싶을 때 -> $(this) 사용
+			$(this).addClass("type1");
+		})
+
+	</script>
+</body>
+</html>

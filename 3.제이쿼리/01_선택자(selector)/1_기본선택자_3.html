@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>제이쿼리 선택자</title>
+  <script src="../jquery-3.6.1.min.js"></script>
+</head>
+<body>
+  <div>
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+    </ul>
+    <ul>
+      <li>6</li>
+      <li>7</li>
+      <li>8</li>
+      <li>9</li>
+      <li>10</li>
+    </ul>
+  </div>
+  
+  <script>
+    // gt : great than
+    // gt(인덱스번호) : 해당 인덱스번호의 뒤에 있는 형제요소 모두 (css에서 ~선택자)
+    // $("ul li:gt(6)").css("background","yellow")
+    //   .css("border","1px solid #000");
+    // // lt : 
+    // // lt(인덱스번호) : 해당 인덱스 번호의 앞에 있는 형제요소 모두
+    // $("ul li:lt(5)").css("background", "green")
+    //   .css("border","1px solid #f00")
+
+    // // 인덱스번호 홀수
+    // $("ul li:odd").css("background","green");
+    // // 인덱스번호 짝수
+    // $("ul li:even").css("background","yellow");
+
+    // 해당 인덱스번호(여기선 5)를 제외한 모든 요소에 해당
+    $("ul li:not(:eq(5))").css("background","green");
+
+  </script>
+</body>
+</html>

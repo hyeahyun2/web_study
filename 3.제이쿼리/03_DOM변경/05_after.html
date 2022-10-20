@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title> after( )  </title>
+<!-- jQuery library -->
+<script src="jquery-1.7.2.min.js"></script>
+</head>
+<body>
+
+<div id="container">형제를 만들어주세요</div>
+
+<!---------- jQuery code Start ---------->
+<script>
+	// .after() : 선택된 요소 뒤에 새로운 노드(형제태그) 추가 / (요소) 이동
+	$("#container").after("<p>추가될 형제입니다</p>");
+	// .before() : 해당 요소(#container)의 앞으로 이동
+	$("#container").before($("p"));
+	
+	// 해당요소.before(옮길대상) , 해당요소.after(옮길대상)
+	// 옮길대상(요소) or 추가할 요소
+</script>
+
+</body>
+</html>

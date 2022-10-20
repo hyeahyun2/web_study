@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title> addClass_removeClasss </title>
+<script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+<style>
+	img { padding:5px; background:#666; }
+
+	img.type1 { padding:5px; background: orange; }
+	img.type2 { padding:5px; background: blue; }
+	img.type3 { padding:5px; background: pink; }
+	
+	img.type5 { background: green; }
+
+</style>
+</head>
+
+<body>
+
+	<img src="th1.jpg" alt="" class="type1" />
+	<img src="th2.jpg" alt="" class="type2" />
+	<img src="th3.jpg" alt="" class="type3" />
+
+	<!---------- jQuery code Start ---------->
+
+	<script>
+
+		// 클릭한 이미지의 클래스만 삭제
+		// 동시에 클래스 type5를 추가하시오
+		$("img").on("click",function(){
+			// 모든 img태그의 클레스명을 삭제
+			// $("img").removeClass();
+			// 모든 img태그의 클래스명 중 type2만 삭제
+			// $("img").removeClass("type2");
+			// 이벤트가 발생한 태그의 class명만 삭제
+			// $(this).removeClass();
+			// 적용되어있는 class명 삭제 후 새로운 class명 적용
+			$(this).removeClass().addClass("type5");
+		})
+		
+
+	</script>
+</body>
+</html>

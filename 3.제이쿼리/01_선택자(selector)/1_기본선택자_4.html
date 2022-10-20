@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>제이쿼리 선택자</title>
+  <script src="../jquery-3.6.1.min.js"></script>
+  <style>
+    p {
+      height: 20px; border: 1px solid #000;
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li>apple</li>
+    <li>banana</li>
+    <li>grape</li>
+    <li></li>
+    <li>lion</li>
+    <li>fox</li>
+    <li>tiger</li>
+  </ul>
+  <p></p>
+  <p><span>내용있음</span></p>
+  <script>
+    // :conations(조건식) : 조건문
+    // ap라는 문자열을 가지고있는(contaions) li(해당태그)
+    $("ul li:contains(ap)").css("background","orange");  
+    // :has(자식태그명) : 조건문, 태그요소를 판별
+    // p태그가 자식태그span을 가지고 있다면
+    $("p:has(span)").css("background","lightgreen");
+    // :empty : 해당 태그가 비어있다면
+    $('ul li:empty').css("background","black");
+    // 해당 태그가 비어있는 태그가 아니라면!
+    $('ul li:not(:empty)').css("color","red");
+    // $('ul li:parent').css("color","blue"); // :parent = :not(:empty)
+    
+  </script>
+</body>
+</html>

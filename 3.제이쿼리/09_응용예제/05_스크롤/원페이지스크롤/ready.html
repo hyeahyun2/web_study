@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+
+<title> one page scroll </title>
+
+<script src="js/jquery-1.7.2.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+
+<style>
+	/********************** navi**********************/
+	*{margin:0px; padding:0px;}
+
+	#navigation{
+		position:fixed; 
+		top:0px;
+		left:0px;
+		height:80px;
+		width:100%; 
+		min-width:700px;
+		background:#000;	  
+		text-align:center;
+		font-size:14px;
+	}
+	#navigation ul { list-style:none; margin-top:50px; }		   		
+	#navigation li {display:inline; margin-right:10px;}
+	#navigation li a { text-decoration:none; color:#FFF;}
+	#navigation li a:hover {color:#0F0;}
+
+	#wrap {width:800px;margin:0 auto;margin-top:80px;  }
+	#red{background:red; height:700px;}
+	#blue{background:blue; height:700px;}
+	#yellow{background:yellow; height:700px;}
+	#black{background:black; height:700px;}
+
+</style>
+</head>
+
+<body>
+
+	<div id="navigation">
+		<ul>
+			<li><a href="#red"> RED </a> </li>
+			<li><a href="#blue"> BLUE </a> </li>
+			<li><a href="#yellow"> YELLOW </a> </li>
+			<li><a href="#black"> BLACK </a> </li>
+		</ul>
+	</div>
+
+	<div id="wrap">
+		<div id="red">red</div>
+		<div id="blue">blue</div>
+		<div id="yellow">yellow</div>
+		<div id="black">black</div>
+	</div>
+	
+	
+	<script>
+	
+		/* 할 일 목록
+		
+		Tip1. 요소가 이동하는 것이 아니라 요소의 위치로 스크롤이 움직이는 것
+				position()과 scrollTop 속성을 이용
+				
+		*/
+		$("ul li a").click( function() {
+		
+			
+			
+			
+			
+			
+			return false;
+			   
+		});
+
+
+	</script>
+
+</body>
+</html>
+

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title> parent </title>
+<!-- jQuery library -->
+<script src="jquery-1.7.2.min.js"></script>
+
+<style>
+	div, p {float:left;margin:10px; }
+	div#sub { width:100px; height:100px; border:1px solid #000;}
+	p { width:50px; height:50px; border:1px solid #000;}
+</style>
+</head>
+<body>
+
+	<div id="container">
+
+		<div id = "sub">
+			<p>div p</p>
+		</div>
+		<p id="part1">p</p>
+		<p>p</p>
+		<p>p</p>
+
+	</div>
+	
+	<!---------- jQuery code Start ---------->
+	<script>
+
+		// id 값이 part1인 p 태그의 부모 노드를 선택하시오
+		// find, children, prev, nextm siblings, parent : 탐색 명령어
+		// (중복사용 가능)
+		// .find("하위태그명") : 앞에 불러온 태그 중에서 해당되는 하위 태그만
+		// $("#container p").css("background","orange");
+		// $("#container").find("p").css("background","orange");
+
+		//.children("자식요소") : 해당태그의 자식요소만 
+		// $("#container > p").css("background","orange");
+		// $("#container").children("p").css("background","orange");
+
+		// .next() : 해당태그의 다음 요소 (형제요소 중에서)
+		// $("#part1").next().next().css("background","orange");
+		// .prev() : 해당태그의 이전 요소 (형제요소 중에서)
+		// $("#part1").prev().css("background","yellow");
+
+		// .siblings() : 해당태그의 형제요소 모두 선택
+		// .siblings("태그명") : 형제요소 중 해당 태그명을 갖고 있는 요소 모두 선택
+		// $("#part1").siblings("p").css("background","blue");
+
+		// .parent() : 해당 요소의 바로 위의 부모 요소 선택
+		$("#part1").parent().css("border","2px solid #f00");
+		// .parents() : 해당 요소의 부모 요소 모두 선택(여기선 div#container, body .. 이렇게)
+		// $("#part1").parents().css("border","2px solid #f00");
+
+		// :eq() = .eq() 같은 의미, :first = .first() , :last = .last()
+		// $("#container p:eq(2)").css("background","yellow");
+		// $("#container p").eq(2).css("background","yellow");
+		// $("#container p").first().css("background","yellow");
+		// $("#container p").last().css("background","yellow");
+		
+		// :not() = .not()
+		$("#container p").not("#part1").css("background","yellow");
+		
+	</script>
+	
+	
+	
+	
+
+</body>
+</html>

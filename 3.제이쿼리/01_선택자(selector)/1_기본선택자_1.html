@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>기본선택자</title>
+  <script src="../jquery-3.6.1.min.js"></script>
+</head>
+<body>
+  <div id="wrap">
+    <h1>제목</h1>
+    <p class="text">문단1</p>
+    <p class="text">문단2</p>
+  </div>
+  <script>
+    // 스타일시트 적용 방법
+    // .css(스타일속성명, 스타일속성값)
+    $("#wrap").css("border","1px solid #000");
+    $("#wrap > h1").on("click", function(){
+      // $(this) : 이벤트가 발생한 해당태그를 가르키는 명령어
+      $(this).css("color","red");
+      // 이벤트가 발생한 해당태그의 자식태그(여기선 class명으로 선택)
+      $(".text").css("background","pink");
+    })
+
+    $("p:first-of-type").on("click", function(){
+      // next() : 이벤트가 발생한 태그의 바로 다음 태그(형제요소)
+      $(this).next().css("font-size","30px");
+    })
+  </script>
+</body>
+</html>

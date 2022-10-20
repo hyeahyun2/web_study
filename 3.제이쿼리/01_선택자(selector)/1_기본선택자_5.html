@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>제이쿼리 선택자</title>
+  <script src="../jquery-3.6.1.min.js"></script>
+</head>
+<body>
+  <ul>
+    <li style="display: none;">apple</li>
+    <li>banana</li>
+    <li>grape</li>
+  </ul>
+
+  <script>
+    // :hidden : 감춰진 요소(display: none 처리 되어있는 요소)
+    // .show(지속시간) : 보여지게 하는 명령어(애니메이션 명령어)
+    //        지속시간 ms단위, ()안에 비우면 즉시실행
+    $("ul li:hidden").show(1000);
+    // :visible : 보여지고 있는 요소
+    // .hide(지속시간) : [display: none] 처리
+    $("ul li:visible").hide(1000);
+  </script>
+</body>
+</html>

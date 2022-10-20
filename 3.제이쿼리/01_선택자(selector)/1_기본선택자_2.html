@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>제이쿼리 선택자</title>
+  <script src="../jquery-3.6.1.min.js"></script>
+</head>
+<body>
+  <div>
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+    </ul>
+    <ul>
+      <li>6</li>
+      <li>7</li>
+      <li>8</li>
+      <li>9</li>
+      <li>10</li>
+    </ul>
+  </div>
+
+  <script>
+    // $("ul li:first-child").css("background", "yellow");
+    // eq : equre(같다 =), eq(인덱스번호)
+    $("ul li:eq(0)").css("background","orange");
+    // ul태그(2개)의 모든 li태그중에 몇번?(여기선 0~9번까지 있음)
+    $("ul li:eq(9)").css("background","orange");
+    // 모든 li 중에 첫번째(인덱스번호 = 0)
+    $('ul li:first').css("font-size","30px");
+    // 모든 li 중에 마지막(인덱스번호 = 9)
+    $("ul li:last").css("font-size","30px");
+  </script>
+</body>
+</html>

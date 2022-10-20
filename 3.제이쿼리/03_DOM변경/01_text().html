@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title> text() </title>
+<script src="../jquery-3.6.1.min.js"></script>
+</head>
+<body>
+
+	<div id = "intro">
+		<p> intro 입니다.</p>
+	</div>
+
+	<div id = "main">
+		<p>여기는 main 입니다.</p>
+		<p><img src='sample1.jpg'/></p>
+	</div>
+
+	<!---------- jQuery code Start ---------->
+	<script>
+
+		// #intro의 텍스트값을 변수에 저장
+		// let intro = $("#intro").text();
+		// console.log(intro);
+		// let main = $("#main").text();
+		// console.log(main);
+
+		// 변수와 해당태그에 text값 바꾸기 -> #intro 안에 있는 모든 요소 삭제 후 text값 바뀜
+		// intro = $("#intro").text("여기는 main 입니다.");
+		// main = $("#main").text("여기는 intro입니다");
+		
+		// main = $("#main").text($("#intro").text());
+		main = $("#main").text(intro); // text값을 담은 변수를 바로 사용 가능
+
+		// const intro = document.getElementById("intro");
+		// const main = document.getElementById("main");
+		// main.innerText = intro.innerText;
+
+	</script>
+
+
+
+
+
+
+</body>
+</html>

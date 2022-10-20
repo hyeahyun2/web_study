@@ -10,13 +10,9 @@
     overflow: hidden;
 }
 #header {
-    /* border: 3px solid #000; */
     text-transform: uppercase;
     max-width: 1400px; height: 120px; color: #fff;
     display: flex; 
-    /* justify-content: left;  */
-    /* justify-content: first baseline; */
-    /* align-items: center; */
     margin: 0 auto;
     position: relative;
 }
@@ -29,26 +25,21 @@
 
 /* logo (hight : 87px) */
 #header > ul {
-    /* border: 1px solid #000; */
     display: flex;
     justify-content: space-between;
     margin: 20px 20px 0;
-    width: 20%; height: 87px;
+    height: 87px;
 }
 #header > ul > li {
     margin: auto 0;
     height: 87px; 
+    display: flex; 
+    align-items: center;
 }
 #header > ul > li > a{ display: block; text-indent: -9999px; }
-#header > ul > li:nth-of-type(1) { 
-    width: 110px; height: 86px;
-}
 #header > ul > li:nth-of-type(1) > a {
     width: 110px; height: 86px;
     background: url(../images/logo.png) no-repeat left center / cover;
-}
-#header > ul > li:nth-of-type(2) { 
-    width: 125px; height: 33px;
 }
 #header > ul > li:nth-of-type(2) > a {
     width: 125px; height: 33px;
@@ -60,15 +51,12 @@
     margin-top: 44px;
     height: 29px;
     width: 70%;
-    /* border: 1px solid #000; */
 }
 #gnb > ul {
-    /* border: 1px solid #000; */
     display: flex; 
     justify-content: space-around ;
     align-items: center;
     width: 90%;
-    /* width: 934.09px; */
 }
 #gnbList > li {
     flex:1;
@@ -81,7 +69,6 @@
 #gnbList > li > a {
     width: 100%;
     text-align: center;
-    /* display: block; */
 }
 /* 롤오버시 글자색 그라데이션색으로 */
 #gnbList > li:hover > a {
@@ -107,14 +94,8 @@
 }
 .snb li:hover { color : #fff; }
 .snb li a {
-    /* display: block; */
 }
 
-/* 서브메뉴 롤오버 */
-/* #headerWrap:hover {
-    height: 400px;
-    background-color: rgb(var(--nav-hover-purple-color));
-} */
 #headerWrap:hover #header {
     height: 400px;
     background: url(../images/header_img.png) no-repeat left 5% bottom 30%;
@@ -134,13 +115,10 @@
 
 /* 언어선택 */
 #LangSelect {
-    /* border: 1px solid #000; */
     z-index: 11;
     text-transform: uppercase;
     color: #fff;
     width: 68px; height: 120px;
-    /* margin-top: 60px; */
-    /* transform: translateY(-50%); */
     font-size: 20px;
     position: fixed;
     right: 5%; top: 40px;
@@ -150,7 +128,6 @@
 }
 #LangSelect ul {
     width: 100%;
-    /* width: 68px; */
     position: absolute;
     top: 40px; left: 0;
     background: #fff; color: #000;
@@ -169,7 +146,3 @@
 #LangSelect ul li a {
     display:block;
 }
-/* #LangSelect:hover ul {
-    opacity: 1;
-    height: 300%;
-} */

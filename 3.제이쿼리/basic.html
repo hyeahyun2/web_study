@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>기본문법</title>
+  <!-- jquery코드 쓰기 위한 import파일? 비슷한? -->
+  <script src="./jquery-3.6.1.min.js"></script>
+  <!-- jquery를 html파일에 적용하고 jquery를 사용한 js파일을 따로 불러와도 사용가능 -->
+  <script src="./common.js" defer></script> 
+  <script>
+    // body위에 스크립트를 사용했을 때 사용되게 하는 명령어
+    // = document가 준비 됐을 때 function을 실행해라
+    // jQuery(document).ready(function(){ // 방법1
+    // $(document).ready(function(){ // 방법2
+    // $(function(){ // 방법3 (가장 간단!)
+    //   $("button").on("click", function(){
+    //   alert("Hello!!!")
+    // })
+    // })
+    
+  </script>
+</head>
+<body>
+  <button>클릭</button>
+  <script>
+      // $(버튼태그)의 on~ 이벤트(addEvent~~의 옛날문법) (이벤트발생조건, 함수)
+      // $("button").on("click", function(){
+      //   alert("Hello!!");
+      // })
+
+      //// java script에서의 문법 ////
+      // const btn = document.querySelector("button");
+      // btn.addEventListener("click",()=>{
+      //   alert("Hello!");
+      // });
+  </script>
+</body>
+</html>

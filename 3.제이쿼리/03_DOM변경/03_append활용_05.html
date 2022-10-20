@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title> append()활용  </title>
+<!-- jQuery library -->
+<script src="jquery-1.7.2.min.js"></script>
+
+<style>
+	div {border:1px  solid #00F;}
+</style>
+</head>
+ 
+<body>
+
+	<button id ="append"  title="append">append</button>
+
+	<div id="container"></div>	
+
+	<!---------- jQuery code Start ---------->
+	<script>
+		
+		// 버튼을 클릭할 때 div#container 내부에 랜덤이미지 추가하기
+		
+		
+		$("#append").on("click", function(){
+			let randomFun = Math.ceil(Math.random()*3);
+			console.log(randomFun);
+			$("#container").append(`<img src='pic${randomFun}.jpg' alt='' width='100' />`);
+		})
+
+	</script>
+	
+	
+	
+	
+
+</body>
+</html>
