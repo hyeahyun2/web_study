@@ -1,4 +1,8 @@
 @charset "utf-8";
+:root {
+  --gnbView-backColor: #fff;
+  --gnbList-after-content: "+";
+}
 
 /* 크기 1280px 이상 */
 @media all and (min-width: 1280px) {
@@ -8,8 +12,24 @@
   }
 }
 
-/* 크기 1279px 이하 */
+/* 크기 770px ~ 1279px */
+/* and (min-width: 770px) */
 @media all and (max-width: 1279px) {
+  /* header */
+  #headerWrap {
+    overflow: visible;
+    height: 80px;
+  }
+  #header {
+    height: 80px;
+  }
+  #headerWrap:hover::before {
+    display: none;
+  }
+  #headerWrap:hover #header {
+    background-image: unset;
+    height: 80px;
+  }
   /* logo */
   #header > ul {
     width: 150px;
@@ -24,10 +44,6 @@
     background-size: 61px;
   }
 
-  /* header */
-  #headerWrap {
-    overflow: visible;
-  }
   /* gnb */
   .gnbView { 
     display: block;
@@ -35,44 +51,93 @@
     width: 30px; height: 20px;
     border-top: 2px solid #fff;
     border-bottom: 2px solid #fff;
+    z-index: 40;
+    transition: 0.2s;
   }
   .gnbView::after {
     content: ""; 
     position: absolute; 
     top: 7px;
     width: 100%; height: 2px;
-    background: #fff;
+    background: var(--gnbView-backColor);
     transition: 0.2s;
   }
-
   #gnb {
-    /* border: 1px solid #000; */
-    background-color: #5c74e2;
+    background-color: #ffffff;
     z-index: 30;
     width: 350px;
     height: 100%;
     margin-top: 0;
     position: fixed;
     top: 0;
-    right: 0;
+    right: -350px;
+    transition: 0.5s;
   }
-  
   #gnb > ul {
+    /* border: 1px solid #000; */
+    width: 100%;
     flex-direction: column;
     margin-top: 80px;
   }
-
-  #gnb > ul > li {
+  #gnbList > li {
     width: 100%;
     color: #000;
-    border-top: 2px solid #b8b8b8;
+    border-top: 2px solid #d5d5d5;
     font-size: 24px;
-    padding: 5%;
+    padding: 4%;
+    flex-wrap: wrap;
+  }
+  #gnbList > li::after {
+    content: var(--gnbList-after-content);
+    font-size: 30px;
+    position: absolute; right: 5%; top: 5%;
+    cursor: pointer; /* 롤오버시 마우스 포인터모양 */
+  }
+  #gnbList > li:first-of-type::after {
+    content: "";
+  }
+  #gnbList > li > a {
+    text-align: left;
+    display: contents;
   }
   #gnb > ul > li:first-of-type {
     font-size: 20px;
   }
+  #gnbList > li:hover > a {
+    background: none;
+    -webkit-text-fill-color: #000;
+  }
+  /* #gnbList > li:hover .snb {
+    height: auto;
+  } */
   
+  /* 서브메뉴 snb */
+  .snb {
+    color: #5b5b5b;
+    font-size: 18px;
+    margin: 0;
+    position: relative;
+    top: 10px;
+    transition: 0.5s;
+    margin-bottom: 10px;
+    /* 클릭시 나타나게 */
+    height: 0;
+    overflow: hidden;
+  }
+  .snb li {
+    text-align: left;
+    width: 100%;
+    border-top: 1px solid #d5d5d5;
+    padding: 2%;
+    /* border: 2px solid #000; */
+    /* display: none; */
+    /* overflow: hidden; */
+  }
+  .snb li:hover { color : #5b5b5b; }
+  .snb li a {
+    display: block;
+    width: 100%;
+  }
   /* 언어선택 */
   #LangSelect {
     width: 51px;
@@ -80,5 +145,20 @@
   }
   #LangSelect p {
     background-size: 10px;
+    transition: 0.5s;
   }
+
+}
+
+/* 크기 770px 이하 */
+@media all and (max-width: 769px) {
+
+  #gnb {
+    z-index: 30;
+    width: 45vw;
+  }
+  #gnbList > li {
+    font-size: 18px;
+  }
+
 }
