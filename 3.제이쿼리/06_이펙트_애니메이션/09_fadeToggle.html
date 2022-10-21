@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title> fadeToggle() </title>
 <!-- jQuery library -->
-<script src="jquery-1.7.2.min.js"></script>
+<script src="../jquery-3.6.1.min.js"></script>
 </head>
 <body>
 
@@ -15,17 +15,12 @@
 	
     <!---------- jQuery code Start ---------->
     <script >
-	
         // fadeToggle()을 이용한 투명애니메이션 적용하기
+        
+        $("#fade").on("click", function(){
+            $("p img:not(:animated)").fadeToggle(1000);
+        })
 
-
-	
     </script>
-
-
-
-
-
-	
 </body>
 </html>

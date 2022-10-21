@@ -3,11 +3,12 @@
 <head>
     <meta charset="utf-8">
     <title>live()</title>
-    <script src="jquery-1.7.2.min.js"></script>
+    <script src="../jquery-3.6.1.min.js"></script>
 </head>
 <body>
 
     <button>li 요소를 추가</button>
+    <button>스크립트 막기</button>
 
     <ul>
         <li><a href="flower.jpg"> 꽃</a></li>
@@ -19,12 +20,49 @@
 
     <!---------- jQuery code Start ---------->
     <script type="text/javascript">
+        // 리스트 클릭시 해당되는 이미지로 변경
+        // $("ul li").on("click", function(e){
+        //     e.preventDefault();
+        //     let liImg = $(this).children("a").attr("href");
+        //     let liText = $(this).children("a").text();
+        //     $("p img").attr({src: liImg, alt: liText});
+        // })
 
         // 버튼 클릭시 건물이미지 리스트를 추가하고, a 이벤트가 적용되도록
 
+        // .one : 스크립트의 기능을 단 한번 실행
+        // $("ul li").one("click", function(e){
+        //     e.preventDefault();
+        //     let liImg = $(this).children("a").attr("href");
+        //     let liText = $(this).children("a").text();
+        //     $("p img").attr({src: liImg, alt: liText});
+        // })
 
+        // // .off() : 이벤트 스크립트기능을 정지시킴
+        // $("button:eq(1)").on("click", function(){
+        //     $("ul li").off();
+        // })
 
-       
+        // 이벤트 스크립트를 라이브로(후에 이벤트발생대상이 추가되더라도 적용됨)
+        // .live -> 구문법(최신버전은 사용 안됨)
+        // $("ul li").live("click", function(e){
+        //     e.preventDefault();
+        //     let liImg = $(this).children("a").attr("href");
+        //     let liText = $(this).children("a").text();
+        //     $("p img").attr({src: liImg, alt: liText});
+        // })
+
+        // 다른 방법 (지금 사용)
+        // $(document).on("이벤트방법", "이벤트발생대상", function(){})
+        $(document).on("click", "li a", function(e){
+            e.preventDefault();
+            let liImg = $(this).attr("href");
+            let liText = $(this).text();
+            $("p img").attr({src: liImg, alt: liText});
+        })
+        $("button:eq(0)").one("click", function(){
+            $("ul").append(`<li><a href="building.jpg">빌딩</a></li>`);
+        })
 
     </script>
 

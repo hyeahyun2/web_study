@@ -6,37 +6,79 @@
 <style type="text/css">
 	dl { width: 300px; margin: 30px auto 0px; }
 	dl dt { padding:10px; background: #b677ff; cursor:pointer; }
-	dl dd { border: 1px solid #b677ff; height: 100px; 
-			    margin:0; padding:10px; }
+	dl dd { 
+		border: 1px solid #b677ff; height: 100px; 
+		margin:0; padding:10px; }
+	dl dt {
+		border-bottom: 1px solid #fff;
+	}
+	dl dd {
+		display: none;
+	}
 </style>
 <!-- jQuery library -->
 <script src="jquery-1.7.2.min.js"></script>
 </head>
 <body>
-
 		<dl>
 			<dt>슬라이딩 효과로 표시상태를 변경한다</dt>
 			<dd>slideDown()/slideUp()는 show()/hide() 와는 
 					다른 슬라이딩 애니메이션 효과로 
 					표시/비표시를 변경하는 명령입니다.
 			</dd>
+			<dt>슬라이딩 효과로 표시상태를 변경한다</dt>
+			<dd>slideDown()/slideUp()는 show()/hide() 와는 
+					다른 슬라이딩 애니메이션 효과로 
+					표시/비표시를 변경하는 명령입니다.
+			</dd>
+			<dt>슬라이딩 효과로 표시상태를 변경한다</dt>
+			<dd>slideDown()/slideUp()는 show()/hide() 와는 
+					다른 슬라이딩 애니메이션 효과로 
+					표시/비표시를 변경하는 명령입니다.
+			</dd>
 		</dl>
-		
-		
-		
+
 	<!---------- jQuery code Start ---------->
 	<script type="text/javascript">
+		const dtList = document.querySelectorAll("dt");
+		const ddList = document.querySelectorAll("dd");
+		// let ddType = "none";
+		// dtList.forEach(element => {
+		// 	element.addEventListener("click", (e)=>{
+		// 		let ddType = e.currentTarget.nextElementSibling.style.display;
+		// 		if(ddType == "none"){
+		// 			e.currentTarget.nextElementSibling.style.display = "block";
+		// 			ddType = "block"
+		// 		}
+		// 		else {
+		// 			e.currentTarget.nextElementSibling.style.display = "none";
+		// 			ddType = "none"
+		// 		}
+		// 	})
+		// });
+
+		// dtList.forEach((dt)=>{
+		// 	dt.addEventListener("click", (e)=>{
+		// 		let nextSb = dt.nextSibling.nextSibling;
+		// 		let state = nextSb.style.display;
+		// 		if(state==""|| state=="none"){
+		// 			ddList.forEach((dd)=>{
+		// 				dd.style.display = "none";
+		// 			})
+		// 			nextSb.style.display = "block";
+		// 		}
+		// 		else {
+		// 			nextSb.style.display = "none";
+		// 		}
+		// 	})
+		// })
 		
-        // dt 클릭시 dd가 슬라이드 업/다운을 순차적으로 실행하도록
-
-
+		// .slideToggle(지속시간) : .slideUp() + .slideDown() 합한 명령어
+		$("dl dt").on("click", function(){
+			$(this).next("dd:not(:animated)").slideToggle(500);
+			$("dl dd").not($(this).next()).slideUp(500);
+		})
 		
 	</script>
-
-
-
-
-
-		
 </body>
 </html>

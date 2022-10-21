@@ -1,7 +1,7 @@
 .sect5 {
-    padding-top: 3rem;
+    padding-top: 5rem;
     width: 100%;
-    height: 80vh;
+    height: 75vh;
     /* background-color: white; */
     position: relative;
 }
@@ -20,18 +20,18 @@
 /* ================================================== */
 .sect5 > .front-image-container {
     position: absolute;
-    bottom: 0;
+    bottom: -5vw;
     left: 3%;
 
 }
 .sect5 > .front-image-container > img {
-    height: 20rem;
+    height: 20vw;
 }
 
 /* ================================================== */
 
 .sect5 > .notice_post {
-    width: 1100px;
+    width: 80%;
     margin: 0 auto;
     align-items: center;
     display: flex;

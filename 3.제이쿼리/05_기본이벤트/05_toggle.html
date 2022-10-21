@@ -3,24 +3,48 @@
 <head>
 <meta charset="utf-8">
 <title>toggle()</title>
-<script src="jquery-1.7.2.min.js"></script>
+<script src="../jquery-3.6.1.min.js"></script>
+<script src="../jquery-migrate-1.4.1.min.js"></script>
 </head>
 <body>
-
 	<button>화면을 변경</button>
-
 	<p><img src="flower.jpg" alt="꽃" /></p>
 	
 	
 	<!---------- jQuery code Start ---------->
 	<script type="text/javascript">
-
 		// button을 클릭할때마다 바다, 해파리, 건물, 꽃 이미지를 순서대로 로드하시오
+		// const btn = document.querySelector("button");
+		// const imgTag = document.querySelector("img");
+		// let imgList = ["flower", "sea", "jellyfish", "building"];
+		// let n = 0;
+		// btn.addEventListener("click",()=>{
+		// 	n++;
+		// 	if(n>imgList.length-1) n = 0;
+		// 	imgTag.setAttribute("src",`${imgList[n]}.jpg`);
+		// })
 		
-		
-		
-		
-		
+		// $("button").on("click",function(){
+		// 	$("p img").attr({src: "sea.jpg", alt: "바다"});
+		// })
+
+		// .toggle : 클릭을 여러번 하면 .. -> 할때마다 원하는 함수 넣어줌
+		// 함수(function)가 2개 이상~ 있어야됨 -> 적은 순서대로 돌아감 
+		// 젤 마지막 function에서 한번 더 누르면 첫번째 함수로
+		$("button").toggle(
+			function(){
+				$("p img").attr({src: "sea.jpg", alt: "바다"});
+			}, 
+			function(){
+				$("p img").attr({src: "jellyfish.jpg", alt: "해파리"});
+			},
+			function(){
+				$("p img").attr({src: "building.jpg", alt: "빌딩"});
+			},
+			function(){
+				$("p img").attr({src: "flower.jpg", alt: "꽃"});
+			}
+			)
 	</script>
 
 

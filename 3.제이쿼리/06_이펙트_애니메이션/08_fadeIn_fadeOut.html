@@ -7,7 +7,7 @@
 	img { display:none; }
 </style>
 <!-- jQuery library -->
-<script src="jquery-1.7.2.min.js"></script>
+<script src="../jquery-3.6.1.min.js"></script>
 </head>
 <body>
 
@@ -19,11 +19,15 @@
 	
 	<!---------- jQuery code Start ---------->
 	<script type="text/javascript">
-		
+		// display속성 건드는거 ->  투명 <-> 불투명 처럼 애니메이션
+		$("#fadeIn").on("click", function(){
+			$("p img").fadeIn(1000);
+		})
+		$("#fadeOut").on("click", function(){
+			$("p img").fadeOut(1000);
+		})
 
 
 	</script>
-    
-	
 </body>
 </html>

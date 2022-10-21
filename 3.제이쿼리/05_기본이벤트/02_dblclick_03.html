@@ -18,17 +18,17 @@
 	
 	<!---------- jQuery code Start ---------->
 	<script type="text/javascript">
-
 		// 리스트(a 태그)를 클릭시 해당 이미지로 변경하시오
-		
+		$("ul li").on("dblclick",function(){
+			let listImg = $(this).children("a").attr("href");
+			let listText = $(this).children("a").text()
+			$("p img").attr({src: listImg, alt: listText});
+		}).on("click",function(e){
+			e.preventDefault();
+		})
+		// 이벤트 발생함수 여러개 이어서 적기 가능
 		
 		
 	</script>
-
-
-
-
-
-
 </body>
 </html>

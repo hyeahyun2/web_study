@@ -5,35 +5,28 @@
 <title> slideDown() slideUp() </title>
 <!-- jQuery library -->
 <script src="jquery-1.7.2.min.js"></script>
+<style>
+	div { display: none; }
+</style>
 </head>
 <body>
-
+	<button id="up">slide감추기</button>
+	<button id="down">slide보이기</button>
+	<br><br>
 	<div>
 		<img src="sample1.jpg" alt=" " width="200" />
 	</div>
 
-	<button id="up">slide감추기</button>
-	<button id="down">slide보이기</button>
-	
-	
-	
 	<!---------- jQuery code Start ---------->
 	<script>
-
-		$('#up').click(function() {				
-			
-		});
-
-		$('#down').click(function() {
-			
-		});
-
+		// slideDown / slideup <- display속성을 이용한 명령어! 
+		// slideDown(지속시간)
+		$("#down").on("click",function(){
+			$("div:not(:animated)").slideDown(2000);
+		})
+		$("#up").on("click",function(){
+			$("div:not(:animated)").slideUp(1000);
+		})
 	</script>
-
-
-
-
-
-
 </body>
 </html>

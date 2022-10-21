@@ -15,7 +15,10 @@
 	<script type="text/javascript">
 
 		// a 태그를 클릭시 꽃 이미지를 바다 이미지로 변경하시오
-		
+		$("a").on("click",function(e){
+			e.preventDefault();
+			$("p img").attr({src: "sea.jpg", alt: "바다"});
+		})
 		
 			
 		

@@ -19,9 +19,18 @@
 	
 	<!---------- jQuery code Start ---------->
 	<script type="text/javascript">
-
 		// 마우스다운시 이미지가 바뀌도록
-		
+		$("ul li").on("mousedown", function(){
+			let imgPath = $(this).children("a").attr("href");
+			let altText = $(this).children("a").text();
+			$("p img")
+				.attr({src: imgPath, alt: altText})
+				.css({border: "5px solid #f00"});
+		}).on("mouseup", function(){
+			$("p img").css({border: 0});
+		}).on("click", function(e){
+			e.preventDefault();
+		})
 		
 		
 	</script>

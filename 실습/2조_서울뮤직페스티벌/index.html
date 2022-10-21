@@ -8,9 +8,9 @@
   <title>2022 SEOUL MUSIC FESTIVAL</title>
   <link rel="stylesheet" href="./css/index.css">
   <link rel="stylesheet" href="./css/common.css">
-  <!-- <link rel="stylesheet" href="./css/navigaton_media.css"> -->
   <script src="./script/header.js" async></script>
   <script src="./script/floatingMenu.js" async></script>
+  <script src="./script/sec4.js" async></script>
 
 </head>
 
@@ -232,17 +232,21 @@
         <h2>SMUF 프로그램</h2>
         <p>서울뮤직페스티벌의 특별한 프로그램을 만나보세요.</p>
       </div>
+      <!--  -->
       <div class="wrap">
-        <a href="#">
-          <h3>main<br>stage</h3>
-        </a>
-        <a href="#">
-          <h3>sub<br>stage</h3>
-        </a>
-        <a href="#">
-          <h3>부대<br>프로그램</h3>
-        </a>
+        <div class="wrapInner">
+          <a href="#" class="mainStage">
+            <h3>main<br>stage</h3>
+          </a>
+          <a href="#" class="subStage">
+            <h3>sub<br>stage</h3>
+          </a>
+          <a href="#" class="budaeStage">
+            <h3>부대<br>프로그램</h3>
+          </a>
+        </div>
       </div>
+      <!--  -->
     </section>
 
     <!-- page5 : 공지사항 -->
@@ -265,7 +269,7 @@
           </a>
         </li>
         <li>
-          <a href="#2">s
+          <a href="#2">
             <div>
               <span>22</span>
               <span>2022.09</span>
@@ -281,45 +285,55 @@
     <!-- page6 : 갤러리 -->
     <section class="sect6 section" id="gallery">
       <div class="front-image-container">
-        <img src="./images/s6_m1.png" alt="">
+        <!-- <img src="./images/s6_m1.png" alt=""> -->
       </div>
       <h2>갤러리</h2>
       <p>서울뮤직페스티벌의 생생한 현장을 느껴보세요.</p>
 
-      <ul class="gallery_post">
-        <li>
-          <a href="#" class="gallery_post">
-            <dl>
-              <dt>2022 서울 뮤직페스티벌 라인업 공개</dt>
-              <dd>
-                대한민국을 대표하는 문화강성도시, 서울에서 펼쳐지는 올 가을 최고의 뮤직 페스티벌! 청량한 가을밤 모두의&middot;&middot;&middot;
-                <span>2022.09.20</span>
-              </dd>
-            </dl>
-          </a>
-        </li>
-      </ul>
-      <div class="btnWrap">
-        <button class="btnNext"></button>
-        <button class="btnPrev"></button>
+      <div class="box">
+        <ul class="gallery_post">
+          <li>
+            <a href="#" class="gallery_post">
+              <dl>
+                <dt>2022 서울 뮤직페스티벌 라인업 공개</dt>
+                <dd>
+                  대한민국을 대표하는 문화강성도시, 서울에서 펼쳐지는 올 가을 최고의 뮤직 페스티벌! 청량한 가을밤 모두의&middot;&middot;&middot;
+
+                </dd>
+              </dl>
+              <!-- <p>2022.09.20</p> -->
+            </a>
+          </li>
+        </ul>
+        <div class="btnWrap">
+          <button class="btnNext"></button>
+          <button class="btnPrev"></button>
+        </div>
       </div>
+
+
+
     </section>
   </main>
 
   <footer id="footer">
     <div class="wave">
-      <!-- 웨이브 이미지 삽입 및 애니메이션 효과 -->
+
     </div>
     <div class="title_logo"></div>
-    <div>
+    <!-- <div class="box2"> -->
       <div class="infoWrap">
         <p>주소 : 서울시 강남구 도산대로 30길 13-9 연락처 : 070-4170-0944 이메일 : seoulmusicfestival@gmail.com</p>
         <small>Copyright © 2022 Seoul Music Festival. All Rights Reserved.</small>
       </div>
-    </div>
+    <!-- </div> -->
     <div class="goSite">
-      <a href="#fac"><img src="./images/f_m1.png" alt="facebook"></a>
-      <a href="#ins"><img src="./images/f_m2.png" alt="instagram"></a>
+      <a href="#fac">
+        <img src="./images/f_m1.png" alt="facebook">
+      </a>
+      <a href="#ins">
+        <img src="./images/f_m2.png" alt="instagram">
+      </a>
     </div>
   </footer>
 </body>

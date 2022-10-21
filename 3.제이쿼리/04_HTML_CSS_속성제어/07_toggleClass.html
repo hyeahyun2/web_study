@@ -26,9 +26,20 @@
 	<!---------- jQuery code Start ---------->
 
 	<script>
-
 		// toggleClass는 addClass와 removeClass를 번갈아가며 실행
+
+		// const imgTag = document.querySelectorAll("img");
+		// imgTag.forEach((element,i) => {
+		// 	element.addEventListener("click",(e)=>{
+		// 		e.currentTarget.classList.toggle(`type${i+1}`);
+		// 	});
+		// 	})
 		
+		// jQuery code
+		$("img").on("click",function(){
+			$("img").not($(this)).removeClass();
+			$(this).toggleClass("type1");
+		})
 		
 
 	</script>

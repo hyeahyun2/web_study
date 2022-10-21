@@ -4,11 +4,14 @@
 <meta charset="utf-8">
 <title> toggle() </title>
 <style type="text/css">
-	div { width: 200px;
-		   height: 200px;
-		   background: red;
-		   display: none;
-		  }
+	div { 
+		width: 200px;
+		height: 200px;
+		background: red;
+		display: none;
+		position: fixed;
+		bottom: 0; right: 0;
+	}
 </style>
 <!-- jQuery library -->
 <script src="jquery-1.7.2.min.js"></script>
@@ -24,8 +27,13 @@
 
 		// toggle() : show()와 hide()를 한 이벤트에 binding			
 		// $("selector").toggle(속도);			
-        // 버튼을 클릭때마다 나타나고 사라지는 애니메이션 구현
+		// 버튼을 클릭때마다 나타나고 사라지는 애니메이션 구현
 
+		$("button").on("click", function(){
+			// .toggle(지속시간) : show와 hide를 합한 명령어(기능 2개)
+			// 애니메이션 방향은 해당요소의 원점을 기준
+			$("div:not(:animated)").toggle(1000);
+		})
 
 		
 	</script>

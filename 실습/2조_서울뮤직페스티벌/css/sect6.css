@@ -1,18 +1,26 @@
 .sect6 {
     width: 100%;
-    /* background: white; */
+    height: 60vw;
     position: relative;
-    margin-bottom: 7rem;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 2rem;
 }
 
-.sect6 > .front-image-container {
+/* ========================================== */
+/* .sect6 > .front-image-container {
     position: absolute;
-    bottom: -4.5rem;
-    right: 2.5rem;
+    width: 100%;
+    height: 100%;
 }
 .sect6 > .front-image-container > img {
-    height: 15rem;
-}
+    position: absolute;
+    bottom: 0;
+    right: 8%;
+    height: 15vw;
+} */
+
+/* ========================================== */
 .sect6 > h2 {
     text-align: center;
     font-size: 2.5rem;
@@ -27,59 +35,222 @@
     font-size: 1.3rem;
     font-weight: 600;
 }
-.sect6 > ul {
-    width: 1100px;
-    margin: 2rem auto 0;
+.sect6 ul {
+    width: 85%;
+    height: 25vw;
+    margin: 2rem auto;
+    align-items: flex-start;
+    display: flex;
+    flex-direction: row;
+    /* border: 1px solid #000; */
+}
 
+.sect6 > div > ul > li {
+    width: 33%;
+    height: 100%;
+    margin: 0 .5rem;
+    /* border: 1px solid #000; */
+}
+
+.sect6 > div > ul > li > a {
+    width: 100%;
+    height: 100%;
+    background: url(../images/youtube_vidio.jpg) no-repeat top /100% 50%;
+    transition: .2s;
+    display: block;
+    padding-top: 65%;
+    /* border: 1px solid #000; */
+}
+
+.sect6 > div > ul > li:hover > a {
+    background: url(../images/youtube_vidio.jpg) no-repeat top / 105% 52%;
+}
+
+.sect6 > div > ul > li > a > dl {
+    width: 100%;
+    height: 50%;
+    /* border: 1px solid #000; */
+}
+
+.sect6 > div > ul > li > a > dl > dt {
+    letter-spacing: -1px;
+    font-size: 1rem;
+    font-weight: 900;
+    transition: .2s;
+
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.sect6 > div > ul > li:hover > a > dl > dt {
+    color: rgb(var(--aside-basic-color));
+}
+
+.sect6 > div > ul > li > a > dl > dd {
+    font-size: 14px;
+    /* font-weight: ; */
+    font-weight: 500;
+    color: #4b4b4b;
+    line-height: calc(30/18);
+    margin-top: 19px;
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    letter-spacing: -0.1em;
+}
+.sect6 > div > ul > li > a > p {
+    margin-top: 1rem;
+    width: 100%;
+    /* height: 100%; */
+    /* border: 1px solid #000; */
+    font-size: 16px;
+    letter-spacing: -0.1em;
+    font-weight: 300;
+    color: #4b4b4b;
+    margin-top: 27px;
+}
+/* .sect6 > div > ul > li > a > dl > dd > span {
+
+    color: #555555;
+    font-weight: 600;
+    position: absolute;
+    bottom: 0;
+    border: 1px solid #fff;
+} */
+
+.sect6 > .box {
+    width: 90%;
+    margin: 5rem auto;
+    /* border: 1px solid #000; */
+    position: relative;
+}
+
+
+/* .sect6 > .box > .btnWrap { */
+    /* width: 100%; */
+    /* height: 100%; */
+    /* border: 1px solid #000; */
+    /* position: relative; */
+/* } */
+.sect6 > .box > .btnWrap > button {
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    border: 1px solid rgb(0, 0, 0);
+    background: no-repeat center center;
+    border-radius: 10px;
+    top: calc(50%);
+    transform: translateY(-50%);
+}
+.sect6 > .box > .btnWrap > .btnNext {
+    left: 0;
+    background-image: url(../images/arrow_1_b.png);
+    transition: .2s;
+}
+.sect6 > .box > .btnWrap > .btnNext:hover {
+    background: rgb(var(--footer-basic-color)) url(../images/arrow_1.png) no-repeat center center;
+    border: 1px solid rgb(var(--footer-basic-color));
+}
+.sect6 > .box > .btnWrap > .btnPrev {
+
+    right: 0;
+    background-image: url(../images/arrow_1_b_r.png);
+    transition: .2s;
+}
+.sect6 > .box > .btnWrap > .btnPrev:hover {
+    background: rgb(var(--footer-basic-color)) url(../images/arrow_1_r.png) no-repeat center center;
+    border: 1px solid rgb(var(--footer-basic-color));
+}
+
+
+
+@media all and (max-width:800px) {
+    .sect6  {
+        height:85vw;
+    }
+    .sect6 > ul {
+ 
+    }
+    .sect6 > ul > li{
+        width: 60%;
+        height: 55vw;
+        /* display: flex;
+        align-items: center;
+        justify-content: center; */
+
+    }
+    .sect6 > ul > li > a > dl > dd {
+        /* margin-top: 1.25rem; */
+        position:absolute;
+        top:-20vw;
+        font-size: px;
+        color: #555555;
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
+
+
+/* .sect6 > div > ul {
+    width: 70%;
+    height: 30vw;
+    margin: 2rem auto 0;
     align-items: flex-start;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-
-    /* z-index: 99999; */
 }
 
-.sect6 > ul > li {
-    width: 340px;
-    height: 450px;
+.sect6 > div > ul > li {
+    width: 33%;
+    height: 30vw;
     margin: 0 0.5rem;
-} 
+}
 
-.sect6 > ul > li > a {
-    width: 100%;
-    height: 85%;
+.sect6 > div > ul > li > a {
+    width: 33vw;
+    height: 33vw;
     background: url(../images/youtube_vidio.jpg) no-repeat top / 100% 50%;
     transition: .2s;
     display: block;
+    position: relative;
 }
-.sect6 > ul > li:hover > a {
+
+.sect6 > div > ul > li:hover > a {
     background: url(../images/youtube_vidio.jpg) no-repeat top / 105% 52%;
 }
-.sect6 > ul > li > a > dl {
-    /* display: block;     */
-    width: 100%;
-    height: 100%;
+
+.sect6 > div > ul > li > a > dl {
+
+    bottom: 0;
+    position: absolute;;
     align-items: flex-start;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
 }
-.sect6 > ul > li > a > dl > dt {
+.sect6 > div > ul > li > a > dl > dt {
     letter-spacing: -1px;
     font-size: 1.12rem;
     font-weight: 900;
     transition: .5s;
 }
-.sect6 > ul > li:hover > a > dl > dt {
+.sect6 > div > ul > li:hover > a > dl > dt {
     color: rgb(var(--aside-basic-color));
 }
-.sect6 > ul > li > a > dl > dd {
+.sect6 > div > ul > li > a > dl > dd {
     margin-top: 1.25rem;
+
     color: #555555;
     display: flex;
     flex-direction: column;
 }
-.sect6 > ul > li > a > dl > dd > span {
+.sect6 > div > ul > li > a > dl > dd > span {
     margin-top: 1.25rem;
     color: #555555;
     font-weight: 600;
@@ -87,61 +258,33 @@
 
 
 .sect6 > .btnWrap {
-    top: 50%;
-    left: 50%;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    width: 1400px;
-    /* height: 100%; */
-    /* margin: 0 auto; */
-    
-    display: flex;
-    justify-content: space-between;
-    
+    max-width: 90%;
+    margin: 0 auto;;
+    position: relative;
 }
 .sect6 > .btnWrap > button {
     width: 90px;
     height: 90px;
-    position: relative;
-    background: no-repeat center center / 50px 30px;
+    position: absolute;
     border: 1px solid rgb(0, 0, 0);
+    background: no-repeat center center;
     border-radius: 10px;
+    bottom: 200px
 }
-.sect6 > .btnWrap > .btnNext {  
+.sect6 > .btnWrap > .btnNext {
     background-image: url(../images/arrow_1_b.png);
     transition: .2s;
 }
 .sect6 > .btnWrap > .btnNext:hover {
-    /* width: 91px;
-    height: 91px; */
-    background: rgb(var(--footer-basic-color)) url(../images/arrow_1.png) no-repeat center center / 50px 30px;
-    /* box-sizing: border-box; */
+    background: rgb(var(--footer-basic-color)) url(../images/arrow_1.png) no-repeat center center;
     border: 1px solid rgb(var(--footer-basic-color));
 }
 .sect6 > .btnWrap > .btnPrev {
+    right: 0;
     background-image: url(../images/arrow_1_b_r.png);
     transition: .2s;
 }
 .sect6 > .btnWrap > .btnPrev:hover {
-    /* width: 91px;
-    height: 91px; */
-    background: rgb(var(--footer-basic-color)) url(../images/arrow_1_r.png) no-repeat center center / 50px 30px;
-    /* box-sizing: border-box; */
+    background: rgb(var(--footer-basic-color)) url(../images/arrow_1_r.png) no-repeat center center;
     border: 1px solid rgb(var(--footer-basic-color));
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+} */

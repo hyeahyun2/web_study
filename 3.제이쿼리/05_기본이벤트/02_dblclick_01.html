@@ -22,12 +22,11 @@
 	
 	<!---------- jQuery code Start ---------->
 	<script>
-	
 		// div 태그를 더블 클릭시 클래스 명 dbl이 추가되었다 삭제되게 하시오
-		
-		
+		$("div").on("dblclick",function(){
+			$(this).toggleClass("dbl");
+		})
 		
 	</script>
-
 </body>
 </html>

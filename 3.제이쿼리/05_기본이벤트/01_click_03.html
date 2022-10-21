@@ -16,16 +16,13 @@
 	
 	<!---------- jQuery code Start ---------->
 	<script type="text/javascript">
-	 
 		// 리스트를 클릭할 때마다 이미지를 그 리스트의 이미지로 변경하시오
-		
-		
-		
+		$("ul li").on("click", function(e){
+			e.preventDefault();
+			let imgPath = $(this).children("a").attr("href");
+			let altText = $(this).children("a").text();
+			$("p img").attr({src: imgPath, alt: altText});
+		})
 	</script>
-
-
-
-
-
 </body>
 </html>
