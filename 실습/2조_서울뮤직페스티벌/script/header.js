@@ -15,7 +15,8 @@ const LangItem = LangList.querySelectorAll("li");
 ///// 네비에 마우스오버시 서브네비(1280px 이상) ///////////
 let navHover = ()=>{
   if(window.innerWidth >=1280){
-    list.forEach(element => {
+  console.log(window.innerWidth);
+  list.forEach(element => {
       headerWrap.style.height = `120px`;
       element.addEventListener("mouseenter",()=>{
         // console.log("test");
@@ -27,6 +28,7 @@ let navHover = ()=>{
         headerWrap.classList.remove("moustHover");
       })  
     });
+    // alert("1280이상");
     }
   else {
     headerWrap.style.height = "80px";
@@ -34,7 +36,7 @@ let navHover = ()=>{
 }
 navHover();
 window.addEventListener("resize",()=>{
-  console.log(window.innerWidth);
+  // console.log(window.innerWidth);
   navHover();
 })
 ///////////////////////////////////////////////////////////////

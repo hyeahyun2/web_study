@@ -6,7 +6,7 @@ li.forEach(element => {
     // console.log("test");
     headerWrap.style.height = `390px`;
   })
-  element.addEventListener("mouseleave",()=>{
+  headerWrap.addEventListener("mouseleave",()=>{
     headerWrap.style.height = `92px`;
   })  
 });
