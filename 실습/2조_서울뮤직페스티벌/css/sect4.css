@@ -91,9 +91,9 @@
 }
 
 .sect4 > .wrap > .wrapInner {
-  width: 100vw;
-  display: flex;
-  transition: 1s;
+    width: 100vw;
+    display: flex;
+    transition: 1s;
 }
 
 .sect4 > .wrap  a {
@@ -104,6 +104,7 @@
     width: 20vw;
     height: 30vw;
     background: no-repeat center center / cover;
+    transition: 1s;
 }
 
 .sect4 > .wrap .mainStage{
