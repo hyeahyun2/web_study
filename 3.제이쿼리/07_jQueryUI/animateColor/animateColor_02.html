@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <title> animateColor </title>
 <!-- jQuery library -->
-<script src="jquery-1.7.2.min.js"></script>
-
+<script src="../../jquery-3.6.1.min.js"></script>
+<script src="../../jquery-ui.min.js"></script>
 <style>
 ul { min-width:800px; }
 li {list-style:none; float:left;width:200px; height:60px;}
@@ -34,7 +34,14 @@ li a{
 <script>
 
 	// 각 메뉴(li)에 롤오버시 data-bg의 값에 설정된 색상으로 변하는 애니메이션
-	
+	$("ul li").hover(function(){
+		// let listColor = $(this).children().attr("data-bg");
+		let listColor = $(this).children("a").data("bg"); //jQuery에서는 이렇게도 사용 가능
+		// $(this).children().css({background: listColor});
+		$(this).children("a").stop().animate({backgroundColor: listColor, color: "#fff"},500);
+	}, function(){
+		$(this).children("a").stop().animate({backgroundColor: "#9AB92E", color: "#000"},500);
+	})
 	
 	
 </script>

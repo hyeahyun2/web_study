@@ -4,51 +4,53 @@
     <meta charset="utf-8">
     <title> animate()  </title>
     <style>
-        div { width: 400px; height: 267px; overflow: hidden; }
-        p { width: 800px; height: 267px; margin: 0; }
+        div {
+            width: 400px; 
+            border: 2px solid #f00;
+            overflow-x: scroll;
+        }
+        div p {
+            width: 800px;
+            /* animation: move 1s forwards; */
+            transition: 1s;
+        }
+        div p.left { transform: translateX(-50%);}
+        div p.right { transform: translateX(0);}
+
+        /* @keyframes move {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+        @keyframes moveR {
+            from { transform: translateX(-50%); }
+            to { transform: translateX(0); }
+        } */
     </style>
     <!-- jQuery library -->
     <script src="jquery-1.7.2.min.js"></script>
 </head>
 <body>
-
     <div>
         <p>
             <img src="flower.jpg" alt="flower" id="flower" /><img src="building.jpg" alt="building" id="building" />
         </p>
     </div>
 
-
-
     <!---------- jQuery code Start ---------->
     <script>
-
-
-
         // 스크립트를 적용하기 전 먼저 CSS를 이용하여 이미지 하나만 보이도록 한다
-
         // 버튼 클릭시 이미지가 각각 좌우로 슬라이딩 되는 애니메이션을 만들어보자
-
-        // margin 속성을 이용
-
-        $("#flower").click(function () {
-
-
-        });
-
-        $("#building").click(function () {
-
-
-        });
-
-
-
+        $("#flower").on("click",function(){
+            // $("div p").animate({marginLeft: -400});
+            // $("div p").animate({transform: "translateX(-400px)"}); // 사용 불가
+            // $("div p").css({animation: "move 1s forwards"}); // animation(@keyframes) 이용
+            $("div p").removeClass("right").addClass("left"); // 사용 추천! (안정적임)
+        })
+        $("#building").on("click",function(){
+            // $("div p").animate({marginLeft: 0});
+            // $("div p").css({animation: "moveR 1s normal"});
+            $("div p").removeClass("left").addClass("right");
+        })
     </script>
-
-
-
-
-
-
 </body>
 </html>

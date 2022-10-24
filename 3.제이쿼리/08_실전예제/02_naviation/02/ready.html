@@ -3,12 +3,10 @@
 <head>
 <meta charset="utf-8">
 <title>어디서나 펼쳐지는 내비게이션</title>
-<script type="text/javascript" src="jquery-1.7.2.min.js"></script>
-
+<script type="text/javascript" src="../../../jquery-3.6.1.min.js"></script>
+<script src="../../../jquery-migrate-1.4.1.min.js"></script>
 <style>
-
 	*{	margin:0; padding:0;	}
-
 	div#container {
 		width:600px;
 		height:200px;
@@ -16,7 +14,6 @@
 		top:0px;
 		position:relative;
 	}
-					
 	div#home {
 		width:50px;
 		height:200px;
@@ -26,7 +23,6 @@
 		position:absolute;
 		z-index:2;
 	}
-			   
 	ul { 
 		width:600px; 
 		height:200px;
@@ -36,45 +32,50 @@
 		position:absolute;
 		z-index:1;
 	}
-		 
 	ul li {
 		width:200px;
 		height:200px;
 		float:left;
 		opacity:0.7;
 	}
-
 </style>
 
 </head>
 
 <body>
-
 	<div id="container">
 		<div id="home">HOME </div>
-	  
 		<ul id="menu">     
 			<li><img src="th_bg1.jpg" /></li>
 			<li><img src="th_bg2.jpg" /></li>
 			<li><img src="th_bg3.jpg" /></li>
 		</ul>
 	</div>
-
 	<!---------- jQuery code Start ---------->
 	<script>	
-	
 		/* 할 일 목록을 적어보세요 */
-	   
-	   
-	   
-
-		 
+		// 클릭하면 나오고 들어가기 -> ul의 left값 변경
+		// li위에 롤오버하면 -> opacity = 1
+		// 마우스오버하면 마우스 위치에 따라 움직이기(마우스위치가 home div태그의 중앙에 위치)
+		// home태그의 제일 윗부분이 브라우저 위로 가리지 않도록
+		$("#home").toggle(function(){
+			$("#menu").stop().animate({left: 50}, 500);
+		}, function(){
+			$("#menu").stop().animate({left: -600}, 500);
+		})
+		$("#menu li").on("mouseenter", function(){
+			$(this).stop().animate({opacity: 1})
+		})
+		$("#menu li").on("mouseleave", function(){
+			$(this).stop().animate({opacity: 0.7})
+		})
+		$("#home").on("mousemove", function(e){
+			if(e.pageY <= $(this).height()/2) $("#container").css({top: 0});
+			else {
+				$("#container").css({top: e.pageY-$(this).height()/2});
+			}
+		})
 	</script>
-	
-	
-	
-	
-	
 </body>
 </html>
 

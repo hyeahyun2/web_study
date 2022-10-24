@@ -5,7 +5,6 @@
 <title> Sliding Captions 갤러리 </title>
 <script type="text/javascript" src="jquery-1.7.2.min.js"></script>
 <style type="text/css">
-
 	body {
 		margin:20px auto;
 		padding:0;	
@@ -13,8 +12,8 @@
 		background:#192839;
 	}
 	.thumbs {
-	   width:100px;	
-	   float:left;
+		width:100px;	
+		float:left;
 	}
 	.thumbs img {
 		border:solid 1px #ccc;
@@ -32,20 +31,17 @@
 		padding:5px;
 		margin-left:110px;
 		overflow:hidden;
-		
 	}
 
 	#caption { background:url(captionBg.png) repeat-y; 
-			   border:#CCC 1px thin; 
-			   padding:10px;
-			   position:relative;
-			   color:#FFFFFF; }		   
-
+				border:#CCC 1px thin; 
+				padding:10px;
+				position:relative;
+				color:#FFFFFF; }		   
 </style>
 </head>
 
 <body>
-
 	<div class="thumbs">
 	  
 			<a href="images/pic1.jpg" title="image1"><img src="images/th_pic1.jpg" /></a>
@@ -64,7 +60,6 @@
 		
 	<div id="largeImg">
 		<img src="images/pic1.jpg" alt="image1" />
-		
 		<!-- 아이디 caption인 div 추가 -->
 		
 	</div>
@@ -72,31 +67,33 @@
 
 	<!---------- jQuery code Start ---------->
 	<script>
-
 		/* 할 일 목록
-		
 		1. em 태그를  hide() 메서드를 이용, 처음엔 안보이도록 한다
-			
 		2. 이미지를  클릭할 때마다 큰이미지가 바뀌도록 한다
-		
 		3. a태그 값 삭제
-		
 		4. 클래스 thumbs의 a 태그를 클릭시 em이 추가될 위치를 지정		
 			( 아이디 largeImg 내 끝에 아이디 caption인 div 추가 )
-		
 		5. 이미지 클릭시 해당 em 태그 내용이 아이디 caption에 전달되도록 하고,
 			큰이미지의 하단에서 나타나도록
-			
 		6. 아이디 caption 요소 삭제
-		
 		완료후, 큰이미지에도 부드럽게 화면전환하는 effect를 적용한다
-		
 		*/
-	
+		//초기설정 -> 처음엔 안보이도록
+		$("em").hide();
+		// 할 일 시작
+		$(".thumbs a").on("click", function(e){
+			e.preventDefault();
+			$("#largeImg img").attr("src",$(this).attr("href"))
+				.attr("alt",$(this).attr("title"));
+			$("#caption").remove(); // 기존의 ID : caption을 가지는 div 삭제
+			$("#largeImg").append(`<div id="caption"></div>`);//largeImg의 제일 마지막에 ID : caption을 가지는 div 추가
+			// console.log($(this).next().text());
+			$("#caption")
+				.text($(this).next().text())// caption div에 text값 추가
+				.animate({bottom: $("#caption").innerHeight()}, 500) // .height() : number타입
+				// $("#caption").innerHeight() = parseInt($("#caption").css("height"))+20 (number로 바꾸고 padding 높이만큼 더하기)
+			})
 		
-		
-		
-	
 	</script>
 </body>
 </html>

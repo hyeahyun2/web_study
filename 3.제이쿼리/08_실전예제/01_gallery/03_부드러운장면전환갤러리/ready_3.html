@@ -5,7 +5,6 @@
 <title> fadeInOut 갤러리 </title>
 <script type="text/javascript" src="jquery-1.7.2.min.js"></script>
 <style>
-
 	body {
 		margin:20px auto;
 		padding:0;	
@@ -16,53 +15,75 @@
 		background:#666;
 		width:600px; 
 		height:350px; 
-		border:2px solid #FDF6DD;        
+		border:2px solid #FDF6DD;
+		position: relative;        
 	}
-	.fadeShow img{position:absolute;}
+	.fadeShow img{position:absolute; top: 0; left: 0;}
 
 	.fadeShow .active{
 		z-index:1;
 	}
-		
+	.btn {
+		margin: 20px 0;
+		width:620px;
+		display: flex;
+		justify-content: center;
+		gap: 20px;
+	}
 </style>
 </head>
 
 <body>
 
 <div class="fadeShow">
-     <img class="active" src="slide1.jpg" alt="image1" />
-     <img src="slide2.jpg" alt="image2" />
-     <img src="slide3.jpg" alt="image3" />
+	<img src="slide1.jpg" alt="image1" class="active" />
+	<img src="slide2.jpg" alt="image2" />
+	<img src="slide3.jpg" alt="image3" />
 </div>
-
+<div class="btn">
+	<button>이전 슬라이드</button>
+	<button>다음 슬라이드</button>
+</div>
 
 	<!---------- jQuery code Start ---------->
 	<script>
-		
 		/* 할 일 목록
-		
 		Tip1. position: absolute의 적용으로 보이는 순서는 아래그림부터
-			
 		Tip2. 클래스 active로 인해 첫번째 그림이 보이고 있음
-		
 		1. 두번째 이미지가 전환되어 보이도록 하기 위해 클래스 active 추가
-		
 		2. animate()를 이용해 이펙트 적용
-		
 		3. 이펙트 적용시 첫번째 그림은 클래스 fadeShow내 마지막으로 이동하고,
 			동시에 클래스 네임 삭제
-		
 		*/
-		
-		
-		
-		
+		function fading_next(){
+			$(".fadeShow img:eq(1):not(:animated)")
+				.addClass("active") // active class 추가
+				.css({opacity: 0}) // class 추가하자마자 안보이게 처리(투명도)
+				.animate({opacity: 1}, 1000, function(){ // 투명도 1로 애니메이션 처리(서서히 보여지도록)
+					$(".fadeShow").append($(".fadeShow img:eq(0)"));// eq(0) img태그를 가장 뒤로 이동
+					$(`.fadeShow img:last`).removeClass("active"); // 이동한 태그의 class active 삭제
+				}) 
+		}
+		function fading_prev(){
+			$(".fadeShow img:last:not(:animated)")
+				.addClass("active")
+				.css({opacity: 0})
+				.animate({opacity: 1}, 1000, function(){
+					$(".fadeShow").prepend($(".fadeShow img:last"));
+					$(`.fadeShow img:eq(1)`).removeClass("active");
+				}) 
+		}
+		// 문제1: 일정시간마다 함수 호출
+		// setInterval(fading_next, 2000); 
+
+		// 문제2: 버튼을 눌러 슬라이드 넘기기
+		$(".btn button:eq(0)").on("click", function(){
+			fading_prev();
+		})
+		$(".btn button:eq(1)").on("click", function(){
+			fading_next();
+		})
 	</script>
-	
-	
-	
-	
-	
 </body>
 </html>
 
