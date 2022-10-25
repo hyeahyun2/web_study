@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>이미지 쪼개기</title>
+    <style>
+        html, body, p { margin: 0; padding: 0; }
+        #sliceWrap { overflow: hidden; position: relative; width: 640px; height: 360px; margin: 200px auto 0;
+                        border-radius: 50%; }
+        #sliceWrap p {  background: #ccc;
+                            text-align: center; line-height: 360px;
+                            font-size: 50px;  }
+        #sliceWrap p a { text-transform: uppercase; text-decoration: none; color: #fff; }
+
+        #sliceWrap div { position: absolute; width: 640px; height: 180px;
+                              background: url(bg.png) no-repeat; }
+        #sliceWrap .top { top: 0; background-position: center top;   }
+        #sliceWrap .bottom { bottom: 0; background-position: center bottom; }
+
+    </style>
+    <script src="jquery-3.4.1.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+</head>
+<body>
+    <div id="sliceWrap">
+        <p><a href="#">Lorem Ipsum</a></p>
+       <!-- <div class="top"></div>
+        <div class="bottom"></div>-->
+    </div>
+    <script>
+
+        $("#sliceWrap").append("<div class='top'></div><div class='bottom'></div>");
+        $("#sliceWrap").hover( function() {
+                $(this).find(".top").stop().animate({ top: -180 }, 500,  "easeOutBounce")
+                $(this).find(".bottom").stop().animate({ bottom: -180 }, 500, "easeOutBounce")
+        }, function () {
+                $(this).find(".top").stop().animate({ top: 0 }, 500,  "easeOutBounce")
+                $(this).find(".bottom").stop().animate({ bottom: 0 }, 500,  "easeOutBounce")
+        });
+    </script>
+</body>
+</html>

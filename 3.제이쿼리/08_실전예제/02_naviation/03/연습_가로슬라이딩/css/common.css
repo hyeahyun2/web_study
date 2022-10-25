@@ -16,10 +16,11 @@ a { text-decoration: none; color: #000;}
   background: no-repeat center / cover;
 }
 #sliderList li div {
-  width: 1400px;
+  max-width: 1400px;
   margin: 0 auto;
-  border: 1px solid #f00;
+  /* border: 1px solid #f00; */
   font-size: 100px; color: #fff;
+  text-align: center;
 }
 
 /* 좌우버튼 */
@@ -33,13 +34,13 @@ a { text-decoration: none; color: #000;}
 #btnPos a.nextBtn {
   height: 120px;
   width: 70px;
-  right: 0;
+  right: 20px;
   background-image: url(../images/R_chevron.png);
 }
 #btnPos a.prevBtn {
   height: 120px;
   width: 70px;
-  left: 0;
+  left: 20px;
   background-image: url(../images/L_chevron.png);
 }
 
@@ -57,4 +58,8 @@ a { text-decoration: none; color: #000;}
   border-radius: 100%;
   border: 3px solid #000;
   text-indent: -9999px;
+}
+
+#btnNum a.on {
+  background: #000;
 }

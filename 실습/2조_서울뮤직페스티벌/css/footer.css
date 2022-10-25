@@ -29,6 +29,7 @@
     /* border: 5px solid #f00; */
     display: flex;
     justify-content: space-evenly;
+    /* position: relative; */
     /* flex-direction: column; */
 }
 #footer > .fBox > .info > .title_logo {
@@ -48,7 +49,7 @@
     width: 25%;
     height: 250px;
     /* border: 5px solid #0f0; */
-    /* position: relative; */
+    /* position: absolute; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -74,5 +75,9 @@
     #footer > .fBox > .info {
         display: flex;
         flex-direction: column;
+    }
+    #footer > .fBox > .goSite > a > img {
+        top: 0;
+        /* right:2rem */
     }
 }

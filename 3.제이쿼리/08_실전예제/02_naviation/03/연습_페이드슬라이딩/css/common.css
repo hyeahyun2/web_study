@@ -1,0 +1,72 @@
+@charset "utf-8";
+/* 초기화 */
+* { box-sizing: border-box; }
+body, h2, ul { margin: 0; padding: 0; }
+ul li { list-style: none; }
+a { text-decoration: none; color: #000;}
+
+/* 슬라이더 */
+#sliderWrap { 
+  overflow: hidden; position: relative;
+  height: 600px;
+}
+#sliderList {}
+
+#sliderList li {
+  width: 100%; height: 600px;
+  background: no-repeat center / cover;
+  position: absolute; top: 0; left: 0;
+}
+#sliderList li.active {
+  z-index: 9;
+}
+#sliderList li div {
+  max-width: 1400px;
+  margin: 0 auto;
+  /* border: 1px solid #f00; */
+  font-size: 100px; color: #fff;
+  text-align: center;
+}
+
+/* 좌우버튼 */
+#btnPos {}
+#btnPos a {
+  background: no-repeat center / cover;
+  position: absolute;
+  top: 50%; transform: translateY(-50%);
+  text-indent: -9999px;
+  z-index: 10;
+}
+#btnPos a.nextBtn {
+  height: 120px;
+  width: 70px;
+  right: 20px;
+  background-image: url(../images/R_chevron.png);
+}
+#btnPos a.prevBtn {
+  height: 120px;
+  width: 70px;
+  left: 20px;
+  background-image: url(../images/L_chevron.png);
+}
+
+/* 번호버튼 */
+#btnNum {
+  display: flex;
+  gap: 20px;
+  position: absolute;
+  bottom: 5%;
+  left: 50%; transform: translate(-50%);
+  z-index: 10;
+}
+#btnNum a {
+  display: block;
+  width: 20px; height: 20px;
+  border-radius: 100%;
+  border: 3px solid #000;
+  text-indent: -9999px;
+}
+
+#btnNum a.on {
+  background: #000;
+}
