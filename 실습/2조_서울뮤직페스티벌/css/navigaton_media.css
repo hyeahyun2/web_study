@@ -1,13 +1,16 @@
 @charset "utf-8";
 :root {
   --gnbView-backColor: #fff;
-  --gnbList-after-content: "+";
 }
 
 /* 크기 1280px 이상 */
 @media all and (min-width: 1280px) {
   #headerWrap {
     height: 120px;
+  }
+  #headerWrap.on {
+    height: 400px;
+    background-color: rgb(var(--nav-hover-purple-color));
   }
   #header {
     height: 120px;
@@ -28,6 +31,9 @@
     position: absolute; top: 120px; left: 0;
     width: 100%; height: 2px;
     background: linear-gradient(90deg, rgba(227,67,149,1) 0%, rgba(0,174,183,1) 100%);
+  }
+  #gnbList > li > span {
+    display: none;
   }
   /* 자바스크립트로 구현 */
   /* #headerWrap:hover {
@@ -100,7 +106,7 @@
     position: fixed;
     top: 0;
     right: -350px;
-    transition: 0.5s;
+    transition: 0.5s right;
   }
   #gnb > ul {
     /* border: 1px solid #000; */
@@ -116,14 +122,13 @@
     padding: 4%;
     flex-wrap: wrap;
   }
-  #gnbList > li::after {
-    content: var(--gnbList-after-content);
-    font-size: 30px;
-    position: absolute; right: 5%; top: 5%;
+  #gnbList > li > span {
+    text-indent: -9999px;
+    background: url(../images/plus.png) no-repeat center / cover;
+    width: 15px; height: 15px;
+    position: absolute; 
+    right: 5%; top: 23px;
     cursor: pointer; /* 롤오버시 마우스 포인터모양 */
-  }
-  #gnbList > li:first-of-type::after {
-    content: "";
   }
   #gnbList > li > a {
     text-align: left;
@@ -141,18 +146,21 @@
   } */
   
   /* 서브메뉴 snb */
-  .snb {
+  #gnbList > li > ul {
     color: #5b5b5b;
     font-size: 18px;
     margin: 0;
     position: relative;
     top: 10px;
-    transition: 0.5s;
     margin-bottom: 10px;
     /* 클릭시 나타나게 */
-    height: 0;
-    overflow: hidden;
+    /* height: 0; */
+    display: none;
   }
+  #gnbList > li > ul.mobaOn {
+    height: 200px;
+  }
+  
   .snb li {
     text-align: left;
     width: 100%;

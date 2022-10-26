@@ -5,6 +5,7 @@ const gnb = document.getElementById("gnb");
 
 const gnbList = document.getElementById("gnbList");
 const list = gnbList.querySelectorAll("li");
+const snb = gnbList.querySelectorAll(".snb");
 
 const LangSelect = document.getElementById("LangSelect");
 const LangPTag = LangSelect.querySelector("p");
@@ -15,23 +16,15 @@ const LangItem = LangList.querySelectorAll("li");
 ///// 네비에 마우스오버시 서브네비(1280px 이상) ///////////
 let navHover = ()=>{
   if(window.innerWidth >=1280){
-  console.log(window.innerWidth);
-  list.forEach(element => {
-      headerWrap.style.height = `120px`;
+    $(".snb").show();
+    list.forEach(element => {
       element.addEventListener("mouseenter",()=>{
-        // console.log("test");
-        headerWrap.style.height = `400px`;
-        headerWrap.classList.add("moustHover");
+        headerWrap.classList.add("on")
       })
       headerWrap.addEventListener("mouseleave",()=>{
-        headerWrap.style.height = `120px`;
-        headerWrap.classList.remove("moustHover");
-      })  
+        headerWrap.classList.remove("on")
+      })
     });
-    // alert("1280이상");
-    }
-  else {
-    headerWrap.style.height = "80px";
   }
 }
 navHover();
@@ -78,8 +71,12 @@ window.addEventListener("resize", ()=>{
   }
 })
 // 메인메뉴의 + 클릭시 서브메뉴 보이게
+// jQuery 이용
 // jQuery -> No.6 folder -> No.7 file 참조
-
+$(document).on("click", "#gnbList li span", function(){
+  $("#gnbList li span").not($(this)).next().slideUp();
+  $(this).next().slideToggle();
+})
 
 
 // 스크롤시 네비 고정 밑 색 변화

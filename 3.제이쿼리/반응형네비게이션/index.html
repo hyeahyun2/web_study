@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>반응형 네비게이션</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <script src="./js/jquery-3.6.1.min.js" defer></script>
+    <script src="./js/common.js" defer></script>
+  </head>
+  <body>
+    <header id="header">
+      <h1><a href="#">로고</a></h1>
+      <a href="#" class="menuView">메뉴보기</a>
+    </header>
+    <nav id="gnb">
+      <h2 class="hidden">주요이용메뉴</h2>
+      <ul id="gnbList">
+        <li class="item"><a href="#content1">리스트1</a>
+          <ul class="snb">
+            <li><a href="#">리스트1</a></li>
+            <li><a href="#">리스트2</a></li>
+            <li><a href="#">리스트3</a></li>
+          </ul>
+        </li>
+        <li class="item"><a href="#content2">리스트2</a>
+          <ul class="snb">
+            <li><a href="#">리스트1</a></li>
+            <li><a href="#">리스트2</a></li>
+            <li><a href="#">리스트3</a></li>
+          </ul>
+        </li>
+        <li class="item"><a href="#content3">리스트3</a>
+          <ul class="snb">
+            <li><a href="#">리스트1</a></li>
+            <li><a href="#">리스트2</a></li>
+            <li><a href="#">리스트3</a></li>
+          </ul>
+        </li>
+      </ul>
+      <a href="#" class="menuClose">메뉴닫기</a>
+    </nav>
+    <section id="content1" class="content">
+      <h2>섹션1</h2>
+    </section>
+    <section id="content2" class="content">
+      <h2>섹션2</h2>
+    </section>
+    <section id="content3" class="content">
+      <h2>섹션3</h2>
+    </section>
+    <aside id="banner">
+      <h2>광고배너 또는 퀵메뉴</h2>
+    </aside>
+    <footer id="footer">
+      <p>하단</p>
+    </footer>
+  </body>
+</html>

@@ -19,9 +19,6 @@
 #headerWrap.scrollActive {
     background-color: rgba(0,0,0,0.5);
 }
-#headerWrap.moustHover {
-    background-color: rgb(var(--nav-hover-purple-color));
-}
 
 /* logo (hight : 87px) */
 #header > ul {

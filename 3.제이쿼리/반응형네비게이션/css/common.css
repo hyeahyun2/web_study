@@ -1,0 +1,144 @@
+@charset "utf-8";
+/* 초기화 */
+body, h1, h2, ul, p { margin: 0; padding: 0; }
+ul li { list-style: none; }
+a { text-decoration: none; color: #000;}
+.hidden { position: absolute; left: -9999px; }
+
+/******************** header ********************/
+#header {
+  width: 100%;
+  position: absolute; top: 0;
+  z-index: 999;
+}
+#header h1 {
+  position: absolute;
+  top: 20px; left: 50px;
+}
+#header a.menuView {
+  position: absolute;
+  top: 30px; right: 50px;
+}
+
+/* gnb */
+#gnb {
+  top: 0;
+}
+#gnbList {
+  overflow: hidden;
+}
+#gnbList .item {
+}
+#gnbList .item > a {
+  display: block;
+}
+
+/* snb */
+.snb {
+  text-align: center;
+}
+.snb li {
+  margin: 20px 0;
+}
+.snb li a {}
+
+/* 메뉴닫기 */
+#gnbList .menuClose {}
+
+/********************** 컨텐츠 ********************/
+section.content { height: 100vh; }
+#content1 { 
+  background: #a5b5f3;
+  margin-top: 70px; 
+} 
+#content2 {
+  background: #c7f19c;
+}
+#content3 {
+  background: #f0aef0;
+}
+
+/* aside */
+#banner {
+  color: #fff;
+  background: #000;
+}
+
+/* 1000px 이상 */
+@media screen and (min-width: 1000px) {
+  #header a.menuView {
+    display: none;
+  }
+  #gnb {
+    position: absolute;
+    padding-top: 30px;
+    width: 100%;
+    background: #fff;
+    left: 0; /* 모바일 스크립트 이용 후 변화없기위해 */
+  }
+  #gnbList {
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    transition: 0.5s;
+  }
+  #gnbList.on {
+    height: 200px;
+  }
+  #gnbList::after {
+    content: "";
+    width: 100%; height: 2px;
+    background:#000;
+    position: absolute;
+    top: 70px;
+  }
+  #gnbList .item > a {
+    padding: 0 20px;
+    line-height: 40px;
+  }
+  /* 메뉴닫기 */
+  .menuClose {
+    display: none;
+  }
+
+  /* aside */
+  #banner {
+    position: absolute;
+    width: 100px; height: 300px;
+    top: 200px; right: 50px;
+  }
+  
+}
+
+/* 999px 이하 */
+@media screen and (max-width: 999px) {
+  #header a.menuView {
+    display: block;
+  }
+  #gnb {
+    position: fixed;
+    right: -200px;
+    padding-top: 0;
+    width: 200px; height: 100vh;
+    background: #fff;
+    transition: 0.5s right;
+  }
+  #gnb.on { right: 0;}
+  #gnbList {
+    /* auto : 부모의 크기를 padding포함 자동으로 받아오기 */
+    height: auto; 
+    display: block;
+    justify-content: center;
+    padding-top: 70px;
+  }
+  #gnbList .item > a {
+    padding: 0 20px;
+    line-height: 40px;
+  }
+  .snb li {
+  }
+  #banner {
+    position: static;
+    width: 100%; padding: 20px 0;
+  }
+}

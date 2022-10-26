@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>창 크기에따라 크기 변화</title>
+  <script src="../jquery-3.6.1.min.js"></script>
+  <style>
+    div {
+      width: 100px;
+      height: 200px;
+      background-color: #f00;
+      transition: 0.5s;
+    }
+    div.on1 {width: 500px;}
+    div.on1 {width: 300px;}
+  </style>
+</head>
+<body>
+  <button>클릭</button>
+  <div></div>
+  <script>
+    // const div = document.querySelector("div");
+    // const btn = document.querySelector("button");
+    // console.log(div, btn);
+    // btn.addEventListener("click",()=>{
+    //   if(window.innerWidth >= 1000){
+    //     div.style.width = `500px`
+    //   }
+    //   else {
+    //     div.style.width = `300px`
+    //   }
+    // })
+    $("button").on("click",function(){
+      if(window.innerWidth >= 1000){
+        // $("div").animate({width: 500})
+        $("div").removeClass("on2").addClass("on1");
+      }
+      else{
+        // $("div").animate({width: 300})
+        $("div").removeClass("on1").addClass("on2");
+      }
+    })
+  </script>
+</body>
+</html>
