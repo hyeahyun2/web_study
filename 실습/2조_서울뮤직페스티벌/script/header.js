@@ -12,10 +12,12 @@ const LangPTag = LangSelect.querySelector("p");
 const LangList = LangSelect.querySelector("ul");
 const LangItem = LangList.querySelectorAll("li");
 
-
+// 1280px이상에서 이하로 resize됐을 때 서브메뉴 초기값 = hide 설정을 위한 변수
+let state = 1; 
 ///// 네비에 마우스오버시 서브네비(1280px 이상) ///////////
 let navHover = ()=>{
   if(window.innerWidth >=1280){
+    state = 0;
     $(".snb").show();
     list.forEach(element => {
       element.addEventListener("mouseenter",()=>{
@@ -25,6 +27,12 @@ let navHover = ()=>{
         headerWrap.classList.remove("on")
       })
     });
+  }
+  else {
+    if(state == 0){
+      $(".snb").hide();
+      state =1;
+    }
   }
 }
 navHover();

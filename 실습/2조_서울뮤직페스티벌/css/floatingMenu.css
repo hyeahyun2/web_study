@@ -3,23 +3,18 @@
 /* floating Menu */
 .foating-container {
     position: fixed;
-    top: 42%; right: 3%;
-    transform: translateY(-10%);
+    right: 3%;
+    /* transform: translateY(-10%); */
     color: #fff;
     z-index: 20;
 }
 #reservation {
-    transform: translateY(-20%);
 }
 #reservation > ul { 
-    /* border: 1px solid #000; */
-    width: 192px; height: 403px;
+    width: 192px; 
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 }
 #reservation > ul > li {
-
 }
 #reservation > ul > li > a {
     /* border: 1px solid #000; */

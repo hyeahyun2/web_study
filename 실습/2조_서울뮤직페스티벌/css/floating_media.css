@@ -1,21 +1,41 @@
 @charset "utf-8";
 
 /* 크기 1280px 이상 */
-@media all and (min-width: 1280px) {}
+@media all and (min-width: 1280px) {
+  .foating-container {
+    bottom: 50px; 
+  }
+  #reservation {
+    transform: translateY(-20%);
+}
+  #reservation > ul { 
+    flex-direction: column;
+    justify-content: space-between;
+    height: 403px;
+  }
+}
 
 /* 크기 770px ~ 1279px */
 /* and (min-width: 770px) */
 @media all and (max-width: 1279px) {
+  .foating-container {
+    display: flex;
+    align-items: center;
+    gap: 70px;
+    bottom: 30px; 
+  }
   #reservation > ul { 
-    width: 150px; height: 300px;
+    width: 150px;
+    flex-direction: row;
+    gap: 10px;
   }
   #reservation > ul > li > a {
-    width: 140px; height: 140px;
+    width: 100px; height: 100px;
   }
   #reservation > ul > li > a > p {
-    width: 108px; height: 108px;
-    top: 16px; left: 16px;
-    font-size: 14px;
+    width: 80px; height: 80px;
+    top: 10px; left: 10px;
+    font-size: 10px;
     padding-top: 40%;
   }
   #reservation > ul > li:nth-of-type(1) > a > p {
@@ -26,11 +46,6 @@
     background-size: 30px;
     background-position-y: 20%;
   }
-
-}
-
-/* 크기 770px 이하 */
-@media all and (max-width: 769px) {
   .topMove {
     font-size: 20px;
   }
@@ -39,4 +54,10 @@
     line-height: 110px;
     background-size: 20px;
   }
+
+}
+
+/* 크기 770px 이하 */
+@media all and (max-width: 769px) {
+  
 }
