@@ -2,23 +2,24 @@
     width: 100%;
     height: 70vw;
     position: relative;
-    /* background-color: white; */
+
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    /* margin-bottom: 80px; */
+    overflow: hidden;
+}
+.sect4 > .wave-container {
+    width: 100%;
+    display: flex;
 }
 
-
-.sect4>.wave {
-    /* z-index: 4; */
-    /* top: -5%; */
+.sect4 > .wave-container > .wave {
     position: absolute;
-    width: 100%;
+    width: 400%;
     height: 100px;
     background: rgb(var(--basic-purple-color)) url(../images/w_wave.png);
-    /* background: rgb(var(--basic-purple-color)) url(../images/w_wave.png) no-repeat 0 bottom / 100vw 6vw;  */
+    animation: Move 10s linear infinite;
 }
 
 /* ============================================== */
@@ -177,6 +178,9 @@
 .sect4>.wrap a.visible>h3 {
     display: block;
 }
+
+
+
 
 
 @media all and (max-width: 1000px) {

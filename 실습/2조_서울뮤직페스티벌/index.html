@@ -8,9 +8,11 @@
   <link rel="stylesheet" href="./css/index.css">
   <link rel="stylesheet" href="./css/common.css">
   <script src="./script/jquery-3.6.1.min.js"></script>
-  <script src="./script/header.js" async></script>
-  <script src="./script/floatingMenu.js" async></script>
-  <script src="./script/sec4.js" async></script>
+  <script src="./script/header.js" defer></script>
+  <script src="./script/floatingMenu.js" defer></script>
+  <script src="./script/sec123.js" defer></script>
+  <script src="./script/sec4.js" defer></script>
+  <!-- <script src="./script/sec_common.js" async></script> -->
 </head>
 
 <body>
@@ -139,27 +141,29 @@
         <p>아름다운 감성으로 서울 일대를 가득 채울<br>
           뮤직 페스티벌이 개최됩니다.</p>
       </div>
-      <div class="schedule_explain">
-        <dl>
-          <dt>행 사 명</dt>
-          <dd>2022 서울뮤직페스티벌 (SMUF 2022)</dd>
-        </dl>
-        <dl>
-          <dt>기&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;간</dt>
-          <dd>2022.10.13(목)~16(일) / 4일간</dd>
-        </dl>
-        <dl>
-          <dt>장&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;소</dt>
-          <dd>노들섬 잔디마당, 노들스퀘어등</dd>
-        </dl>
-        <dl>
-          <dt>주&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;최</dt>
-          <dd><img src="./images/seoul_logoC.png" alt="서울특별시"></dd>
-        </dl>
-        <dl>
-          <dt>프 로 그 램</dt>
-          <dd>메인공연, 차세대 스타공연,<br> 음악·뷰티 프로그램, 체험 프로그램 등</dd>
-        </dl>
+      <div id="explainWrap">
+        <div class="schedule_explain">
+          <dl>
+            <dt>행 사 명</dt>
+            <dd>2022 서울뮤직페스티벌 (SMUF 2022)</dd>
+          </dl>
+          <dl>
+            <dt>기 &nbsp;&nbsp;&nbsp;&nbsp;간</dt>
+            <dd>2022.10.13(목)~16(일) / 4일간</dd>
+          </dl>
+          <dl>
+            <dt>장 &nbsp;&nbsp;&nbsp;&nbsp;소</dt>
+            <dd>노들섬 잔디마당, 노들스퀘어등</dd>
+          </dl>
+          <dl>
+            <dt>주 &nbsp;&nbsp;&nbsp;&nbsp;최</dt>
+            <dd><img src="./images/seoul_logoC.png" alt="서울특별시"></dd>
+          </dl>
+          <dl>
+            <dt>프 로 그 램</dt>
+            <dd>메인공연, 차세대 스타공연,<br> 음악·뷰티 프로그램, 체험 프로그램 등</dd>
+          </dl>
+        </div>   
       </div>
     </section>
 
@@ -174,56 +178,66 @@
       </div>
       <div id="information">
         <ul class="programs_Content">
-          <li>
+          <li class="li1">
             <dl>
               <dt><span>SMUF 2022</span><br>STAGE</dt>
-              <dd>다양한 취향을 저격할<br>다채로운 장르의 메인 공연</dd>
+              <dd id="dd1">
+                <p>다양한 취향을 저격할<br>다채로운 장르의 메인 공연</p>
+                <ul>
+                  <li>Beautiful Stage</li>
+                  <li>Soulful Stage</li>
+                  <li>Powerful Stage</li>
+                  <li>Wonderful Stage</li>
+                </ul>
+              </dd>
             </dl>
-            <ul>
-              <li>Beautiful Stage</li>
-              <li>Soulful Stage</li>
-              <li>Powerful Stage</li>
-              <li>Wonderful Stage</li>
-            </ul>
           </li>
-          <li>
+          <li class="li2">
             <dl>
               <dt><span>SMUF 2022</span><br>MUSIC</dt>
-              <dd>K-Music 및 대중문화의<br>모든 것을 경험하는 프로그램</dd>
+              <dd id="dd2">
+                <p>K-Music 및 대중문화의<br>모든 것을 경험하는 프로그램</p>
+                <ul>
+                  <li>SMUF Talk - 뮤직</li>
+                  <li>SMUF 버스킹</li>
+                  <li>K-Culture 체험 Zone</li>
+                </ul>
+              </dd>
             </dl>
-            <ul>
-              <li>SMUF Talk - 뮤직</li>
-              <li>SMUF 버스킹</li>
-              <li>K-Culture 체험 Zone</li>
-            </ul>
           </li>
-          <li>
+          <li class="li3">
             <dl>
               <dt><span>SMUF 2022</span><br>BEAUTY</dt>
-              <dd>메이크업&middot;패션 트렌드 등<br>K-뷰티를 경험하는 프로그램</dd>
+              <dd id="dd3">
+                <p>메이크업&middot;패션 트렌드 등<br>K-뷰티를 경험하는 프로그램</p>
+                <ul>
+                  <li>SMUF Talk - 뷰티</li>
+                  <li>SMUF Beauty Zone</li>
+                  <li>SMUF x 크리에이터 라이브 방송</li>
+                </ul>
+              </dd>
             </dl>
-            <ul>
-              <li>SMUF Talk - 뷰티</li>
-              <li>SMUF Beauty Zone</li>
-              <li>SMUF x 크리에이터 라이브 방송</li>
-            </ul>
           </li>
         </ul>
-        <div class="contentImg">
-          <img src="./images/s3_ss01.jpg" alt="">
-          <img src="./images/s3_ss02.jpg" alt="">
-          <img src="./images/s3_ss03.png" alt="">
-        </div>
+        <div id="contentImgWrap">
+          <div class="contentImg">
+            <img src="./images/s3_ss01.jpg" alt="" class="conList img1">
+            <img src="./images/s3_ss02.jpg" alt="" class="conList img2">
+            <img src="./images/s3_ss03.png" alt="" class="conList img3">
+          </div>
+        </div>  
       </div>
       <div class="btnWrap2">
-        <button><img src="./images/arrow_1.png" alt=""></button>
-        <button><img src="./images/arrow_1_r.png" alt=""></button>
+        <button class="prev"><img src="./images/arrow_1.png" alt=""></button>
+        <button class="next"><img src="./images/arrow_1_r.png" alt=""></button>
       </div>
     </section>
 
+
     <!-- page4 : 프로그램 상세 페이지 링크 -->
     <section class="sect4 section" id="programLink">
-      <div class="wave">
+      <div class="wave-container">
+        <div class="wave"></div>
         <!-- 웨이브 이미지 삽입 및 애니메이션 효과 -->
       </div>
       <div class="front-image-container">
@@ -321,7 +335,10 @@
   </main>
 
   <footer id="footer">
-    <div class="wave"></div>
+    
+    <div class="wave-container">
+      <div class="wave"></div>
+    </div>
 
 
     <div class="fBox">

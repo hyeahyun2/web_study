@@ -4,64 +4,50 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>footer</title>
+  <title>asd</title>
   <style>
-    main {
-      width: 100%; height: 300px;
-    }
-    #footer {
-      width: 100%; height: 300px;
-      background-color: #888dec;
-    }
-    #All {
+    div {
       display: flex;
-      flex-direction: row-reverse;
-      justify-content: space-between;
-    }
-    .goSite {
-      width: 25%;
-      display: flex;
-    }
-
-    .info {
-      width: 75%;
-      display: flex;
-      flex-wrap: wrap;
       gap: 20px;
     }
-    .title_logo {
-      width: 100px; height: 100px;
-      background: url(./2조_서울뮤직페스티벌/images/smf_logoW.png) no-repeat center / cover;
+    a {
+      margin-top: 50px;
+      text-decoration: none; color: #000;
+      display: block;
+      /* border: 1px solid #000;s */
+      position: relative;
     }
-    
+    a::after {
+      content: "";
+      width: 100%; 
+      height: 10px;
+      background: #dea5ed;
+      position: absolute;
+      bottom: 0; left: 0;
+      z-index: -1;
+      display: none;
+    }
+    a:hover {
+      color: #000;
+    }
+    a:hover::after {
+      display: block;
+      animation: ani 1s;
+    }
+    @keyframes ani {
+      0% { width: 0;}
+      100% { width: 100%;}
+    }
   </style>
 </head>
 <body>
-  <main>
+  <div>
+    <a href="#">보도자료</a>
+    <a href="#">공지사항</a>
+  </div>
 
-  </main>
-  <footer id="footer">
-    <div class="wave">
-    </div>
-    <div id="All">
-      <div class="goSite">
-        <a href="#fac">
-          <img src="./2조_서울뮤직페스티벌/images/f_m1.png" alt="facebook">
-        </a>
-        <a href="#ins">
-          <img src="./2조_서울뮤직페스티벌/images/f_m2.png" alt="instagram">
-        </a>
-      </div>
-  
-      <div class="info">
-        <div class="title_logo"></div>
-        <div class="infoWrap">
-          <p>주소 : 서울시 강남구 도산대로 30길 13-9 &nbsp;&nbsp;연락처 : 070-4170-0944 &nbsp;&nbsp;</p>
-          <p>이메일 : seoulmusicfestival@gmail.com</p>
-          <small>Copyright © 2022 Seoul Music Festival. All Rights Reserved.</small>
-        </div>
-      </div>  
-    </div>
-  </footer>
+  <script>
+
+  </script>
 </body>
 </html>

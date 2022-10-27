@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>마우스에 반응하는 배경</title>
+  <style>
+    body {margin: 0; overflow: hidden;}
+    div {
+      /* 움직이기 위해 position 적용 */
+      position: absolute; 
+      width: 120vw; height: 120vh;
+      background: url(./images/img1.jpg) no-repeat center / cover;
+    }
+  </style>
+  <script src="../jquery-3.6.1.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $(document).on("mousemove", function(e){
+        console.log(e.clientX);
+        $("div").css({ 
+          left: ($(window).width()/2 - e.clientX)/20 - $(window).width()*0.1,
+          top: ($(window).height()/2 - e.clientY)/20 - $(window).height()*0.1
+        });
+      })
+    })
+  </script>
+</head>
+<body>
+  <div></div>
+</body>
+</html>

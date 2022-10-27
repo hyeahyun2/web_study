@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>움직이는 나비</title>
+  <style>
+    body { 
+      margin: 0; height: 100vh;
+      background: #000; 
+      display: flex; justify-content: center; align-items: center;
+    }
+    img { width: 200px; }
+  </style>
+  <script src="../../jquery-3.6.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.5.0/lodash.min.js"></script>
+</head>
+<body>
+  <img src="./nabi/nabi_1.png" alt="나비">
+  <script>
+    // const nabi = document.querySelector("img");
+    // let winSize = window.innerWidth;
+    // let n = 1;
+    // let wing = ()=>{
+    //   // window.innerWidth
+    //   if(winSize<window.innerWidth){
+    //     n -= 1;
+    //     if(n<1) n=6;
+    //     nabi.setAttribute("src",`./nabi/nabi_${n}.png`);
+    //     console.log(n);
+    //   }
+    //   else if(winSize>window.innerWidth){
+    //     n += 1;
+    //     if(n>6) n=1;
+    //     nabi.setAttribute("src",`./nabi/nabi_${n}.png`);
+    //     console.log(n);
+    //   }
+    //   winSize=window.innerWidth;
+    // }
+    // window.addEventListener("resize",()=>{
+    //   wing();
+    // })
+
+    let n = 1;
+    // _.debounce(function(){}, 적용시간) : 중첩되는 이벤트의 제일 마지막에 실행된 이벤트에만 스크립트 적용
+      // 적용시간 : debounce명령어 -> 이벤트가 끝난 후부터~ 몇ms 뒤에 실행
+    // $(window).on("resize", _.debounce(function(){
+    // _.throttle(function(){}, 적용시간) : debounce와 비슷하지만 적용시간이 이벤트 시작했을 때 기준!
+        // 이벤트가 계~~속 중첩적으로 일어나면 적용시간마다 이벤트 스크립트 적용됨
+    $(window).on("resize", _.throttle(function(){
+      n ++;
+      console.log(n);
+      if(n>6) n=1;
+      $("img").attr("src",`./nabi/nabi_${n}.png`);
+    }, 1000)) // 적용되는 시간(ms단위)
+  </script>
+</body>
+</html>

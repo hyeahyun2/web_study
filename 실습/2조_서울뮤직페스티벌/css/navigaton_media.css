@@ -198,4 +198,8 @@
     font-size: 18px;
   }
 
+  #LangSelect {
+    width: 51px;
+    top: 25px; right: 15%;
+  }
 }

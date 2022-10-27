@@ -4,9 +4,30 @@
 <title>상품 슬라이드</title>
 <meta charset="utf-8">
 <style>
-
+	/* 초기화 */
+	body, ul { margin: 0; padding: 0; }
+	li { list-style: none; }
+	/* 상품슬라이드 */
+	#scroll_wrap { 
+		border: 1px solid #000;
+		width: 400px; 
+		margin: 50px 0 0 50px; padding: 50px; 
+		position: relative;
+	}
+	#scroll_wrap span { 
+		position: absolute; 
+		top: 50%; transform: translateY(-50%);
+	}
+	#scroll_wrap span.left { left: 20px;}
+	#scroll_wrap span.right { right: 20px;}
+	.scroll { 
+		width: 400px;  background: #c4ecfb; 
+		overflow: hidden;
+	}
+	.scroll ul { width: 1000px; display: flex;}
+	.scroll ul li { width: 90px; margin: 0 5px;}
 </style>
-<script src="jquery-1.7.2.min.js"></script>
+<script src="../../jquery-3.6.1.min.js"></script>
 </head>
 <body>
 	<div id="scroll_wrap">
@@ -30,9 +51,15 @@
 	</div>
 
 	<script>
-	
-		
-		
+		$(".right").on("click", function(){
+			// scrollLeft : jQuery에서 사용할 수 있는 스타일시트 속성
+									// 스크롤의 위치?를 의미 
+									// margin이용해서 옮기는것과 비슷한 원리
+			$(".scroll:not(:animated)").animate({scrollLeft: `+=100`})
+		})
+		$(".left").on("click", function(){
+			$(".scroll:not(:animated)").animate({scrollLeft: `-=100`})
+		})
 	</script>
 	
 	

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>마우스에 반응하는 글자</title>
+  <style>
+    body { overflow: hidden; margin: 0; background: #000;}
+    div {
+      position: absolute;
+      top: 30%; left: 0;
+      width: 100%;
+      font-size: 10vw; font-weight: bold;
+      text-transform: uppercase;
+      text-align: center;
+      transition: 0.2s linear;
+      /* 그림자속성 이용해서 글자 테두리 만들기 */
+      text-shadow: -1px -1px 0 #f0f0f0, 
+                    1px -1px 0 #f0f0f0,
+                    -1px 1px 0 #f0f0f0,
+                    1px 1px 0 #f0f0f0;
+    }
+    /* 글자간격 각 div마다 다르게 설정 */
+    .text45 { letter-spacing: 0em;}
+    .text38 { letter-spacing: 0.005em;}
+    .text32 { letter-spacing: 0.01em;}
+    .text27 { letter-spacing: 0.015em;}
+    .text23 { letter-spacing: 0.020em;}
+    .text20 { letter-spacing: 0.025em;}
+    .text18 { letter-spacing: 0.030em;}
+  </style>
+  <script src="../jquery-3.6.1.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $(document).on("mousemove", function(e){
+        $("div").each(function(){
+          let  className = $(this).attr("class");
+          // 해당태그의 문자중에 index번호가 4번째부터 2개만 저장하기
+          // text45 -> 45만 저장 
+          let classNum = className.substr(4,2);
+          // (마우스 위치를 중점으로 움직이는)/비율
+          let posX = (e.clientX - $(window).width()/2)/classNum*2; 
+          let posY = (e.clientY - $(window).height()/2)/classNum*3;
+          $(this).css({ transform: `translate(${posX}px, ${posY}px)`})
+        })
+      })
+    })
+  </script>
+</head>
+<body>
+  <div class="text45">web designer</div>
+  <div class="text38">web designer</div>
+  <div class="text32">web designer</div>
+  <div class="text27">web designer</div>
+  <div class="text23">web designer</div>
+  <div class="text20">web designer</div>
+  <div class="text18">web designer</div>
+</body>
+</html>

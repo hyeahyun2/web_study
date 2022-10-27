@@ -1,0 +1,14 @@
+body::-webkit-scrollbar {
+/* 스크롤바 전체 */
+  width: 8px;
+}
+body::-webkit-scrollbar-thumb {
+  /* 스크롤 막대 */
+  background-color: #464646;
+  /* width: 5px; */
+  border-radius: 10px;
+}
+body::-moz-focus-inner {
+  /* 스크롤 막대 외부 */
+  background-color: #bebebe;
+}

@@ -106,3 +106,13 @@ LangSelect.addEventListener("mouseleave",()=>{
   LangList.style.opacity = 0;
   LangList.style.height = 0;
 })
+LangPTag.addEventListener("click", ()=>{
+  if(LangList.style.opacity > 0){
+    LangList.style.opacity = 0;
+    LangList.style.height = 0;
+  }
+  else {
+    LangList.style.opacity = 1;
+    LangList.style.height = `60%`;
+  }
+})

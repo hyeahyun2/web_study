@@ -132,3 +132,12 @@ button {
 }
 
 /* 초기화 끝!!!! */
+
+@keyframes Move {
+    from {
+        transform: translateX(0)
+    }
+    to {
+        transform: translateX(-1920px);
+    }
+}

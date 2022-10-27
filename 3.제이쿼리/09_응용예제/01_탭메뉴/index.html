@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>탭 구현</title>
+  <style>
+    /* 공통 */
+    #wrap { 
+      width: 700px;
+      position: relative;
+    }
+    section { }
+    section h2 { float: left; margin-right: 50px;}
+    section.on h2 { border-bottom: 3px solid #de87f3; }
+    section ul { 
+      box-sizing: border-box;
+      width: 700px; padding: 50px;
+      position: absolute; 
+      top: 50px; left: 0;
+      border: 1px solid #000;
+      background: #fff;
+    }
+  </style>
+  <script src="../../jquery-3.6.1.min.js"></script>
+  <script>
+    $(function(){
+      $("#wrap section ul").not(":first").hide();
+      $("#wrap section h2").on("click", function(){
+        $("#wrap section").removeClass("on");
+        $(this).parent().addClass("on");
+        $("#wrap section ul").hide();
+        $(this).next("ul").show();
+      })
+    })
+  </script>
+</head>
+<body>
+  <div id="wrap">
+    <section id="notice" class="on">
+      <h2>공지사항</h2>
+      <ul>
+        <li>공지사항입니다공지사항입니다공지사항입니다공지사항입니다공지사항입니다</li>
+        <li>공지사항입니다공지사항입니다공지사항입니다공지사항입니다공지사항입니다</li>
+        <li>공지사항입니다공지사항입니다공지사항입니다공지사항입니다공지사항입니다</li>
+      </ul>
+    </section>
+    <section id="notice">
+      <h2>보도자료</h2>
+      <ul>
+        <li>보도자료입니다보도자료입니다보도자료입니다보도자료입니다보도자료입니다</li>
+        <li>보도자료입니다보도자료입니다보도자료입니다보도자료입니다보도자료입니다</li>
+        <li>보도자료입니다보도자료입니다보도자료입니다보도자료입니다보도자료입니다</li>
+        <li>보도자료입니다보도자료입니다보도자료입니다보도자료입니다보도자료입니다</li>
+      </ul>
+    </section>
+  </div>
+  
+</body>
+</html>

@@ -33,4 +33,27 @@ let next = ()=>{
     
     
 }
-setInterval(next, 2000);
+setInterval(next, 3000);
+
+const Wcontainer4 = sect4.querySelector('.wave-container');
+const wave4 = Wcontainer4.querySelector('.wave');
+// const wave4 = sect4.querySelector('.wave');
+// const colnewave1 =wave.cloneNode(true);
+const colnewave1 =wave4.cloneNode(true);
+const colnewave2 =wave4.cloneNode(true);
+// Wcontainer.prepend(colnewave1);
+Wcontainer4.append(colnewave1);
+Wcontainer4.append(colnewave2);
+
+// console.log(wave4)
+
+const footer = window.document.getElementById('footer');
+const footerWave = footer.querySelector('.wave-container');
+const waveF = footerWave.querySelector('.wave');
+// const wave4 = sect4.querySelector('.wave');
+// const colnewave1 =wave.cloneNode(true);
+const colnewave3 =waveF.cloneNode(true);
+const colnewave4 =waveF.cloneNode(true);
+// Wcontainer.prepend(colnewave1);
+footer.append(colnewave3);
+footer.append(colnewave4);
