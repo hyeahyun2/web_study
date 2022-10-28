@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>체크박스 제어</title>
+  <!-- 체크박스 제어를 통한 전체선택과 부분선택 -->
+</head>
+<body>
+  <form name="study">
+    <fieldset>
+      <legend>과목선택</legend>
+      <label><input type="checkbox" name="allCheck">전체선택</label>
+      <br>
+      <label><input type="checkbox" name="subject">과목1</label>
+      <br>
+      <label><input type="checkbox" name="subject">과목2</label>
+      <br>
+      <label><input type="checkbox" name="subject">과목3</label>
+    </fieldset>
+  </form>
+
+  <script>
+    const study = document.study;
+    const allCheck = study.allCheck;
+    const subject = study.subject;
+    allCheck.addEventListener("click",()=>{
+      subject.forEach(element => {
+        if(allCheck.checked) {
+          // element.checked == true;
+          element.setAttribute("checked", "checked");
+        }
+        else {
+          // element.checked == false;
+          element.removeAttribute("checked");
+        }
+      });
+    })
+    subject.forEach((ele)=>{
+      ele.addEventListener("click",()=>{
+        if(subject[0].checked && subject[1].checked && subject[2].checked){
+          allCheck.setAttribute("checked", "checked");
+        }
+        else {
+          allCheck.removeAttribute("checked");
+        }
+      })
+    })
+  </script>
+</body>
+</html>

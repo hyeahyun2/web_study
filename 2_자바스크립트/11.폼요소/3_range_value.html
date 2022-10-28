@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form name="f1">
+    <input type="range" name="f2" min="1" max="10" value="1">
+    <input type="text" name="f3">
+  </form>
+  <script>
+    let f1 = document.f1;
+    let f2 = document.f1.f2;
+    let f3 = document.f1.f3;
+    f3.value = f2.value;
+    f2.addEventListener("change", ()=>{
+      f3.value = f2.value;
+    })
+  </script>
+</body>
+</html>

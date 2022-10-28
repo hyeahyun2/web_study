@@ -1,6 +1,6 @@
 body::-webkit-scrollbar {
 /* 스크롤바 전체 */
-  width: 8px;
+  width: 8px; height: 8px;
 }
 body::-webkit-scrollbar-thumb {
   /* 스크롤 막대 */

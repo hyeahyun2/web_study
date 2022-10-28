@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>계산기</title>
+</head>
+<body>
+  <form name="calc">
+    <label>계산식 <input type="text" name="count"></label>
+    <br>
+    <label>결과 <input type="text" name="result"></label>
+    <br>
+    <input type="button" name="btn" value="계산하기">
+  </form>
+
+  <script>
+    const calc = document.calc;
+    const count = calc.count;
+    const result = calc.result;
+    const btn = calc.btn;
+    btn.addEventListener("click",()=>{
+      console.log((count.value));
+      result.value = eval(count.value);
+    })
+  </script>
+</body>
+</html>

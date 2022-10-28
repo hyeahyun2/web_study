@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>form태그의 속성</title>
+</head>
+<body>
+  <form name="people">
+    <label for="name">이름</label>
+    <input type="text" id="name" name="myName">
+    <br>
+    <label for="classNum">학번</label>
+    <input type="text" id="classNum" name="myNum">
+    <br>
+    <input type="submit" value="값전달">
+  </form>
+
+  <script>
+    let myName = document.people.myName;
+    console.log(myName);
+    // .focus() : 해당 요소를 focus하게 하는 명령어
+    myName.focus(); // 문서 로드하자마자 해당 요소를 focus상태로
+    myName.addEventListener("blur", ()=>{
+      // .value : (input태그에서) 해당 요소의 value(입력)값
+      if(myName.value == "") { // 입력값이 비었을 경우
+        alert("반드시 입력해야 합니다")
+        // 메세지창을 클릭 후 focus될때까지의 시간차가 있기 때문에
+        // setTimeout사용해서 시간차를 매꿔줌
+        setTimeout(function(){
+          myName.focus();
+        },1)
+      }
+    })
+  </script>
+</body>
+</html>

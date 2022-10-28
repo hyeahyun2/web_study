@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>선택한 리스트들의 금액 합산하기</title>
+</head>
+<body>
+  <form name="product">
+    <label><input type="checkbox" name="list" value="10000">모자 1만원</label>
+    <label><input type="checkbox" name="list" value="30000">구두 3만원</label>
+    <label><input type="checkbox" name="list" value="80000">가방 8만원</label>
+    <br>
+    <label>총합은 <input type="text" name="total" value="0"></label>
+  </form>
+
+  <script>
+    const product = document.product;
+    const list = product.list;
+    const total = product.total;
+    // console.log(total.value);
+    let sum = 0;
+    list.forEach(element => {
+      element.addEventListener("click",()=>{
+        if(element.checked){
+          sum += Number(element.value);
+        }
+        else {
+          sum -= Number(element.value);
+        }
+        console.log(sum);
+        total.value = sum;
+        
+      })
+    });
+  </script>
+</body>
+</html>

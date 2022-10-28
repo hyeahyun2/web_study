@@ -8,6 +8,8 @@
     justify-content: flex-start;
     align-items: center;
     overflow: hidden;
+
+    
 }
 .sect4 > .wave-container {
     width: 100%;
@@ -131,16 +133,6 @@
     background-image: url(../images/s4_ss03.jpg);
 }
 
-/* .sect4 > .wrap  .subStage::after,
-.sect4 > .wrap  .budaeStage::after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    content: "";
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-} */
 .sect4>.wrap a.mainSlide {
     transform: scale(1.1);
     z-index: 8;
@@ -181,15 +173,58 @@
 
 
 
-
+/* .sect4>.programLink_title>h2
+.sect4>.programLink_title>p  */
 
 @media all and (max-width: 1000px) {
-
+    .sect4>.programLink_title>h2 {
+        font-size: 1.5rem;
+        font-weight: 900;
+    }
+    .sect4>.programLink_title>p {
+        line-height: 250%;
+        font-size: 1rem;
+    }
+    .sect4 {
+        height: 90vh;
+        /* border: 5px solid #f00; */
+    }
+    .sect4>.wrap a {
+        height: 30vw;
+    }
     .sect4>.wrap .mainStage>h3,
     .sect4>.wrap .subStage>h3,
     .sect4>.wrap .budaeStage>h3 {
-
         font-size: 1rem;
-
     }
+}
+
+@media all and (max-width: 700px) {
+
+    .sect4 {
+        height: 60vh;
+        /* border: 5px solid #0f0; */
+    }
+    .sect4 > .wave-container {
+        display: none;
+    }
+    .sect4>.programLink_title>h2 {
+        font-size: 1.2rem;
+        font-weight: 900;
+    }
+    .sect4>.programLink_title>p {
+        line-height: 250%;
+        font-size: 0.8rem;
+    }
+    .sect4>.wrap a {
+        /* width: 40vw; */
+        /* height: 40vw; */
+    }
+    .sect4>.wrap .mainStage>h3,
+    .sect4>.wrap .subStage>h3,
+    .sect4>.wrap .budaeStage>h3 {
+        font-size: 1px;
+    }
+
+
 }

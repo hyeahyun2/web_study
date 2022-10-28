@@ -86,7 +86,7 @@
     transform: translateX(-50%);
 
 }
-
+/* padding-top: 6rem; */
 @media all and (max-width: 1250px) {
     #footer > .fBox > .info {
         display: flex;
@@ -96,4 +96,12 @@
         top: 0;
         /* right:2rem */
     }
+}
+@media all and (max-width: 700px) {
+    #footer > .fBox {
+        padding-top: 2rem;
+    }
+    #footer > div.wave-container {
+        display: none;
+    }    
 }

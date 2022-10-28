@@ -1,3 +1,35 @@
+let sec1 = ()=>{
+    $('#back1').css({top:300,opacity:1}).animate({top:-100},500)
+}
+let sec2 = ()=>{
+    $('#back2').css({top:300,opacity:1}).animate({top:-100},500)
+}
+let sec3 = ()=>{
+    $('#back3').css({top:300,opacity:1}).animate({top:-100},500)
+}
+let textbox = ()=>{
+    $('#textbox').css({top:500}).animate({top:-100,opacity:1},500)
+}
+let firework1 = ()=>{
+    $('#fw1').css({opacity:0}).animate({opacity:1});
+}
+let firework2 = ()=>{
+    $('#fw2').css({opacity:0}).animate({opacity:1})
+}
+let firework3 = ()=>{
+    $('#fw3').css({opacity:0}).animate({opacity:1});
+}
+let firework4 = ()=>{
+    $('#fw4').css({opacity:0}).animate({opacity:1});
+}
+setTimeout(firework4,4500)
+setTimeout(firework3,4000)
+setTimeout(firework2,3500)
+setTimeout(firework1,3000)
+setTimeout(textbox,2500)
+setTimeout(sec1,2000)
+setTimeout(sec2,1500)
+setTimeout(sec3,1000)
 
 let nextSlider1 = ()=>{
     $('.contentImg')

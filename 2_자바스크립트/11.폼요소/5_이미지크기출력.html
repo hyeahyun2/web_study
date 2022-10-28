@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>이미지 크기 출력</title>
+</head>
+<body>
+  <form name="list">
+    <select name="fruit">
+      <option value="./images/apple.png">사과</option>
+      <option value="./images/banana.png">바나나</option>
+      <option value="./images/mango.png">망고</option>
+    </select>
+    <span id="mySpan">이미지 크기</span>
+  </form>
+  <br>
+  <img id="myImg" src="./images/apple.png" alt="">
+
+  <script>
+    const list = document.list;
+    const fruit = list.fruit;
+    const mySpan = document.getElementById("mySpan");
+    const myImg = document.getElementById("myImg");
+    // myImg.width , myImg.height
+    let changeImage = ()=>{
+      myImg.setAttribute("src", fruit.value);
+      imgLoad();
+    }
+    let imgLoad = ()=>{
+      myImg.addEventListener("load", ()=>{
+        mySpan.innerText = `${myImg.width} x ${myImg.height}`;
+      })
+    }
+    imgLoad();
+    fruit.addEventListener("change",()=>{
+      changeImage();
+    })
+  </script>
+</body>
+</html>

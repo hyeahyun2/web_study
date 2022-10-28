@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>연습문제</title>
+</head>
+<body>
+  <form name="f1">
+    <input type="text" name="f2">
+    <br>
+    <p id="data"></p>
+    <select name="s1">
+      <option value="네이버">네이버</option>
+      <option value="다음">다음</option>
+      <option value="네이트">네이트</option>
+    </select>
+  </form>
+
+  <script>
+    let data = document.getElementById("data");
+    let f1 = document.f1;
+    let f2 = f1.f2;
+    let s1 = f1.s1;
+    f2.addEventListener("focus",()=>{
+      data.innerText = "포커스 상태입니다";
+    })
+    f2.addEventListener("blur",()=>{
+      data.innerText = "블러 상태입니다";
+    })
+    s1.addEventListener("change", ()=>{
+      f2.value = s1.value;
+    })
+  </script>
+</body>
+</html>

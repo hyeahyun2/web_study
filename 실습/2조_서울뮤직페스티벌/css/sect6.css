@@ -7,20 +7,6 @@
     /* margin-bottom: 2rem; */
 }
 
-/* ========================================== */
-/* .sect6 > .front-image-container {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
-.sect6 > .front-image-container > img {
-    position: absolute;
-    bottom: 0;
-    right: 8%;
-    height: 15vw;
-} */
-
-/* ========================================== */
 .sect6 > h2 {
     text-align: center;
     font-size: 2.5rem;
@@ -113,14 +99,7 @@
     color: #4b4b4b;
     margin-top: 27px;
 }
-/* .sect6 > div > ul > li > a > dl > dd > span {
 
-    color: #555555;
-    font-weight: 600;
-    position: absolute;
-    bottom: 0;
-    border: 1px solid #fff;
-} */
 
 .sect6 > .box {
     width: 90%;
@@ -130,12 +109,7 @@
 }
 
 
-/* .sect6 > .box > .btnWrap { */
-    /* width: 100%; */
-    /* height: 100%; */
-    /* border: 1px solid #000; */
-    /* position: relative; */
-/* } */
+
 .sect6 > .box > .btnWrap > button {
     width: 90px;
     height: 90px;
@@ -156,7 +130,6 @@
     border: 1px solid rgb(var(--footer-basic-color));
 }
 .sect6 > .box > .btnWrap > .btnPrev {
-
     right: 0;
     background-image: url(../images/arrow_1_b_r.png);
     transition: .2s;
@@ -166,12 +139,33 @@
     border: 1px solid rgb(var(--footer-basic-color));
 }
 
+.sect6 > h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 900;
+    letter-spacing: -5px;
+}
 
+.sect6 > p {
+    text-align: center;
+    line-height: 300%;
+    color: #676767;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
 
-@media all and (max-width:900px) {
+@media all and (max-width:1000px) {
     .sect6  {
         height:80vw;
-
+        /* border: 5px solid #f00; */
+    }
+    .sect6 > h2 {
+        font-size: 2rem;
+        font-weight: 900;
+    }
+    .sect6 > p {
+        font-size: 1rem;
+        font-weight: 600;
     }
     .sect6 ul {
         width: 100%;
@@ -195,5 +189,30 @@
         display: flex;
         flex-direction: column;
     }
+    .sect6 > .box > .btnWrap > button {
+        width: 50px;
+        height: 50px;
+    }
+    .sect6 > .box > .btnWrap > .btnNext {
+        background-size: 40px;
+    }
+    .sect6 > .box > .btnWrap > .btnNext:hover {
+        background-size: 40px;
+    }
+    .sect6 > .box > .btnWrap > .btnPrev {
+        background-size: 40px;
+    }
+    .sect6 > .box > .btnWrap > .btnPrev:hover {
+        background-size: 40px;
+    }
+}
 
+
+
+
+@media all and (max-width:700px) {
+    .sect6  {
+        height:60vh;
+        /* background-size: 1px; */
+    }
 }

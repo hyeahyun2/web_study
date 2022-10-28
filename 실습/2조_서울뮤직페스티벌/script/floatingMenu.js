@@ -15,10 +15,10 @@ let Y = window.scrollY;
 window.addEventListener("wheel", (e) => {
   // 현재 문서의 총 길이
   let lastY = document.body.scrollHeight - window.innerHeight;
-  // console.log(Y);
-  // console.log(lastY);
-  // console.log(window.scrollY);
-  if(window.scrollY != 0 && window.scrollY <= lastY){
+  console.log(Y);
+  console.log(lastY);
+  console.log(window.scrollY);
+  if(window.scrollY != 0 && window.scrollY < lastY){
     if (e.wheelDelta < 0) {
       // console.log(list[0]);
       deg += 10;

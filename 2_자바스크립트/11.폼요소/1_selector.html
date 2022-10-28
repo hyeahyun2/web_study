@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>폼요소 선택자</title>
+</head>
+<body>
+  <form name="people">
+    <legend>개인정보</legend>
+    <input type="text" id="idName" name="userName">
+  </form>
+  <form name="company">
+    <legend>회사정보</legend>
+    <input type="text" id="companyName" name="comName">
+    <input type="text" name="part">
+    <input type="text" name="part" value="영업부">
+    <input type="text" name="part">
+  </form>
+  
+  <script>
+    // form에 id대신 name속성 사용 -> .name명 으로 선택자 지정 가능
+    let people = document.people;
+    console.log(people);
+    // 해당 input태그가 속해있는 form요소의 선택자의 하위에서 .name명으로 선택자 지정 가능
+    let idName = people.userName;
+    console.log(idName);
+    // 같은 name을 갖는 input태그가 여러개일 경우 배열형식으로 선택자 지정됨
+    let companyPart = document.company.part;
+    console.log(companyPart);
+    console.log(companyPart[1]);
+  </script>
+</body>
+</html>
