@@ -96,9 +96,9 @@ let mouseDown = 0;
 let mouseUp = 0;
 let mouseDrage = false;
 $("#sliderWrap .sliderList").on("mousedown", function(e){
+  clearInterval(timer); // 드래그중엔 자동슬라이딩 중지
   mouseDrage = true;
   mouseDown = e.pageX;
-  clearInterval(timer); // 드래그중엔 자동슬라이딩 중지
 })
 $("#sliderWrap .sliderList").on("mouseup", function(e){
   mouseUp = e.pageX;
@@ -115,7 +115,7 @@ $("#sliderWrap .sliderList").on("mouseup", function(e){
   timer = setInterval(nextMove, 4000);// 자동슬라이딩 재호출
 })
 $("#sliderWrap .sliderList").on("mousemove", function(e){
-  if(mouseDrage == true){ // 드래그 하는 중에
+  if(mouseDrage === true){ // 드래그 하는 중에
     let drageGap = mouseDown - e.pageX;
     let drageGapPer = 100*(drageGap/$(this).children().innerWidth());
     console.log($(this).children().innerWidth())
@@ -128,13 +128,16 @@ let timer = setInterval(nextMove, 4000);
 // 문제 6. 코딩교육프로그램 섹션의 span 태그를 이용해서 아코디언 효과 적용
 $("#contentWrap2 .program").css({transition: "0.5s"});
 $("#contentWrap2 .program span").on("click", function(){
+  $("#contentWrap2 .program span").text("-");
   if($(this).parent().hasClass("pro")===false){
     $("#contentWrap2 .program").removeClass("pro");
     $(this).parent().addClass("pro");
+    $(this).text("+");
   }
   else {
     $("#contentWrap2 .program").removeClass("pro");
   }
+  
 })
 // 문제 7. .contentWrap1에 도달시 컨텐츠가 나타나기
 //초기화
