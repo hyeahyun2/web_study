@@ -49,7 +49,7 @@ let prevMove = ()=>{
   $(".btnList span").removeClass("on");
   $(".btnList span").eq(num).addClass("on");
   if(num == -1){
-    num=2;
+    num=sLength-1;
     $("#sliderWrap .sliderList")
       .prepend($(".slider3"))
       .css({marginLeft: `-100%`})
@@ -57,7 +57,7 @@ let prevMove = ()=>{
         for(let i=(sLength-1); i>0; i--){
           $(this).prepend($(".slider"+i));
         }
-        $(this).css({marginLeft: `-200%`});
+        $(this).css({marginLeft: `-${100*num}%`});
         slideState = 1;
       })
   }
@@ -70,7 +70,7 @@ let prevMove = ()=>{
 let nextMove = ()=>{
   slideState = 0;
   num++;
-  if(num == 3){
+  if(num == sLength){
     num=0;
     $("#sliderWrap .sliderList")
       .append($(".slider1"))
@@ -104,11 +104,14 @@ $("#sliderWrap .sliderList").on("mouseup", function(e){
   mouseUp = e.pageX;
   // console.log("mouseUp", e.pageX);
   if(slideState == 1 ){
-    if(mouseUp > mouseDown+50){ // 왼쪽으로 드래그
+    if(mouseUp > mouseDown+100){ // 왼쪽으로 드래그
       prevMove();
     }
-    else if(mouseUp < mouseDown-50){ // 오른쪽으로 드래그
+    else if(mouseUp < mouseDown-100){ // 오른쪽으로 드래그
       nextMove();
+    }
+    else { // 드래그 폭 좁을 경우 현재 슬라이드로 되돌아가기
+      $(this).animate({marginLeft: `-${(100*num)}%`})
     }
   }
   mouseDrage = false;
@@ -140,8 +143,9 @@ $("#contentWrap2 .program span").on("click", function(){
   
 })
 // 문제 7. .contentWrap1에 도달시 컨텐츠가 나타나기
-//초기화
+// 초기화
 $("#content1").children(".contentWrap1").css({opacity: 0})
+// 스크롤 이벤트
 $(window).on("scroll", function(){
   let pos = $("#content1").offset().top;
   let on = pos-($(this).innerHeight())/2;
