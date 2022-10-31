@@ -5,52 +5,121 @@
     <title>자바스크립트 명령어</title>
     <style>
       body { height: 3000px; }
+      div { position: absolute;
+            top: 100px; left: 200px;
+            width: 200px; height: 300px;
+            border: 1px solid #000;
+            overflow-y: scroll; }
+      p { height: 1000px; margin: 0;
+          background: rgba(91, 179, 138, 0.56); }
     </style>
   </head>
   <body>
+    <div>
+      <p>객체입니다</p>
+    </div>
     <script>
-      // window
+      // 크기관련
+      // 윈도우 창크기
       let winW = window.innerWidth;
       let winH = window.innerHeight;
       let winOw = window.outerWidth;
       let winOh = window.outerHeight;
-      let winSt = window.screenTop;
-      let winSl = window.screenLeft;
-      let winSx = window.scrollX;
-      let winSy= window.scrollY;
-
-      console.log(winW)
-      console.log(winH)
-      console.log(winOw)
-      console.log(winOh)
-      console.log(winSt)
-      console.log(winSl)
-      console.log(winSx)
-      console.log(winSy)
-
-      console.log(`여기까지 window----------<br>`)
       // screen
       let sw = screen.width;
       let sh = screen.height;
       let sCw = screen.availWidth;
       let sCh = screen.availHeight;
+      // documentElement
+      let docW = document.body.scrollWidth;
+      let docH = document.body.scrollHeight;
+      let docW2 = document.documentElement.scrollWidth;
+      let docH2 = document.documentElement.scrollHeight;
+      // object
+      const div = document.querySelector('div')
+      let objCw = div.clientWidth; // width + padding
+      let objCh = div.clientHeight;
+      let objOw = div.offsetWidth; // width + padding + border
+      let objOh = div.offsetHeight;
+      // scrollWidth 스크롤 영역일때 스크롤로 감싸여진 내용의 전체 크기
+      let objSw = div.scrollWidth;
+      let objSh = div.scrollHeight;
+
+      console.log(`윈도우 크기`)
+      console.log(winW)
+      console.log(winH)
+      console.log(winOw)
+      console.log(winOh)
+      console.log(`스크린 크기`)
       console.log(sw)
       console.log(sh)
       console.log(sCw)
       console.log(sCh)
-
-      console.log(`여기까지 screen-----------<br>`)
-      // 문서길이
-      let docW = document.body.scrollWidth;//보여지는 창 크기
-      let docH = document.body.scrollHeight;
-      let docW2 = document.documentElement.scrollWidth;//스크롤바 포함 크기
-      let docH2 = document.documentElement.scrollHeight;
-
+      console.log(`문서 크기`)
       console.log(docW)
       console.log(docH)
       console.log(docW2)
       console.log(docH2)
-      console.log(`여기까지 screen-----------<br>`)
+      console.log(`object 크기`)
+      console.log(objCw)
+      console.log(objCh)
+      console.log(objOw)
+      console.log(objOh)
+      console.log(objSw)
+      console.log(objSh)
+      console.log(`---여기까지 크기---`)
+      console.log(``)
+
+      // 윈도우 스크롤 위치 반환
+      let winSx = window.scrollX;
+      let winSy = window.scrollY;
+      let winSx2 = window.pageXOffset;
+      let winSy2 = window.pageYOffset;
+      console.log(`윈도우 위치`)
+      console.log(winSx)
+      console.log(winSy)
+      console.log(winSx2)
+      console.log(winSy2)
+
+      let docSt = document.body.scrollTop;
+      let docSl = document.body.scrollLeft;
+      let docSt2 = document.documentElement.scrollTop; // 항상 0
+      let docSl2 = document.documentElement.scrollLeft;
+
+      console.log(`문서 위치`)
+      console.log(docSt)
+      console.log(docSl)
+      console.log(docSt2)
+      console.log(docSl2)
+      console.log(`---여기까지 위치---`)
+      console.log(``)
+
+      // 스크린과 윈도우와의 거리
+      let winSt = window.screenTop;
+      let winSl = window.screenLeft;
+      console.log(`스크린과 윈도우 거리`)
+      console.log(winSt)
+      console.log(winSl)
+      console.log(`---여기까지 기타---`)
+      console.log(``)
+      // viewport
+      const clientRt = div.getBoundingClientRect().top;
+      const clientRb = div.getBoundingClientRect().bottom;
+      const clientRl = div.getBoundingClientRect().left;
+      const clientRr = div.getBoundingClientRect().right;
+      const clientRw = div.getBoundingClientRect().width;
+      const clientRh = div.getBoundingClientRect().height;
+      const clientRx = div.getBoundingClientRect().x;
+      const clientRy = div.getBoundingClientRect().y;
+      console.log(`장치기기와 요소`)
+      console.log(clientRt)
+      console.log(clientRb)
+      console.log(clientRl)
+      console.log(clientRr)
+      console.log(clientRw)
+      console.log(clientRh)
+      console.log(clientRx)
+      console.log(clientRy)
 
     </script>
   </body>
